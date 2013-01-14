@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+/*
+Copyright (c) 2013, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://yuilibrary.com/license/
+*/
+
+var checker = require('../lib/index');
+
+var args = require('../lib/args').parse();
+var mkdirp = require('mkdirp');
+var path = require('path');
+var fs = require('fs');
+
+checker.init(args, function(json) {
+    if (args.json) {
+        var dir = path.dirname(args.json);
+        mkdirp.sync(dir);
+        fs.writeFileSync(args.json, JSON.stringify(json, null, 4) + '\n', 'utf8');
+        console.log('file written', args.json);
+    } else {
+        checker.print(json);
+    }
+});
