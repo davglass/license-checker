@@ -2,7 +2,7 @@
     "name": "license-checker",
     "description": "Check license info for a pacakge",
     "author": "Dav Glass <davglass@gmail.com>",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "dependencies": {
         "mkdirp": "*",
         "treeify": "*",
