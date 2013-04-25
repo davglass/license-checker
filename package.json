@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "yui-lint": "~0.1.1",
-        "jshint": "~0.9.0",
+        "jshint": "~1.1.0",
         "vows": "*" 
     },
     "keywords": [
