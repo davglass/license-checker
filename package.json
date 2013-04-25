@@ -2,21 +2,25 @@
     "name": "license-checker",
     "description": "Check license info for a pacakge",
     "author": "Dav Glass <davglass@gmail.com>",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "dependencies": {
         "mkdirp": "*",
         "treeify": "*",
         "nopt": "*",
-        "read-installed": "*"
+        "read-installed": "*",
+        "underscore": "~1.4.4"
     },
     "devDependencies": {
         "yui-lint": "~0.1.1",
         "jshint": "~1.1.0",
-        "vows": "*" 
+        "vows": "*"
     },
     "keywords": [
-        "license", "cli", "checker", "oss"
-    ],
+        "license",
+    "cli",
+    "checker",
+    "oss"
+        ],
     "main": "./lib/index.js",
     "bin": {
         "license-checker": "./bin/license-checker"
@@ -26,15 +30,17 @@
         "test": "istanbul cover --print both vows -- --spec ./tests/*.js"
     },
     "preferGlobal": "true",
-    "bugs": { "url" : "http://github.com/davglass/license-checker/issues" },
-    "licenses":[
+    "bugs": {
+        "url": "http://github.com/davglass/license-checker/issues"
+    },
+    "licenses": [
         {
-            "type" : "BSD",
-            "url" : "https://github.com/davglass/license-checker/blob/master/LICENSE"
+            "type": "BSD",
+            "url": "https://github.com/davglass/license-checker/blob/master/LICENSE"
         }
     ],
     "repository": {
-        "type":"git",
-        "url":"http://github.com/davglass/license-checker.git"
+        "type": "git",
+        "url": "http://github.com/davglass/license-checker.git"
     }
 }
