@@ -62,7 +62,6 @@ Requiring
 
 
 ```
-
 var checker = require('license-checker');
 
 checker.init({
@@ -71,5 +70,26 @@ checker.init({
     //The sorted json data
 });
 
-
 ```
+
+### Options
+
+#### options.unknown
+Type: `Boolean`
+Default value: `false`
+
+Only generate a list of unknown licenses (as opposed to all)
+
+#### options.start
+Type: `String`
+Default value: `.`
+
+Path to begin the dependency checks
+
+#### options.depth
+Type: `Number`
+Default value: null
+
+How deep to recurse through the dependencies.  The default is to recurse through all.
+
+Project directory from which to start the search
