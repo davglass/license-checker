@@ -61,7 +61,7 @@ Requiring
 ---------
 
 
-```
+```javascript
 var checker = require('license-checker');
 
 checker.init({
@@ -72,24 +72,14 @@ checker.init({
 
 ```
 
-### Options
+### Options (Defaults)
+Below are the list of defaults and their descriptions.
+You may pass them either as a module or through the command line (ie. `license-checker --depth=3`)
 
-#### options.unknown
-Type: `Boolean`
-Default value: `false`
-
-Only generate a list of unknown licenses (as opposed to all)
-
-#### options.start
-Type: `String`
-Default value: `.`
-
-Path to begin the dependency checks
-
-#### options.depth
-Type: `Number`
-Default value: null
-
-How deep to recurse through the dependencies.  The default is to recurse through all.
-
-Project directory from which to start the search
+```javascript
+{
+  unknown: false,    // Boolean: generate only a list of unknown licenses
+  start: '.',        // String: path to start the dependency checks
+  depth: null,       // Number: how deep to recurse through the dependencies
+}
+```
