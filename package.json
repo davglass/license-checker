@@ -12,7 +12,8 @@
     "devDependencies": {
         "yui-lint": "~0.1.1",
         "jshint": "~1.1.0",
-        "vows": "*" 
+        "vows": "*",
+        "istanbul": "*"
     },
     "keywords": [
         "license", "cli", "checker", "oss"
