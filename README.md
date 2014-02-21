@@ -61,8 +61,7 @@ Requiring
 ---------
 
 
-```
-
+```js
 var checker = require('license-checker');
 
 checker.init({
@@ -70,6 +69,9 @@ checker.init({
 }, function(json) {
     //The sorted json data
 });
-
-
 ```
+
+build status
+------------
+
+[![Build Status](https://travis-ci.org/davglass/license-checker.png?branch=master)](https://travis-ci.org/davglass/license-checker)
