@@ -45,6 +45,15 @@ var tests = {
                 assert.isTrue(Object.keys(d).length > 20);
             }
         }
+    },
+    'should not error': {
+        topic: function () {
+            var lic = require('../lib/license.js');
+            return lic();
+        },
+        'on undefined': function (d) {
+            assert.equal(d, 'Undefined');
+        }
     }
 };
 
