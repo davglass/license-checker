@@ -14,12 +14,20 @@ var path = require('path');
 var fs = require('fs');
 
 checker.init(args, function(json) {
+    var dir;
     if (args.json) {
-        var dir = path.dirname(args.json);
+        dir = path.dirname(args.json);
         mkdirp.sync(dir);
         fs.writeFileSync(args.json, JSON.stringify(json, null, 4) + '\n', 'utf8');
         console.log('file written', args.json);
-    } else {
+    }
+    else if (args.csv) {
+        dir = path.dirname(args.csv);
+        mkdirp.sync(dir);
+        fs.writeFileSync(args.csv, checker.asCSV(json), 'utf8');
+        console.log('file written', args.csv);
+    }
+    else {
         checker.print(json);
     }
 });
