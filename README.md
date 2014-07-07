@@ -57,6 +57,8 @@ You can also specify `--unknown` to only show licenses that it can't determine o
 
 Also supports `--json /path/to/save.json` to export the data.
 
+Added support for `--csv /path/to/save.csv` to export the data as comma-separated values.
+
 Requiring
 ---------
 
