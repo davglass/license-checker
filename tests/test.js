@@ -27,7 +27,7 @@ var tests = {
         },
         'and give us results': function (d) {
             assert.isTrue(Object.keys(d).length > 70);
-            assert.equal(d['abbrev@1.0.4'].licenses, 'MIT');
+            assert.equal(d['abbrev@1.0.5'].licenses, 'MIT');
         },
         'should parse local without unknown': {
             topic: function () {
