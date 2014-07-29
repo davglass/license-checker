@@ -15,7 +15,8 @@
     "vows": "*",
     "istanbul": "*",
     "request": "^2.34.0",
-    "queue": "^1.0.0"
+    "queue": "^1.0.0",
+    "detectionizr": "*"
   },
   "keywords": [
     "license",
