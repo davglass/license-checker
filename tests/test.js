@@ -46,7 +46,9 @@ var tests = {
                 });
             },
             'and give us results': function (d) {
-                assert.equal(d['vows@0.7.0'].licenses, 'BSD*');
+                assert.ok(d);
+                assert.ok(d['vows@0.8.0'], 'failed to lookup vows dep');
+                assert.equal(d['vows@0.8.0'].licenses, 'MIT');
                 assert.isTrue(Object.keys(d).length > 20);
             }
         }
