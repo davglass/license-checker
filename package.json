@@ -13,7 +13,7 @@
   "devDependencies": {
     "yui-lint": "~0.1.1",
     "jshint": "~1.1.0",
-    "vows": "*",
+    "vows": "0.8.0",
     "istanbul": "*",
     "request": "^2.34.0",
     "queue": "^1.0.0",
