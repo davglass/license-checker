@@ -34,23 +34,40 @@ var tests = {
             assert.equal('"module name","license","repository"', str.split('\n')[0]);
             assert.equal('"abbrev@1.0.5","MIT","http://github.com/isaacs/abbrev-js"', str.split('\n')[1]);
         },
-        'should parse local without unknown': {
-            topic: function () {
-                var self = this;
+    },
+    'should parse local without unknown': {
+        topic: function () {
+            var self = this;
 
-                checker.init({
-                    start: path.join(__dirname, '../'),
-                    unknown: true
-                }, function (sorted) {
-                    self.callback(null, sorted);
-                });
-            },
-            'and give us results': function (d) {
-                assert.ok(d);
-                assert.ok(d['vows@0.8.0'], 'failed to lookup vows dep');
-                assert.equal(d['vows@0.8.0'].licenses, 'MIT');
-                assert.isTrue(Object.keys(d).length > 20);
-            }
+            checker.init({
+                start: path.join(__dirname, '../'),
+                unknown: true
+            }, function (sorted) {
+                self.callback(null, sorted);
+            });
+        },
+        'and give us results': function (d) {
+            assert.ok(d);
+            assert.ok(d['vows@0.8.0'], 'failed to lookup vows dep');
+            assert.equal(d['vows@0.8.0'].licenses, 'MIT');
+            assert.isTrue(Object.keys(d).length > 20);
+        }
+    },
+    'should parse local in color': {
+        topic: function () {
+            var self = this;
+
+            checker.init({
+                start: path.join(__dirname, '../'),
+                color: true
+            }, function (sorted) {
+                self.callback(null, sorted);
+            });
+        },
+        'and give us results': function (d) {
+            assert.ok(d);
+            assert.isTrue(Object.keys(d).length > 70);
+            assert.equal(d['abbrev@1.0.5'].licenses, 'MIT');
         }
     },
     'should not error': {
