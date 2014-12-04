@@ -13,6 +13,8 @@ var mkdirp = require('mkdirp');
 var path = require('path');
 var fs = require('fs');
 
+if (!args.color && (args.json || args.csv || args.out)) args.color = false
+
 checker.init(args, function(json) {
     var formattedOutput = '';
     if (args.json) formattedOutput = JSON.stringify(json, null, 2);
