@@ -53,11 +53,22 @@ scanning ./yui-lint
       └─ repository: http://github.com/yui/yui-lint
 ```
 
-You can also specify `--unknown` to only show licenses that it can't determine or guessed at (from README)
+Options
+-------
 
-Also supports `--json /path/to/save.json` to export the data.
+* `--unknown` to only show licenses that it can't determine or guess at (from README)
+* `--json` output in json format.
+* `--csv` output in csv format.
+* `--out [filepath]` write the data to a specific file.
 
-Added support for `--csv /path/to/save.csv` to export the data as comma-separated values.
+Examples
+--------
+
+```
+license-checker --json > /path/to/licenses.json
+license-checker --csv --out /path/to/licenses.csv
+license-checker --unknown
+```
 
 Requiring
 ---------
