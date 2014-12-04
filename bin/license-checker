@@ -14,8 +14,16 @@ var path = require('path');
 var fs = require('fs');
 
 checker.init(args, function(json) {
-    if (args.json) return console.log(JSON.stringify(json, null, 2))
-    if (args.csv) return console.log(checker.asCSV(json))
+    var formattedOutput = '';
+    if (args.json) formattedOutput = JSON.stringify(json, null, 2);
+    else if (args.csv) formattedOutput = checker.asCSV(json);
+    else formattedOutput = checker.asTree(json);
 
-    checker.print(json);
+    if (args.out) {
+        var dir = path.dirname(args.out);
+        mkdirp.sync(dir);
+        fs.writeFileSync(args.out, formattedOutput, 'utf8');
+    } else {
+        console.log(formattedOutput);
+    }
 });
