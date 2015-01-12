@@ -2,7 +2,7 @@
   "name": "license-checker",
   "description": "Check license info for a pacakge",
   "author": "Dav Glass <davglass@gmail.com>",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "dependencies": {
     "chalk": "~0.5.1",
     "mkdirp": "^0.3.5",
