@@ -37,12 +37,7 @@
   "bugs": {
     "url": "http://github.com/davglass/license-checker/issues"
   },
-  "licenses": [
-    {
-      "type": "BSD",
-      "url": "https://github.com/davglass/license-checker/blob/master/LICENSE"
-    }
-  ],
+  "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
     "url": "http://github.com/davglass/license-checker.git"
