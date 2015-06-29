@@ -24,6 +24,8 @@ checker.init(args, function(json) {
         formattedOutput = JSON.stringify(json, null, 2);
     } else if (args.csv) {
         formattedOutput = checker.asCSV(json);
+    } else if (args.markdown){
+        formattedOutput = checker.asMarkDown(json);
     } else {
         formattedOutput = checker.asTree(json);
     }
