@@ -11,6 +11,7 @@ var checker = require('../lib/index');
 var args = require('../lib/args').parse();
 var mkdirp = require('mkdirp');
 var path = require('path');
+var chalk = require('chalk');
 var fs = require('fs');
 
 if (!args.color && (args.json || args.csv || args.out)) {
@@ -30,6 +31,8 @@ checker.init(args, function(json) {
     if (args.out) {
         var dir = path.dirname(args.out);
         mkdirp.sync(dir);
+        //Remove the color tags
+        formattedOutput = chalk.stripColor(formattedOutput);
         fs.writeFileSync(args.out, formattedOutput, 'utf8');
     } else {
         console.log(formattedOutput);
