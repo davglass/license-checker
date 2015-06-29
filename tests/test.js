@@ -27,12 +27,12 @@ var tests = {
         },
         'and give us results': function (d) {
             assert.isTrue(Object.keys(d).length > 70);
-            assert.equal(d['abbrev@1.0.5'].licenses, 'MIT');
+            assert.equal(d['abbrev@1.0.7'].licenses, 'ISC');
         },
         'and convert to CSV': function(d) {
             var str = checker.asCSV(d);
             assert.equal('"module name","license","repository"', str.split('\n')[0]);
-            assert.equal('"abbrev@1.0.5","MIT","http://github.com/isaacs/abbrev-js"', str.split('\n')[1]);
+            assert.equal('"abbrev@1.0.7","ISC","https://github.com/isaacs/abbrev-js"', str.split('\n')[1]);
         },
         'should parse local without unknown': {
             topic: function () {
