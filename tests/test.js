@@ -34,6 +34,10 @@ var tests = {
             assert.equal('"module name","license","repository"', str.split('\n')[0]);
             assert.equal('"abbrev@1.0.7","ISC","https://github.com/isaacs/abbrev-js"', str.split('\n')[1]);
         },
+        'and convert to MarkDown': function(d) {
+            var str = checker.asMarkDown(d);
+            assert.equal('[abbrev@1.0.7](https://github.com/isaacs/abbrev-js) - ISC', str.split('\n')[0]);
+        },
         'should parse local without unknown': {
             topic: function () {
                 var self = this;
