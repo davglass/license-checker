@@ -18,12 +18,17 @@ if (!args.color && (args.json || args.csv || args.out)) {
     args.color = false;
 }
 
+args.customFormat = checker.parseJson(args.customPath);
+
 checker.init(args, function(json) {
+
+console.log(args.customFormat);
+
     var formattedOutput = '';
     if (args.json) {
         formattedOutput = JSON.stringify(json, null, 2);
     } else if (args.csv) {
-        formattedOutput = checker.asCSV(json);
+        formattedOutput = checker.asCSV(json, args.customFormat);
     } else if (args.markdown){
         formattedOutput = checker.asMarkDown(json);
     } else {
