@@ -30,7 +30,7 @@ console.log(args.customFormat);
     } else if (args.csv) {
         formattedOutput = checker.asCSV(json, args.customFormat);
     } else if (args.markdown){
-        formattedOutput = checker.asMarkDown(json);
+        formattedOutput = checker.asMarkDown(json, args.customFormat);
     } else {
         formattedOutput = checker.asTree(json);
     }
