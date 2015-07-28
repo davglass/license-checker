@@ -22,7 +22,7 @@ args.customFormat = checker.parseJson(args.customPath);
 
 checker.init(args, function(json) {
 
-console.log(args.customFormat);
+    console.log(args.customFormat);
 
     var formattedOutput = '';
     if (args.json) {
