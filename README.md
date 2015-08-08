@@ -56,7 +56,7 @@ scanning ./yui-lint
 Options
 -------
 
-* `--unknown` to only show licenses that it can't determine or guess at (from README)
+* `--unknown` report guessed licenses as unknown licenses.
 * `--json` output in json format.
 * `--csv` output in csv format.
 * `--out [filepath]` write the data to a specific file.
