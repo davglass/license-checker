@@ -57,6 +57,26 @@ var tests = {
             }
         }
     },
+    'should parse local with unknown': {
+        topic: function () {
+            var self = this;
+
+            checker.init({
+                start: path.join(__dirname, '../'),
+                exclude: "MIT, ISC"
+            }, function (filtered) {
+                self.callback(null, filtered);
+            });
+        },
+        'and exclude MIT and ISC licensed modules from results': function (d) {
+            var excluded = true;
+            Object.keys(d).forEach(function(item) {
+                if (d[item].licenses && (d[item].licenses == "MIT" || d[item].licenses == "ISC"))
+                    excluded = false;
+            })
+            assert.ok(excluded);
+        }
+    },
     'should not error': {
         topic: function () {
             var lic = require('../lib/license.js');
