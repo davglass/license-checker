@@ -61,6 +61,7 @@ Options
 * `--csv` output in csv format.
 * `--out [filepath]` write the data to a specific file.
 * `--customPath` to add a custom Format file in JSON
+* `--exclude [list]` exclude modules which licenses are in the comma-separated list from the output
 
 Examples
 --------
@@ -70,6 +71,7 @@ license-checker --json > /path/to/licenses.json
 license-checker --csv --out /path/to/licenses.csv
 license-checker --unknown
 license-checker --customPath customFormatExample.js 
+license-checker --exclude 'MIT, MIT/X11, BSD, ISC'
 ```
 
 Requiring
