@@ -85,6 +85,33 @@ var tests = {
         'on undefined': function (d) {
             assert.equal(d, 'Undefined');
         }
+    },
+    'should only list UNKNOWN licenses': {
+        topic: function () {
+            var self = this;
+
+            checker.init({
+                start: path.join(__dirname, '../'),
+                onlyunknown: true
+            }, function (sorted) {
+                self.callback(null, sorted);
+            });
+        },
+        'so we check if there is not a star in a license': function(d) {
+            var onlyStarsFound = true;
+            Object.keys(d).forEach(function(item) {
+                if (d[item].licenses && d[item].licenses.indexOf('UNKNOWN') !== -1) {
+                    //Okay
+                } else if (d[item].licenses && d[item].licenses.indexOf('*') !== -1) {
+                    //Okay
+                } else {
+                    onlyStarsFound = false;
+                }
+            });
+
+            assert.ok(onlyStarsFound);
+        }
+
     }
 };
 
