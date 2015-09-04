@@ -1,6 +1,7 @@
 var vows = require('vows'),
     assert = require('assert'),
     path = require('path'),
+    util = require('util');
     checker = require('../lib/index');
 
 var tests = {
@@ -84,6 +85,34 @@ var tests = {
         },
         'on undefined': function (d) {
             assert.equal(d, 'Undefined');
+        }
+    },
+    'should init without errors': {
+        topic: function () {
+            var self = this;
+
+            checker.init({
+                start: path.join(__dirname, '../')
+            }, function (sorted, err) {
+                self.callback(sorted, err);
+            });
+        },
+        'errors should not exist': function (d, err) {
+            assert.equal(err, null);
+        }
+    },
+    'should init with errors (npm packages not found)': {
+        topic: function () {
+            var self = this;
+
+            checker.init({
+                start: 'C:\\'
+            }, function (sorted, err) {
+                self.callback(sorted, err);
+            });
+        },
+        'errors should exist': function (d, err) {
+            assert.isTrue(util.isError(err));
         }
     }
 };
