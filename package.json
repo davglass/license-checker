@@ -31,7 +31,8 @@
   },
   "scripts": {
     "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
-    "test": "istanbul cover --print both vows -- --spec ./tests/*.js"
+    "test": "istanbul cover --print both vows -- --spec ./tests/*.js",
+    "posttest": "istanbul check-coverage --statements 95 --functions 100 --lines 95 --branches 90"
   },
   "preferGlobal": "true",
   "bugs": {

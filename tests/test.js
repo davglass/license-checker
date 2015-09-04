@@ -57,7 +57,7 @@ var tests = {
             }
         }
     },
-    'should parse local with unknown': {
+    'should parse local with unknown and excludes': {
         topic: function () {
             var self = this;
 
@@ -135,7 +135,56 @@ var tests = {
             });
             assert.equal(onlyStarsFound, false);
         }
-    }
+    },
+    'should export a tree': {
+        topic: function() {
+            return checker.asTree([{}]);
+        },
+        'and format it': function(data) {
+            assert.ok(data);
+            assert.isTrue(data.indexOf('└─') > -1);
+        }
+    },
+    'should export as csv': {
+        topic: function() {
+            return checker.asCSV({
+                foo: {
+                    licenses: 'MIT',
+                    repository: '/path/to/foo'
+                }   
+            });
+        },
+        'and format it': function(data) {
+            assert.ok(data);
+            assert.isTrue(data.indexOf('"foo","MIT","/path/to/foo"') > -1);
+        }
+    },
+    'should export as csv with partial data': {
+        topic: function() {
+            return checker.asCSV({
+                foo: {
+                }   
+            });
+        },
+        'and format it': function(data) {
+            assert.ok(data);
+            assert.isTrue(data.indexOf('"foo","",""') > -1);
+        }
+    },
+    'should export as markdown': {
+        topic: function() {
+            return checker.asMarkDown({
+                foo: {
+                    licenses: 'MIT',
+                    repository: '/path/to/foo'
+                }   
+            });
+        },
+        'and format it': function(data) {
+            assert.ok(data);
+            assert.isTrue(data.indexOf('[foo](/path/to/foo) - MIT') > -1);
+        }
+    },
 };
 
 vows.describe('license-checker').addBatch(tests).export(module);
