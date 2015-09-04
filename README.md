@@ -57,6 +57,7 @@ Options
 -------
 
 * `--unknown` report guessed licenses as unknown licenses.
+* `--onlyunknown` only list packages with unknown or guessed licenses.
 * `--json` output in json format.
 * `--csv` output in csv format.
 * `--out [filepath]` write the data to a specific file.
@@ -70,6 +71,7 @@ license-checker --json > /path/to/licenses.json
 license-checker --csv --out /path/to/licenses.csv
 license-checker --unknown
 license-checker --exclude 'MIT, MIT/X11, BSD, ISC'
+license-checker --onlyunknown
 ```
 
 Requiring
