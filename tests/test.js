@@ -256,6 +256,15 @@ var tests = {
             assert.notEqual(json, null);
         }
     },
+    'should parse json with errors': {
+        topic: function() {
+            var path = './NotExitingFile.json';
+            return path;
+        },
+        'and check it': function(path) {
+            assert.throws(checker.parseJson(path));
+        }
+    },
 };
 
 vows.describe('license-checker').addBatch(tests).export(module);
