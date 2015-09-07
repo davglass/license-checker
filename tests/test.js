@@ -245,6 +245,17 @@ var tests = {
             assert.isTrue(data.indexOf('[foo](/path/to/foo) - MIT') > -1);
         }
     },
+    'should parse json successfully': {
+        topic: function() {
+            var path = './customFormatExample.json';
+            return path;
+        },
+        'and check it': function(path) {
+            var json = checker.parseJson(path);
+            assert.notEqual(json, undefined);
+            assert.notEqual(json, null);
+        }
+    },
 };
 
 vows.describe('license-checker').addBatch(tests).export(module);
