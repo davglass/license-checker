@@ -39,24 +39,24 @@ var tests = {
         'and convert to MarkDown': function(d) {
             var str = checker.asMarkDown(d);
             assert.equal('[abbrev@1.0.7](https://github.com/isaacs/abbrev-js) - ISC', str.split('\n')[0]);
-        },
-        'should parse local without unknown': {
-            topic: function () {
-                var self = this;
+        }
+    },
+    'should parse local without unknown': {
+        topic: function () {
+            var self = this;
 
-                checker.init({
-                    start: path.join(__dirname, '../'),
-                    unknown: true
-                }, function (sorted) {
-                    self.callback(null, sorted);
-                });
-            },
-            'and give us results': function (d) {
-                assert.ok(d);
-                assert.ok(d['vows@0.8.0'], 'failed to lookup vows dep');
-                assert.equal(d['vows@0.8.0'].licenses, 'MIT');
-                assert.isTrue(Object.keys(d).length > 20);
-            }
+            checker.init({
+                start: path.join(__dirname, '../'),
+                unknown: true
+            }, function (sorted) {
+                self.callback(null, sorted);
+            });
+        },
+        'and give us results': function (d) {
+            assert.ok(d);
+            assert.ok(d['vows@0.8.0'], 'failed to lookup vows dep');
+            assert.equal(d['vows@0.8.0'].licenses, 'MIT');
+            assert.isTrue(Object.keys(d).length > 20);
         }
     },
     'should parse local with unknown and excludes': {
@@ -75,7 +75,7 @@ var tests = {
             Object.keys(d).forEach(function(item) {
                 if (d[item].licenses && (d[item].licenses == "MIT" || d[item].licenses == "ISC"))
                     excluded = false;
-            })
+            });
             assert.ok(excluded);
         }
     },
@@ -145,7 +145,10 @@ var tests = {
                 });
             });
         }
-    }
+    },
+    'should only list UNKNOWN or guessed licenses successful': {
+        topic: function () {
+            var self = this;
 
             checker.init({
                 start: path.join(__dirname, '../'),
@@ -208,7 +211,7 @@ var tests = {
                 foo: {
                     licenses: 'MIT',
                     repository: '/path/to/foo'
-                }   
+                }
             });
         },
         'and format it': function(data) {
@@ -220,7 +223,7 @@ var tests = {
         topic: function() {
             return checker.asCSV({
                 foo: {
-                }   
+                }
             });
         },
         'and format it': function(data) {
@@ -234,7 +237,7 @@ var tests = {
                 foo: {
                     licenses: 'MIT',
                     repository: '/path/to/foo'
-                }   
+                }
             });
         },
         'and format it': function(data) {
