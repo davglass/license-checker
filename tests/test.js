@@ -1,7 +1,9 @@
 var vows = require('vows'),
     assert = require('assert'),
     path = require('path'),
-    checker = require('../lib/index');
+    checker = require('../lib/index'),
+    args = require('../lib/args'),
+    fs = require('fs');
 
 var tests = {
     loading: {
@@ -84,6 +86,64 @@ var tests = {
         },
         'on undefined': function (d) {
             assert.equal(d, 'Undefined');
+        }
+    },
+    'should create a custom format using customFormat': {
+        topic: function () {
+            var self = this;
+
+            checker.init({
+                start: path.join(__dirname, '../'),
+                exclude: "MIT, ISC",
+                customFormat: {
+                    'name': '<<Default Name>>',
+                    'description': '<<Default Description>>',
+                    'pewpew': '<<Should Never be set>>'
+                }
+            }, function (filtered) {
+                self.callback(null, filtered);
+            });
+        },
+        'create custom format with name, description and pewpew (customFormat manipulation)': function (d) {
+            Object.keys(d).forEach(function(item) {
+                assert.notEqual(d[item].name, undefined);
+                assert.notEqual(d[item].description, undefined);
+                assert.notEqual(d[item].pewpew, undefined);
+                assert.equal(d[item].pewpew, '<<Should Never be set>>');
+            });
+        }
+    },
+    'should create a custom format using customPath': {
+        topic: function () {
+            var self = this;
+
+            process.argv.push('--customPath');
+            process.argv.push('./customFormatExample.json');
+
+            args = args.parse();
+            args.start = path.join(__dirname, '../');
+
+            process.argv.pop();
+            process.argv.pop();
+
+            checker.init(args, function (filtered) {
+                self.callback(null, filtered);
+            });
+        },
+        'create custom format with contents of customFormatExample': function (d) {
+            var customFormatContent = fs.readFileSync(path.join(__dirname, './../customFormatExample.json'), 'utf8');
+
+            assert.notEqual(customFormatContent, undefined);
+            assert.notEqual(customFormatContent, null);
+
+            var customJson = JSON.parse(customFormatContent);
+
+            //Test dynamically with the file directly
+            Object.keys(d).forEach(function(licenseItem) {
+                Object.keys(customJson).forEach(function(definedItem) {
+                    assert.notEqual(d[licenseItem][definedItem], undefined);
+                });
+            });
         }
     }
 };

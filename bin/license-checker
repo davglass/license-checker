@@ -18,11 +18,7 @@ if (!args.color && (args.json || args.csv || args.out)) {
     args.color = false;
 }
 
-args.customFormat = checker.parseJson(args.customPath);
-
 checker.init(args, function(json) {
-
-    console.log(args.customFormat);
 
     var formattedOutput = '';
     if (args.json) {
