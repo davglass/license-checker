@@ -59,7 +59,7 @@ var tests = {
             }
         }
     },
-    'should parse local with unknown': {
+    'should parse local with unknown and excludes': {
         topic: function () {
             var self = this;
 
@@ -146,8 +146,102 @@ var tests = {
             });
         }
     }
+
+            checker.init({
+                start: path.join(__dirname, '../'),
+                onlyunknown: true
+            }, function (sorted) {
+                self.callback(null, sorted);
+            });
+        },
+        'so we check if there is no license with a star or UNKNOWN found': function(d) {
+            var onlyStarsFound = true;
+            Object.keys(d).forEach(function(item) {
+                if (d[item].licenses && d[item].licenses.indexOf('UNKNOWN') !== -1) {
+                    //Okay
+                } else if (d[item].licenses && d[item].licenses.indexOf('*') !== -1) {
+                    //Okay
+                } else {
+                    onlyStarsFound = false;
+                }
+            });
+
+            assert.ok(onlyStarsFound);
+        }
+    },
+    'should only list UNKNOWN or guessed licenses with errors (argument missing)': {
+        topic: function () {
+            var self = this;
+
+            checker.init({
+                start: path.join(__dirname, '../')
+            }, function (sorted) {
+                self.callback(null, sorted);
+            });
+        },
+        'so we check if there is no license with a star or UNKNOWN found': function(d) {
+            var onlyStarsFound = true;
+            Object.keys(d).forEach(function(item) {
+                if (d[item].licenses && d[item].licenses.indexOf('UNKNOWN') !== -1) {
+                    //Okay
+                } else if (d[item].licenses && d[item].licenses.indexOf('*') !== -1) {
+                    //Okay
+                } else {
+                    onlyStarsFound = false;
+                }
+            });
+            assert.equal(onlyStarsFound, false);
+        }
+    },
+    'should export a tree': {
+        topic: function() {
+            return checker.asTree([{}]);
+        },
+        'and format it': function(data) {
+            assert.ok(data);
+            assert.isTrue(data.indexOf('└─') > -1);
+        }
+    },
+    'should export as csv': {
+        topic: function() {
+            return checker.asCSV({
+                foo: {
+                    licenses: 'MIT',
+                    repository: '/path/to/foo'
+                }   
+            });
+        },
+        'and format it': function(data) {
+            assert.ok(data);
+            assert.isTrue(data.indexOf('"foo","MIT","/path/to/foo"') > -1);
+        }
+    },
+    'should export as csv with partial data': {
+        topic: function() {
+            return checker.asCSV({
+                foo: {
+                }   
+            });
+        },
+        'and format it': function(data) {
+            assert.ok(data);
+            assert.isTrue(data.indexOf('"foo","",""') > -1);
+        }
+    },
+    'should export as markdown': {
+        topic: function() {
+            return checker.asMarkDown({
+                foo: {
+                    licenses: 'MIT',
+                    repository: '/path/to/foo'
+                }   
+            });
+        },
+        'and format it': function(data) {
+            assert.ok(data);
+            assert.isTrue(data.indexOf('[foo](/path/to/foo) - MIT') > -1);
+        }
+    },
 };
-
-
 
 vows.describe('license-checker').addBatch(tests).export(module);

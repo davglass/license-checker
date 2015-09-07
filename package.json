@@ -2,7 +2,7 @@
   "name": "license-checker",
   "description": "Check license info for a pacakge",
   "author": "Dav Glass <davglass@gmail.com>",
-  "version": "3.1.0",
+  "version": "4.0.0",
   "dependencies": {
     "chalk": "~0.5.1",
     "mkdirp": "^0.3.5",
@@ -31,7 +31,8 @@
   },
   "scripts": {
     "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
-    "test": "istanbul cover --print both vows -- --spec ./tests/*.js"
+    "test": "istanbul cover --print both vows -- --spec ./tests/*.js",
+    "posttest": "istanbul check-coverage --statements 95 --functions 100 --lines 95 --branches 90"
   },
   "preferGlobal": "true",
   "bugs": {
