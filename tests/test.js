@@ -44,14 +44,15 @@ var tests = {
     'should parse local with unknown and custom format': {
         topic: function () {
             var self = this;
+            var format = {
+                'name': '<<Default Name>>',
+                'description': '<<Default Description>>',
+                'pewpew': '<<Should Never be set>>'
+            };
 
             checker.init({
                 start: path.join(__dirname, '../'),
-                customFormat: {
-                    'name': '<<Default Name>>',
-                    'description': '<<Default Description>>',
-                    'pewpew': '<<Should Never be set>>'
-                }
+                customFormat: format
             }, function (sorted) {
                 self.callback(null, sorted);
             });
@@ -59,6 +60,27 @@ var tests = {
         'and give us results': function (d) {
             assert.isTrue(Object.keys(d).length > 70);
             assert.equal(d['abbrev@1.0.7'].description, 'Like ruby\'s abbrev module, but in js');
+        },
+        'and convert to CSV': function(d) {
+            var format = {
+                'name': '<<Default Name>>',
+                'description': '<<Default Description>>',
+                'pewpew': '<<Should Never be set>>'
+            };
+
+            var str = checker.asCSV(d, format);
+            assert.equal('"module name","name","description","pewpew"', str.split('\n')[0]);
+            assert.equal('"abbrev@1.0.7","abbrev","Like ruby\'s abbrev module, but in js","<<Should Never be set>>"', str.split('\n')[1]);
+        },
+        'and convert to MarkDown': function(d) {
+            var format = {
+                'name': '<<Default Name>>',
+                'description': '<<Default Description>>',
+                'pewpew': '<<Should Never be set>>'
+            };
+
+            var str = checker.asMarkDown(d, format);
+            assert.equal(' - **[abbrev@1.0.7](https://github.com/isaacs/abbrev-js)**', str.split('\n')[0]);
         }
     },
     'should parse local without unknown': {
