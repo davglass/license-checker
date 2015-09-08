@@ -41,6 +41,26 @@ var tests = {
             assert.equal('[abbrev@1.0.7](https://github.com/isaacs/abbrev-js) - ISC', str.split('\n')[0]);
         }
     },
+    'should parse local with unknown and custom format': {
+        topic: function () {
+            var self = this;
+
+            checker.init({
+                start: path.join(__dirname, '../'),
+                customFormat: {
+                    'name': '<<Default Name>>',
+                    'description': '<<Default Description>>',
+                    'pewpew': '<<Should Never be set>>'
+                }
+            }, function (sorted) {
+                self.callback(null, sorted);
+            });
+        },
+        'and give us results': function (d) {
+            assert.isTrue(Object.keys(d).length > 70);
+            assert.equal(d['abbrev@1.0.7'].description, 'Like ruby\'s abbrev module, but in js');
+        }
+    },
     'should parse local without unknown': {
         topic: function () {
             var self = this;
@@ -88,13 +108,12 @@ var tests = {
             assert.equal(d, 'Undefined');
         }
     },
-    'should create a custom format using customFormat': {
+    'should create a custom format using customFormat successfully': {
         topic: function () {
             var self = this;
 
             checker.init({
                 start: path.join(__dirname, '../'),
-                exclude: "MIT, ISC",
                 customFormat: {
                     'name': '<<Default Name>>',
                     'description': '<<Default Description>>',
@@ -141,7 +160,7 @@ var tests = {
             //Test dynamically with the file directly
             Object.keys(d).forEach(function(licenseItem) {
                 Object.keys(customJson).forEach(function(definedItem) {
-                    assert.notEqual(d[licenseItem][definedItem], undefined);
+                    assert.notEqual(d[licenseItem][definedItem], 'undefined');
                 });
             });
         }
@@ -245,18 +264,28 @@ var tests = {
             assert.isTrue(data.indexOf('[foo](/path/to/foo) - MIT') > -1);
         }
     },
-    'should parse json successfully': {
+    'should parse json successfully (File exists + was json)': {
         topic: function() {
-            var path = './customFormatExample.json';
+            var path = './tests/config/custom_format_correct.json';
             return path;
         },
         'and check it': function(path) {
             var json = checker.parseJson(path);
             assert.notEqual(json, undefined);
             assert.notEqual(json, null);
+            assert.equal(json.licenseModified, 'no');
         }
     },
-    'should parse json with errors': {
+    'should parse json with errors (File exists + no json)': {
+        topic: function() {
+            var path = './tests/config/custom_format_broken.json';
+            return path;
+        },
+        'and check it': function(path) {
+            assert.throws(checker.parseJson(path));
+        }
+    },
+    'should parse json with errors (File not found)': {
         topic: function() {
             var path = './NotExitingFile.json';
             return path;
