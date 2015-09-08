@@ -114,8 +114,6 @@ var tests = {
         'errors should exist': function (d, err) {
             assert.isTrue(util.isError(err));
         }
-    }
-};
     },
     'should only list UNKNOWN or guessed licenses successful': {
         topic: function () {
@@ -182,7 +180,7 @@ var tests = {
                 foo: {
                     licenses: 'MIT',
                     repository: '/path/to/foo'
-                }   
+                }
             });
         },
         'and format it': function(data) {
@@ -194,7 +192,7 @@ var tests = {
         topic: function() {
             return checker.asCSV({
                 foo: {
-                }   
+                }
             });
         },
         'and format it': function(data) {
@@ -208,14 +206,14 @@ var tests = {
                 foo: {
                     licenses: 'MIT',
                     repository: '/path/to/foo'
-                }   
+                }
             });
         },
         'and format it': function(data) {
             assert.ok(data);
             assert.isTrue(data.indexOf('[foo](/path/to/foo) - MIT') > -1);
         }
-    },
+    }
 };
 
 vows.describe('license-checker').addBatch(tests).export(module);
