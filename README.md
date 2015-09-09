@@ -85,8 +85,12 @@ var checker = require('license-checker');
 
 checker.init({
     start: '/path/to/start/looking'
-}, function(json) {
-    //The sorted json data
+}, function(json, err) {
+    if (err) {
+        //Handle error
+    } else {
+        //The sorted json data
+    }
 });
 ```
 

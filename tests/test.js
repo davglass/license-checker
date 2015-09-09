@@ -1,9 +1,10 @@
 var vows = require('vows'),
     assert = require('assert'),
     path = require('path'),
+    util = require('util'),
     checker = require('../lib/index'),
     args = require('../lib/args'),
-    chalk = require('chalk');
+    chalk = require('chalk'),
     fs = require('fs');
 
 var tests = {
@@ -129,6 +130,34 @@ var tests = {
         },
         'on undefined': function (d) {
             assert.equal(d, 'Undefined');
+        }
+    },
+    'should init without errors': {
+        topic: function () {
+            var self = this;
+
+            checker.init({
+                start: path.join(__dirname, '../')
+            }, function (sorted, err) {
+                self.callback(sorted, err);
+            });
+        },
+        'errors should not exist': function (d, err) {
+            assert.equal(err, null);
+        }
+    },
+    'should init with errors (npm packages not found)': {
+        topic: function () {
+            var self = this;
+
+            checker.init({
+                start: 'C:\\'
+            }, function (sorted, err) {
+                self.callback(sorted, err);
+            });
+        },
+        'errors should exist': function (d, err) {
+            assert.isTrue(util.isError(err));
         }
     },
     'should parse with args': {
@@ -305,7 +334,7 @@ var tests = {
             assert.ok(data);
             assert.isTrue(data.indexOf('[foo](/path/to/foo) - MIT') > -1);
         }
-    },
+    }
     'should parse json successfully (File exists + was json)': {
         topic: function() {
             var path = './tests/config/custom_format_correct.json';

@@ -18,9 +18,13 @@ if (!args.color && (args.json || args.csv || args.out)) {
     args.color = false;
 }
 
-checker.init(args, function(json) {
+checker.init(args, function(json, err) {
 
     var formattedOutput = '';
+
+    if (!!err) {
+        console.log('Found error');
+        console.log(err);
     if (args.json) {
         formattedOutput = JSON.stringify(json, null, 2);
     } else if (args.csv) {
@@ -28,16 +32,24 @@ checker.init(args, function(json) {
     } else if (args.markdown){
         formattedOutput = checker.asMarkDown(json, args.customFormat);
     } else {
-        formattedOutput = checker.asTree(json);
-    }
+        if (args.json) {
+            formattedOutput = JSON.stringify(json, null, 2);
+        } else if (args.csv) {
+            formattedOutput = checker.asCSV(json);
+        } else if (args.markdown){
+            formattedOutput = checker.asMarkDown(json);
+        } else {
+            formattedOutput = checker.asTree(json);
+        }
 
-    if (args.out) {
-        var dir = path.dirname(args.out);
-        mkdirp.sync(dir);
-        //Remove the color tags
-        formattedOutput = chalk.stripColor(formattedOutput);
-        fs.writeFileSync(args.out, formattedOutput, 'utf8');
-    } else {
-        console.log(formattedOutput);
+        if (args.out) {
+            var dir = path.dirname(args.out);
+            mkdirp.sync(dir);
+            //Remove the color tags
+            formattedOutput = chalk.stripColor(formattedOutput);
+            fs.writeFileSync(args.out, formattedOutput, 'utf8');
+        } else {
+            console.log(formattedOutput);
+        }
     }
 });
