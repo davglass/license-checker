@@ -3,6 +3,7 @@ var vows = require('vows'),
     path = require('path'),
     checker = require('../lib/index'),
     args = require('../lib/args'),
+    chalk = require('chalk');
     fs = require('fs');
 
 var tests = {
@@ -128,6 +129,25 @@ var tests = {
         },
         'on undefined': function (d) {
             assert.equal(d, 'Undefined');
+        }
+    },
+    'should parse with args': {
+        topic: function () {
+            var args = require('../lib/args.js');
+            return args;
+
+        },
+        'on undefined': function (d) {
+            var result = d.defaults(undefined);
+
+            assert.equal(result.color, true);
+            assert.equal(result.start, path.resolve(path.join(__dirname, '../')));
+        },
+        'on color undefined': function (d) {
+            var result = d.defaults({color: undefined, start: path.resolve(path.join(__dirname, '../'))});
+
+            assert.equal(result.color, chalk.supportsColor);
+            assert.equal(result.start, path.resolve(path.join(__dirname, '../')));
         }
     },
     'should create a custom format using customFormat successfully': {
