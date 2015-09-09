@@ -3,6 +3,22 @@
   "description": "Check license info for a pacakge",
   "author": "Dav Glass <davglass@gmail.com>",
   "version": "4.0.0",
+  "contributors": [
+    "Andrew Couch <andy@couchand.com>",
+    "Dav Glass <davglass@gmail.com>",
+    "Glen Arrowsmith <glen.arrowsmith@gmail.com>",
+    "Holger Knust <holger.knust@certusview.com>",
+    "James Bloomer <github2@thebloomers.co.uk>",
+    "Michael Williamson <mike@zwobble.org>",
+    "Paul Mandel <paul.mand3l@gmail.com>",
+    "Philipp Tusch <philipp.tusch@huf-group.com>",
+    "Stan Senotrusov <stan@senotrusov.com>",
+    "Tero Keski-Valkama <tero.keski-valkama@cybercom.com>",
+    "Tim Oxley <secoif@gmail.com>",
+    "Yuri Zapuchlak <yuri@vidmaker.com>",
+    "badunk <baduncaduncan@gmail.com>",
+    "gdw2 <gdwarner@Gmail.com>"
+  ],
   "dependencies": {
     "chalk": "~0.5.1",
     "mkdirp": "^0.3.5",
@@ -11,13 +27,15 @@
     "treeify": "^1.0.1"
   },
   "devDependencies": {
-    "yui-lint": "~0.1.1",
-    "jshint": "~1.1.0",
-    "vows": "0.8.0",
+    "detectionizr": "*",
+    "format-package-json": "^0.2.0",
+    "git-contributors": "^0.2.3",
     "istanbul": "*",
-    "request": "^2.34.0",
+    "jshint": "~1.1.0",
     "queue": "^1.0.0",
-    "detectionizr": "*"
+    "request": "^2.34.0",
+    "vows": "0.8.0",
+    "yui-lint": "~0.1.1"
   },
   "keywords": [
     "license",
@@ -30,6 +48,7 @@
     "license-checker": "./bin/license-checker"
   },
   "scripts": {
+    "contrib": "./scripts/contrib.js",
     "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
     "test": "istanbul cover --print both vows -- --spec ./tests/*.js",
     "posttest": "istanbul check-coverage --statements 95 --functions 100 --lines 95 --branches 90"
