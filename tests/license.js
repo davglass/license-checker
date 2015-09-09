@@ -63,8 +63,24 @@ var tests = {
         topic: function() {
             return license('DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE');
         },
-        'should return WTF': function(data) {
-            assert.equal(data, 'WTF*');
+        'should return WTFPL': function(data) {
+            assert.equal(data, 'WTFPL*');
+        }
+    },
+    'WTF word check': {
+        topic: function() {
+            return license('asdf\nasdf\nWTFPL\nasdf\n');
+        },
+        'should return WTFPL': function(data) {
+            assert.equal(data, 'WTFPL*');
+        }
+    },
+    'Check for null': {
+        topic: function() {
+            return license('this is empty, hi');
+        },
+        'should return null': function(data) {
+            assert.equal(data, null);
         }
     }
 };
