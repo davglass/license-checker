@@ -334,7 +334,7 @@ var tests = {
             assert.ok(data);
             assert.isTrue(data.indexOf('[foo](/path/to/foo) - MIT') > -1);
         }
-    }
+    },
     'should parse json successfully (File exists + was json)': {
         topic: function() {
             var path = './tests/config/custom_format_correct.json';
