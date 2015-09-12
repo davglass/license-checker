@@ -25,6 +25,8 @@ checker.init(args, function(json, err) {
     if (!!err) {
         console.log('Found error');
         console.log(err);
+    }
+
     if (args.json) {
         formattedOutput = JSON.stringify(json, null, 2);
     } else if (args.csv) {
