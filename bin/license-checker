@@ -34,24 +34,16 @@ checker.init(args, function(json, err) {
     } else if (args.markdown){
         formattedOutput = checker.asMarkDown(json, args.customFormat);
     } else {
-        if (args.json) {
-            formattedOutput = JSON.stringify(json, null, 2);
-        } else if (args.csv) {
-            formattedOutput = checker.asCSV(json);
-        } else if (args.markdown){
-            formattedOutput = checker.asMarkDown(json);
-        } else {
-            formattedOutput = checker.asTree(json);
-        }
+        formattedOutput = checker.asTree(json);
+    }
 
-        if (args.out) {
-            var dir = path.dirname(args.out);
-            mkdirp.sync(dir);
-            //Remove the color tags
-            formattedOutput = chalk.stripColor(formattedOutput);
-            fs.writeFileSync(args.out, formattedOutput, 'utf8');
-        } else {
-            console.log(formattedOutput);
-        }
+    if (args.out) {
+        var dir = path.dirname(args.out);
+        mkdirp.sync(dir);
+        //Remove the color tags
+        formattedOutput = chalk.stripColor(formattedOutput);
+        fs.writeFileSync(args.out, formattedOutput, 'utf8');
+    } else {
+        console.log(formattedOutput);
     }
 });
