@@ -75,6 +75,22 @@ var tests = {
             assert.equal(data, 'WTFPL*');
         }
     },
+    'ISC check': {
+        topic: function() {
+            return license('asdfasdf\nThe ISC License\nasdfasdf');
+        },
+        'should return ISC': function(data) {
+            assert.equal(data, 'ISC*');
+        }
+    },
+    'ISC word check': {
+        topic: function() {
+            return license('asdf\nasdf\nISC\nasdf\n');
+        },
+        'should return ISC': function(data) {
+            assert.equal(data, 'ISC*');
+        }
+    },
     'Check for null': {
         topic: function() {
             return license('this is empty, hi');
