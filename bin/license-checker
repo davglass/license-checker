@@ -18,6 +18,33 @@ if (!args.color && (args.json || args.csv || args.out)) {
     args.color = false;
 }
 
+if (args.help) {
+    console.log('license-checker@' + require('../package.json').version);
+    var usage = [
+        '',
+        '   --production only show production dependencies.',
+        '   --development only show development dependencies.',
+        '   --unknown report guessed licenses as unknown licenses.',
+        '   --onlyunknown only list packages with unknown or guessed licenses.',
+        '   --json output in json format.',
+        '   --csv output in csv format.',
+        '   --out [filepath] write the data to a specific file.',
+        '   --customPath to add a custom Format file in JSON',
+        '   --exclude [list] exclude modules which licenses are in the comma-separated list from the output',
+        '',
+        '   --version The current version',
+        '   --help  The text you are reading right now :)',
+        ''
+    ];
+    console.log(usage.join('\n'), '\n');
+    process.exit(0);
+}
+
+if (args.version) {
+    console.log(require('../package.json').version);
+    process.exit(1);
+}
+
 checker.init(args, function(json, err) {
 
     var formattedOutput = '';
