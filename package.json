@@ -21,6 +21,7 @@
   ],
   "dependencies": {
     "chalk": "~0.5.1",
+    "debug": "^2.2.0",
     "mkdirp": "^0.3.5",
     "nopt": "^2.2.0",
     "read-installed": "~3.1.3",
