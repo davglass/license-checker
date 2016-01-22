@@ -55,6 +55,8 @@ You should see something like this:
 Options
 -------
 
+* `--production` only show production dependencies.
+* `--development` only show development dependencies.
 * `--unknown` report guessed licenses as unknown licenses.
 * `--onlyunknown` only list packages with unknown or guessed licenses.
 * `--json` output in json format.

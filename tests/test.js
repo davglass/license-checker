@@ -137,7 +137,8 @@ var tests = {
             var self = this;
 
             checker.init({
-                start: path.join(__dirname, '../')
+                start: path.join(__dirname, '../'),
+                development: true
             }, function (sorted, err) {
                 self.callback(sorted, err);
             });
@@ -267,7 +268,8 @@ var tests = {
             var self = this;
 
             checker.init({
-                start: path.join(__dirname, '../')
+                start: path.join(__dirname, '../'),
+                production: true
             }, function (sorted) {
                 self.callback(null, sorted);
             });
