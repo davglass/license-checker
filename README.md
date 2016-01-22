@@ -18,7 +18,6 @@ license-checker
 You should see something like this:
 
 ```
-scanning ./yui-lint
 ├─ cli@0.4.3
 │  ├─ repository: http://github.com/chriso/cli
 │  └─ licenses: MIT
@@ -92,6 +91,25 @@ checker.init({
         //The sorted json data
     }
 });
+```
+
+Debugging
+---------
+
+license-checker uses [debug](https://www.npmjs.com/package/debug) for internal logging. There’s two internal markers:
+
+* `license-checker:error` for errors
+* `license-checker:log` for non-errors
+
+Set the `DEBUG` environment variable to one of these to see debug output:
+
+```shell
+$ export DEBUG=license-checker*; license-checker
+scanning ./yui-lint
+├─ cli@0.4.3
+│  ├─ repository: http://github.com/chriso/cli
+│  └─ licenses: MIT
+# ...
 ```
 
 build status
