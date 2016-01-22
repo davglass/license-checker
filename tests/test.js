@@ -353,7 +353,8 @@ var tests = {
             return path;
         },
         'and check it': function(path) {
-            assert.throws(checker.parseJson(path));
+            var json = checker.parseJson(path);
+            assert.ok(json instanceof Error);
         }
     },
     'should parse json with errors (File not found)': {
@@ -362,7 +363,8 @@ var tests = {
             return path;
         },
         'and check it': function(path) {
-            assert.throws(checker.parseJson(path));
+            var json = checker.parseJson(path);
+            assert.ok(json instanceof Error);
         }
     },
 };
