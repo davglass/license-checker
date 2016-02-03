@@ -52,6 +52,16 @@ You should see something like this:
       └─ repository: http://github.com/yui/yui-lint
 ```
 
+An asterisk next to a license name means that it was deduced from
+an other file than package.json (README, LICENSE, ...)
+You could see something like this:
+
+```
+└─ debug@2.0.0
+   ├─ repository: https://github.com/visionmedia/debug
+   └─ licenses: MIT*
+```
+
 Options
 -------
 
