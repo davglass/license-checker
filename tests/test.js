@@ -237,6 +237,51 @@ var tests = {
             });
         }
     },
+    'should output the location of the license files as absolute paths': {
+        topic: function() {
+            var self = this;
+
+            checker.init({
+                start: path.join(__dirname, '../')
+            }, function (filtered) {
+                self.callback(null, filtered);
+            });
+        },
+        'output the location of the license files as absolute paths': function (d) {
+            Object.keys(d).map(function (key) {
+                d[key].name = key.substr(0, key.indexOf("@"));
+                return d[key];
+            }).filter(function (dep) {
+                return dep.licenseFile !== undefined;
+            }).forEach(function(dep) {
+                var expectedPath = path.join(__dirname, '../');
+                var actualPath = dep.licenseFile.substr(0, expectedPath.length);
+                assert.equal(actualPath, expectedPath);
+            });
+        }
+    },
+    'should output the location of the license files as relative paths when using relativeLicensePath': {
+        topic: function() {
+            var self = this;
+
+            checker.init({
+                start: path.join(__dirname, '../'),
+                relativeLicensePath: true
+            }, function (filtered) {
+                self.callback(null, filtered);
+            });
+        },
+        'output the location of the license files as relative paths': function (d) {
+            Object.keys(d).map(function (key) {
+                d[key].name = key.substr(0, key.indexOf("@"));
+                return d[key];
+            }).filter(function (dep) {
+                return dep.licenseFile !== undefined;
+            }).forEach(function(dep) {
+                assert.notEqual(dep.licenseFile.substr(0, 1), "/");
+            });
+        }
+    },
     'should only list UNKNOWN or guessed licenses successful': {
         topic: function () {
             var self = this;
