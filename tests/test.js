@@ -249,7 +249,6 @@ var tests = {
         },
         'output the location of the license files as absolute paths': function (d) {
             Object.keys(d).map(function (key) {
-                d[key].name = key.substr(0, key.indexOf("@"));
                 return d[key];
             }).filter(function (dep) {
                 return dep.licenseFile !== undefined;
@@ -273,7 +272,6 @@ var tests = {
         },
         'output the location of the license files as relative paths': function (d) {
             Object.keys(d).map(function (key) {
-                d[key].name = key.substr(0, key.indexOf("@"));
                 return d[key];
             }).filter(function (dep) {
                 return dep.licenseFile !== undefined;
