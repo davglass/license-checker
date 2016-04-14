@@ -1,25 +1,17 @@
-var vows = require('vows'),
-    assert = require('assert'),
+var assert = require('assert'),
     path = require('path'),
     spawn = require('child_process').spawn;
 
-var tests = {
-    bin: {
-        topic: function() {
-            var test = this;
-            spawn(
-              'node', [path.join(__dirname, '../bin/license-checker')], {
-                stdio: 'ignore'
-              }
-            ).on('exit', function(code) {
-              test.callback(code === 0);
-            });
-        },
-        'exits with code 0': function(code) {
-          assert.ok(code);
-        },
-    }
-};
+describe('bin/license-checker', function() {
+    this.timeout(8000);
+    it('should exit 0', function(done) {
+        spawn('node', [path.join(__dirname, '../bin/license-checker')], {
+            cwd: path.join(__dirname, '../'),
+            stdio: 'ignore'
+        }).on('exit', function(code) {
+            assert.equal(code, 0);
+            done();
+        });
+    });
 
-vows.describe('license-checker').addBatch(tests).export(module);
-
+});

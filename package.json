@@ -37,11 +37,11 @@
     "detectionizr": "*",
     "format-package-json": "^0.2.0",
     "git-contributors": "^0.2.3",
-    "istanbul": "*",
+    "istanbul": "^0.4.3",
+    "jenkins-mocha": "^2.6.0",
     "jshint": "~1.1.0",
     "queue": "^1.0.0",
     "request": "^2.34.0",
-    "vows": "0.8.0",
     "yui-lint": "~0.1.1"
   },
   "keywords": [
@@ -57,8 +57,8 @@
   "scripts": {
     "contrib": "./scripts/contrib.js",
     "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
-    "test": "istanbul cover --print both vows -- --spec ./tests/*.js",
-    "posttest": "istanbul check-coverage --statements 95 --functions 100 --lines 95 --branches 90"
+    "test": "jenkins-mocha ./tests/*.js",
+    "posttest": "istanbul check-coverage"
   },
   "preferGlobal": "true",
   "bugs": {

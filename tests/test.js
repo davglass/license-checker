@@ -1,5 +1,4 @@
-var vows = require('vows'),
-    assert = require('assert'),
+var assert = require('assert'),
     path = require('path'),
     util = require('util'),
     checker = require('../lib/index'),
@@ -7,45 +6,46 @@ var vows = require('vows'),
     chalk = require('chalk'),
     fs = require('fs');
 
-var tests = {
-    loading: {
-        topic: function() {
-            return checker;
-        },
-        'should load init': function(topic) {
-            assert.isFunction(topic.init);
-        },
-        'should load print': function(topic) {
-            assert.isFunction(topic.print);
-        }
-    },
-    'should parse local with unknown': {
-        topic: function () {
-            var self = this;
+describe('main tests', function() {
 
+    it('should load init', function() {
+        assert.equal(typeof checker.init, 'function');
+    });
+
+    it('should load print', function() {
+        assert.equal(typeof checker.print, 'function');
+    });
+    
+    describe('should parse local with unknown', function(done) {
+        var output;
+        before(function(done) {
             checker.init({
                 start: path.join(__dirname, '../')
             }, function (sorted) {
-                self.callback(null, sorted);
+                output = sorted;
+                done();
             });
-        },
-        'and give us results': function (d) {
-            assert.isTrue(Object.keys(d).length > 70);
-            assert.equal(d['abbrev@1.0.7'].licenses, 'ISC');
-        },
-        'and convert to CSV': function(d) {
-            var str = checker.asCSV(d);
+        });
+
+        it('and give us results', function () {
+            assert.equal(Object.keys(output).length > 70, true);
+            assert.equal(output['abbrev@1.0.7'].licenses, 'ISC');
+        });
+
+        it('and convert to CSV', function() {
+            var str = checker.asCSV(output);
             assert.equal('"module name","license","repository"', str.split('\n')[0]);
             assert.equal('"abbrev@1.0.7","ISC","https://github.com/isaacs/abbrev-js"', str.split('\n')[1]);
-        },
-        'and convert to MarkDown': function(d) {
-            var str = checker.asMarkDown(d);
+        });
+        it('and convert to MarkDown', function() {
+            var str = checker.asMarkDown(output);
             assert.equal('[abbrev@1.0.7](https://github.com/isaacs/abbrev-js) - ISC', str.split('\n')[0]);
-        }
-    },
-    'should parse local with unknown and custom format': {
-        topic: function () {
-            var self = this;
+        });
+    });
+
+    describe('should parse local with unknown and custom format', function(done) {
+        var output;
+        before(function (done) {
             var format = {
                 'name': '<<Default Name>>',
                 'description': '<<Default Description>>',
@@ -56,134 +56,133 @@ var tests = {
                 start: path.join(__dirname, '../'),
                 customFormat: format
             }, function (sorted) {
-                self.callback(null, sorted);
+                output = sorted;
+                done();
             });
-        },
-        'and give us results': function (d) {
-            assert.isTrue(Object.keys(d).length > 70);
-            assert.equal(d['abbrev@1.0.7'].description, 'Like ruby\'s abbrev module, but in js');
-        },
-        'and convert to CSV': function(d) {
+        });
+
+        it('and give us results', function () {
+            assert.ok(Object.keys(output).length > 70);
+            assert.equal(output['abbrev@1.0.7'].description, 'Like ruby\'s abbrev module, but in js');
+        });
+
+        it('and convert to CSV', function() {
             var format = {
                 'name': '<<Default Name>>',
                 'description': '<<Default Description>>',
                 'pewpew': '<<Should Never be set>>'
             };
 
-            var str = checker.asCSV(d, format);
+            var str = checker.asCSV(output, format);
             assert.equal('"module name","name","description","pewpew"', str.split('\n')[0]);
             assert.equal('"abbrev@1.0.7","abbrev","Like ruby\'s abbrev module, but in js","<<Should Never be set>>"', str.split('\n')[1]);
-        },
-        'and convert to MarkDown': function(d) {
+        });
+
+        it('and convert to MarkDown', function() {
             var format = {
                 'name': '<<Default Name>>',
                 'description': '<<Default Description>>',
                 'pewpew': '<<Should Never be set>>'
             };
 
-            var str = checker.asMarkDown(d, format);
+            var str = checker.asMarkDown(output, format);
             assert.equal(' - **[abbrev@1.0.7](https://github.com/isaacs/abbrev-js)**', str.split('\n')[0]);
-        }
-    },
-    'should parse local without unknown': {
-        topic: function () {
-            var self = this;
+        });
+    });
 
+    describe('should parse local without unknown', function() {
+        var output;
+        before(function(done) {
             checker.init({
                 start: path.join(__dirname, '../'),
                 unknown: true
             }, function (sorted) {
-                self.callback(null, sorted);
+                output = sorted;
+                done();
             });
-        },
-        'and give us results': function (d) {
-            assert.ok(d);
-            assert.ok(d['vows@0.8.0'], 'failed to lookup vows dep');
-            assert.equal(d['vows@0.8.0'].licenses, 'MIT');
-            assert.isTrue(Object.keys(d).length > 20);
-        }
-    },
-    'should parse local with unknown and excludes': {
-        topic: function () {
-            var self = this;
+        });
 
+        it('should give us results', function () {
+            assert.ok(output);
+            assert.ok(Object.keys(output).length > 20);
+        });
+    });
+
+    describe('should parse local with unknown and excludes', function() {
+        var output;
+        before(function (done) {
             checker.init({
                 start: path.join(__dirname, '../'),
                 exclude: "MIT, ISC"
             }, function (filtered) {
-                self.callback(null, filtered);
+                output = filtered;
+                done();
             });
-        },
-        'and exclude MIT and ISC licensed modules from results': function (d) {
+        });
+
+        it('should exclude MIT and ISC licensed modules from results', function () {
             var excluded = true;
-            Object.keys(d).forEach(function(item) {
-                if (d[item].licenses && (d[item].licenses == "MIT" || d[item].licenses == "ISC"))
+            Object.keys(output).forEach(function(item) {
+                if (output[item].licenses && (output[item].licenses == "MIT" || output[item].licenses == "ISC"))
                     excluded = false;
             });
             assert.ok(excluded);
-        }
-    },
-    'should not error': {
-        topic: function () {
-            var lic = require('../lib/license.js');
-            return lic();
-        },
-        'on undefined': function (d) {
-            assert.equal(d, 'Undefined');
-        }
-    },
-    'should init without errors': {
-        topic: function () {
-            var self = this;
+        });
+    });
 
+    describe('error handler', function() {
+        it('should init without errors', function(done) {
             checker.init({
                 start: path.join(__dirname, '../'),
                 development: true
             }, function (sorted, err) {
-                self.callback(sorted, err);
+                assert.equal(err, null);
+                done();
             });
-        },
-        'errors should not exist': function (d, err) {
-            assert.equal(err, null);
-        }
-    },
-    'should init with errors (npm packages not found)': {
-        topic: function () {
-            var self = this;
-
+        });
+        
+        it('should init with errors (npm packages not found)', function(done) {
             checker.init({
                 start: 'C:\\'
             }, function (sorted, err) {
-                self.callback(sorted, err);
+                assert.ok(util.isError(err));
+                done();
             });
-        },
-        'errors should exist': function (d, err) {
-            assert.isTrue(util.isError(err));
-        }
-    },
-    'should parse with args': {
-        topic: function () {
-            var args = require('../lib/args.js');
-            return args;
+        });
+    });
 
-        },
-        'on undefined': function (d) {
-            var result = d.defaults(undefined);
-
-            assert.equal(result.color, true);
-            assert.equal(result.start, path.resolve(path.join(__dirname, '../')));
-        },
-        'on color undefined': function (d) {
-            var result = d.defaults({color: undefined, start: path.resolve(path.join(__dirname, '../'))});
-
+    describe('should parse with args', function() {
+        var args = require('../lib/args.js');
+        
+        it('should handle undefined', function () {
+            var result = args.defaults(undefined);
             assert.equal(result.color, chalk.supportsColor);
             assert.equal(result.start, path.resolve(path.join(__dirname, '../')));
-        }
-    },
-    'should create a custom format using customFormat successfully': {
-        topic: function () {
-            var self = this;
+        });
 
+        it('should handle color undefined', function () {
+            var result = args.defaults({color: undefined, start: path.resolve(path.join(__dirname, '../'))});
+            assert.equal(result.color, chalk.supportsColor);
+            assert.equal(result.start, path.resolve(path.join(__dirname, '../')));
+        });
+
+        ['json', 'markdown', 'csv'].forEach(function(type) {
+            it('should disable color on ' + type, function () {
+                var def = {
+                    color: undefined,
+                    start: path.resolve(path.join(__dirname, '../'))
+                };
+                def[type] = true;
+                var result = args.defaults(def);
+                assert.equal(result.color, false);
+                assert.equal(result.start, path.resolve(path.join(__dirname, '../')));
+            });
+        });
+    });
+
+    describe('custom formats', function() {
+
+        it('should create a custom format using customFormat successfully', function(done) {
             checker.init({
                 start: path.join(__dirname, '../'),
                 customFormat: {
@@ -191,23 +190,18 @@ var tests = {
                     'description': '<<Default Description>>',
                     'pewpew': '<<Should Never be set>>'
                 }
-            }, function (filtered) {
-                self.callback(null, filtered);
+            }, function (d) {
+                Object.keys(d).forEach(function(item) {
+                    assert.notEqual(d[item].name, undefined);
+                    assert.notEqual(d[item].description, undefined);
+                    assert.notEqual(d[item].pewpew, undefined);
+                    assert.equal(d[item].pewpew, '<<Should Never be set>>');
+                });
+                done();
             });
-        },
-        'create custom format with name, description and pewpew (customFormat manipulation)': function (d) {
-            Object.keys(d).forEach(function(item) {
-                assert.notEqual(d[item].name, undefined);
-                assert.notEqual(d[item].description, undefined);
-                assert.notEqual(d[item].pewpew, undefined);
-                assert.equal(d[item].pewpew, '<<Should Never be set>>');
-            });
-        }
-    },
-    'should create a custom format using customPath': {
-        topic: function () {
-            var self = this;
+        });
 
+        it('should create a custom format using customPath', function(done) {
             process.argv.push('--customPath');
             process.argv.push('./customFormatExample.json');
 
@@ -218,200 +212,193 @@ var tests = {
             process.argv.pop();
 
             checker.init(args, function (filtered) {
-                self.callback(null, filtered);
-            });
-        },
-        'create custom format with contents of customFormatExample': function (d) {
-            var customFormatContent = fs.readFileSync(path.join(__dirname, './../customFormatExample.json'), 'utf8');
+                var customFormatContent = fs.readFileSync(path.join(__dirname, './../customFormatExample.json'), 'utf8');
 
-            assert.notEqual(customFormatContent, undefined);
-            assert.notEqual(customFormatContent, null);
+                assert.notEqual(customFormatContent, undefined);
+                assert.notEqual(customFormatContent, null);
 
-            var customJson = JSON.parse(customFormatContent);
+                var customJson = JSON.parse(customFormatContent);
 
-            //Test dynamically with the file directly
-            Object.keys(d).forEach(function(licenseItem) {
-                Object.keys(customJson).forEach(function(definedItem) {
-                    assert.notEqual(d[licenseItem][definedItem], 'undefined');
+                //Test dynamically with the file directly
+                Object.keys(filtered).forEach(function(licenseItem) {
+                    Object.keys(customJson).forEach(function(definedItem) {
+                        assert.notEqual(filtered[licenseItem][definedItem], 'undefined');
+                    });
                 });
+                done();
             });
-        }
-    },
-    'should output the location of the license files as absolute paths': {
-        topic: function() {
-            var self = this;
+        });
 
+    });
+
+    describe('should output the location of the license files', function() {
+
+        it('as absolute paths', function (done) {
             checker.init({
                 start: path.join(__dirname, '../')
-            }, function (filtered) {
-                self.callback(null, filtered);
+            }, function (output) {
+                Object.keys(output).map(function (key) {
+                    return output[key];
+                }).filter(function (dep) {
+                    return dep.licenseFile !== undefined;
+                }).forEach(function(dep) {
+                    var expectedPath = path.join(__dirname, '../');
+                    var actualPath = dep.licenseFile.substr(0, expectedPath.length);
+                    assert.equal(actualPath, expectedPath);
+                });
+                done();
             });
-        },
-        'output the location of the license files as absolute paths': function (d) {
-            Object.keys(d).map(function (key) {
-                return d[key];
-            }).filter(function (dep) {
-                return dep.licenseFile !== undefined;
-            }).forEach(function(dep) {
-                var expectedPath = path.join(__dirname, '../');
-                var actualPath = dep.licenseFile.substr(0, expectedPath.length);
-                assert.equal(actualPath, expectedPath);
-            });
-        }
-    },
-    'should output the location of the license files as relative paths when using relativeLicensePath': {
-        topic: function() {
-            var self = this;
+        });
 
+        it('as relative paths when using relativeLicensePath', function(done) {
             checker.init({
                 start: path.join(__dirname, '../'),
                 relativeLicensePath: true
             }, function (filtered) {
-                self.callback(null, filtered);
+                Object.keys(filtered).map(function (key) {
+                    return filtered[key];
+                }).filter(function (dep) {
+                    return dep.licenseFile !== undefined;
+                }).forEach(function(dep) {
+                    assert.notEqual(dep.licenseFile.substr(0, 1), "/");
+                });
+                done();
             });
-        },
-        'output the location of the license files as relative paths': function (d) {
-            Object.keys(d).map(function (key) {
-                return d[key];
-            }).filter(function (dep) {
-                return dep.licenseFile !== undefined;
-            }).forEach(function(dep) {
-                assert.notEqual(dep.licenseFile.substr(0, 1), "/");
-            });
-        }
-    },
-    'should only list UNKNOWN or guessed licenses successful': {
-        topic: function () {
-            var self = this;
+        });
+    });
 
+    describe('should only list UNKNOWN or guessed licenses successful', function() {
+        var output;
+        before(function (done) {
             checker.init({
                 start: path.join(__dirname, '../'),
                 onlyunknown: true
             }, function (sorted) {
-                self.callback(null, sorted);
+                output = sorted;
+                done();
             });
-        },
-        'so we check if there is no license with a star or UNKNOWN found': function(d) {
+        });
+
+        it('so we check if there is no license with a star or UNKNOWN found', function() {
             var onlyStarsFound = true;
-            Object.keys(d).forEach(function(item) {
-                if (d[item].licenses && d[item].licenses.indexOf('UNKNOWN') !== -1) {
+            Object.keys(output).forEach(function(item) {
+                if (output[item].licenses && output[item].licenses.indexOf('UNKNOWN') !== -1) {
                     //Okay
-                } else if (d[item].licenses && d[item].licenses.indexOf('*') !== -1) {
+                } else if (output[item].licenses && output[item].licenses.indexOf('*') !== -1) {
                     //Okay
                 } else {
                     onlyStarsFound = false;
                 }
             });
-
             assert.ok(onlyStarsFound);
-        }
-    },
-    'should only list UNKNOWN or guessed licenses with errors (argument missing)': {
-        topic: function () {
-            var self = this;
+        });
+    });
 
+    describe('should only list UNKNOWN or guessed licenses with errors (argument missing)', function() {
+        var output;
+        before(function (done) {
             checker.init({
                 start: path.join(__dirname, '../'),
                 production: true
             }, function (sorted) {
-                self.callback(null, sorted);
+                output = sorted;
+                done();
             });
-        },
-        'so we check if there is no license with a star or UNKNOWN found': function(d) {
+        });
+        
+        it('so we check if there is no license with a star or UNKNOWN found', function() {
             var onlyStarsFound = true;
-            Object.keys(d).forEach(function(item) {
-                if (d[item].licenses && d[item].licenses.indexOf('UNKNOWN') !== -1) {
+            Object.keys(output).forEach(function(item) {
+                if (output[item].licenses && output[item].licenses.indexOf('UNKNOWN') !== -1) {
                     //Okay
-                } else if (d[item].licenses && d[item].licenses.indexOf('*') !== -1) {
+                } else if (output[item].licenses && output[item].licenses.indexOf('*') !== -1) {
                     //Okay
                 } else {
                     onlyStarsFound = false;
                 }
             });
             assert.equal(onlyStarsFound, false);
-        }
-    },
-    'should export a tree': {
-        topic: function() {
-            return checker.asTree([{}]);
-        },
-        'and format it': function(data) {
+        });
+    });
+
+    describe('should export', function() {
+
+        it('print a tree', function() {
+            var log = console.log;
+            console.log = function(data) {
+                assert.ok(data);
+                assert.ok(data.indexOf('└─') > -1);
+            };
+            checker.print([{}]);
+            console.log = log;
+        });
+        
+        it('a tree', function() {
+            var data = checker.asTree([{}]);
             assert.ok(data);
-            assert.isTrue(data.indexOf('└─') > -1);
-        }
-    },
-    'should export as csv': {
-        topic: function() {
-            return checker.asCSV({
+            assert.ok(data.indexOf('└─') > -1);
+        });
+
+        it('as csv', function() {
+            var data = checker.asCSV({
                 foo: {
                     licenses: 'MIT',
                     repository: '/path/to/foo'
                 }
             });
-        },
-        'and format it': function(data) {
             assert.ok(data);
-            assert.isTrue(data.indexOf('"foo","MIT","/path/to/foo"') > -1);
-        }
-    },
-    'should export as csv with partial data': {
-        topic: function() {
-            return checker.asCSV({
+            assert.ok(data.indexOf('"foo","MIT","/path/to/foo"') > -1);
+        });
+
+        it('as csv with partial data', function() {
+            var data = checker.asCSV({
                 foo: {
                 }
             });
-        },
-        'and format it': function(data) {
             assert.ok(data);
-            assert.isTrue(data.indexOf('"foo","",""') > -1);
-        }
-    },
-    'should export as markdown': {
-        topic: function() {
-            return checker.asMarkDown({
+            assert.ok(data.indexOf('"foo","",""') > -1);
+        });
+
+        it('as markdown', function() {
+            var data = checker.asMarkDown({
                 foo: {
                     licenses: 'MIT',
                     repository: '/path/to/foo'
                 }
             });
-        },
-        'and format it': function(data) {
             assert.ok(data);
-            assert.isTrue(data.indexOf('[foo](/path/to/foo) - MIT') > -1);
-        }
-    },
-    'should parse json successfully (File exists + was json)': {
-        topic: function() {
+            assert.ok(data.indexOf('[foo](/path/to/foo) - MIT') > -1);
+        });
+    
+    });
+
+    describe('json parsing', function() {
+    
+        it('should parse json successfully (File exists + was json)', function() {
             var path = './tests/config/custom_format_correct.json';
-            return path;
-        },
-        'and check it': function(path) {
             var json = checker.parseJson(path);
             assert.notEqual(json, undefined);
             assert.notEqual(json, null);
             assert.equal(json.licenseModified, 'no');
-        }
-    },
-    'should parse json with errors (File exists + no json)': {
-        topic: function() {
-            var path = './tests/config/custom_format_broken.json';
-            return path;
-        },
-        'and check it': function(path) {
-            var json = checker.parseJson(path);
-            assert.ok(json instanceof Error);
-        }
-    },
-    'should parse json with errors (File not found)': {
-        topic: function() {
-            var path = './NotExitingFile.json';
-            return path;
-        },
-        'and check it': function(path) {
-            var json = checker.parseJson(path);
-            assert.ok(json instanceof Error);
-        }
-    },
-};
+        });
 
-vows.describe('license-checker').addBatch(tests).export(module);
+        it('should parse json with errors (File exists + no json)', function() {
+            var path = './tests/config/custom_format_broken.json';
+            var json = checker.parseJson(path);
+            assert.ok(json instanceof Error);
+        });
+
+        it('should parse json with errors (File not found)', function() {
+            var path = './NotExitingFile.json';
+            var json = checker.parseJson(path);
+            assert.ok(json instanceof Error);
+        });
+    
+        it('should parse json with errors (null passed)', function() {
+            var json = checker.parseJson(null);
+            assert.ok(json instanceof Error);
+        });
+    
+    });
+
+});
