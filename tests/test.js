@@ -21,7 +21,7 @@ describe('main tests', function() {
         before(function(done) {
             checker.init({
                 start: path.join(__dirname, '../')
-            }, function (sorted) {
+            }, function (err, sorted) {
                 output = sorted;
                 done();
             });
@@ -55,7 +55,7 @@ describe('main tests', function() {
             checker.init({
                 start: path.join(__dirname, '../'),
                 customFormat: format
-            }, function (sorted) {
+            }, function (err, sorted) {
                 output = sorted;
                 done();
             });
@@ -96,7 +96,7 @@ describe('main tests', function() {
             checker.init({
                 start: path.join(__dirname, '../'),
                 unknown: true
-            }, function (sorted) {
+            }, function (err, sorted) {
                 output = sorted;
                 done();
             });
@@ -114,7 +114,7 @@ describe('main tests', function() {
             checker.init({
                 start: path.join(__dirname, '../'),
                 exclude: "MIT, ISC"
-            }, function (filtered) {
+            }, function (err, filtered) {
                 output = filtered;
                 done();
             });
@@ -135,7 +135,7 @@ describe('main tests', function() {
             checker.init({
                 start: path.join(__dirname, '../'),
                 development: true
-            }, function (sorted, err) {
+            }, function (err) {
                 assert.equal(err, null);
                 done();
             });
@@ -144,7 +144,7 @@ describe('main tests', function() {
         it('should init with errors (npm packages not found)', function(done) {
             checker.init({
                 start: 'C:\\'
-            }, function (sorted, err) {
+            }, function (err) {
                 assert.ok(util.isError(err));
                 done();
             });
@@ -190,7 +190,7 @@ describe('main tests', function() {
                     'description': '<<Default Description>>',
                     'pewpew': '<<Should Never be set>>'
                 }
-            }, function (d) {
+            }, function (err, d) {
                 Object.keys(d).forEach(function(item) {
                     assert.notEqual(d[item].name, undefined);
                     assert.notEqual(d[item].description, undefined);
@@ -211,7 +211,7 @@ describe('main tests', function() {
             process.argv.pop();
             process.argv.pop();
 
-            checker.init(args, function (filtered) {
+            checker.init(args, function (err, filtered) {
                 var customFormatContent = fs.readFileSync(path.join(__dirname, './../customFormatExample.json'), 'utf8');
 
                 assert.notEqual(customFormatContent, undefined);
@@ -236,7 +236,7 @@ describe('main tests', function() {
         it('as absolute paths', function (done) {
             checker.init({
                 start: path.join(__dirname, '../')
-            }, function (output) {
+            }, function (err, output) {
                 Object.keys(output).map(function (key) {
                     return output[key];
                 }).filter(function (dep) {
@@ -254,7 +254,7 @@ describe('main tests', function() {
             checker.init({
                 start: path.join(__dirname, '../'),
                 relativeLicensePath: true
-            }, function (filtered) {
+            }, function (err, filtered) {
                 Object.keys(filtered).map(function (key) {
                     return filtered[key];
                 }).filter(function (dep) {
@@ -273,7 +273,7 @@ describe('main tests', function() {
             checker.init({
                 start: path.join(__dirname, '../'),
                 onlyunknown: true
-            }, function (sorted) {
+            }, function (err, sorted) {
                 output = sorted;
                 done();
             });
@@ -300,7 +300,7 @@ describe('main tests', function() {
             checker.init({
                 start: path.join(__dirname, '../'),
                 production: true
-            }, function (sorted) {
+            }, function (err, sorted) {
                 output = sorted;
                 done();
             });
