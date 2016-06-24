@@ -65,7 +65,10 @@ checker.init(args, function(json, err) {
         formattedOutput = checker.asTree(json);
     }
 
-    if (args.out) {
+    if (args.files) {
+        checker.asFiles(json, args.files);        
+    }
+    else if (args.out) {
         var dir = path.dirname(args.out);
         mkdirp.sync(dir);
         //Remove the color tags
