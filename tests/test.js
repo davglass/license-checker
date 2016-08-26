@@ -29,17 +29,17 @@ describe('main tests', function() {
 
         it('and give us results', function () {
             assert.equal(Object.keys(output).length > 70, true);
-            assert.equal(output['abbrev@1.0.7'].licenses, 'ISC');
+            assert.equal(output['abbrev@1.0.9'].licenses, 'ISC');
         });
 
         it('and convert to CSV', function() {
             var str = checker.asCSV(output);
             assert.equal('"module name","license","repository"', str.split('\n')[0]);
-            assert.equal('"abbrev@1.0.7","ISC","https://github.com/isaacs/abbrev-js"', str.split('\n')[1]);
+            assert.equal('"abbrev@1.0.9","ISC","https://github.com/isaacs/abbrev-js"', str.split('\n')[1]);
         });
         it('and convert to MarkDown', function() {
             var str = checker.asMarkDown(output);
-            assert.equal('[abbrev@1.0.7](https://github.com/isaacs/abbrev-js) - ISC', str.split('\n')[0]);
+            assert.equal('[abbrev@1.0.9](https://github.com/isaacs/abbrev-js) - ISC', str.split('\n')[0]);
         });
     });
 
@@ -63,7 +63,7 @@ describe('main tests', function() {
 
         it('and give us results', function () {
             assert.ok(Object.keys(output).length > 70);
-            assert.equal(output['abbrev@1.0.7'].description, 'Like ruby\'s abbrev module, but in js');
+            assert.equal(output['abbrev@1.0.9'].description, 'Like ruby\'s abbrev module, but in js');
         });
 
         it('and convert to CSV', function() {
@@ -75,7 +75,7 @@ describe('main tests', function() {
 
             var str = checker.asCSV(output, format);
             assert.equal('"module name","name","description","pewpew"', str.split('\n')[0]);
-            assert.equal('"abbrev@1.0.7","abbrev","Like ruby\'s abbrev module, but in js","<<Should Never be set>>"', str.split('\n')[1]);
+            assert.equal('"abbrev@1.0.9","abbrev","Like ruby\'s abbrev module, but in js","<<Should Never be set>>"', str.split('\n')[1]);
         });
 
         it('and convert to MarkDown', function() {
@@ -86,7 +86,7 @@ describe('main tests', function() {
             };
 
             var str = checker.asMarkDown(output, format);
-            assert.equal(' - **[abbrev@1.0.7](https://github.com/isaacs/abbrev-js)**', str.split('\n')[0]);
+            assert.equal(' - **[abbrev@1.0.9](https://github.com/isaacs/abbrev-js)**', str.split('\n')[0]);
         });
     });
 
