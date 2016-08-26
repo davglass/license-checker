@@ -39,6 +39,7 @@
   "devDependencies": {
     "detectionizr": "*",
     "format-package-json": "^0.2.0",
+    "github-changes": "^1.0.4",
     "git-contributors": "^0.2.3",
     "istanbul": "^0.4.3",
     "jenkins-mocha": "^2.6.0",
@@ -59,6 +60,7 @@
     "license-checker": "./bin/license-checker"
   },
   "scripts": {
+    "changes": "github-changes -o davglass -r license-checker",
     "contrib": "./scripts/contrib.js",
     "pretest": "jshint --config ./node_modules/yui-lint/jshint.json ./lib/",
     "test": "jenkins-mocha ./tests/*.js",
