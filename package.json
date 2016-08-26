@@ -42,6 +42,7 @@
     "jshint": "~1.1.0",
     "queue": "^1.0.0",
     "request": "^2.34.0",
+    "rimraf": "^2.5.4",
     "yui-lint": "~0.1.1"
   },
   "keywords": [

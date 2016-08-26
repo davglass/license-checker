@@ -370,6 +370,25 @@ describe('main tests', function() {
             assert.ok(data.indexOf('[foo](/path/to/foo) - MIT') > -1);
         });
     
+        it('as files', function() {
+            var out = path.join(require('os').tmpDir(), 'lc'),
+            files;
+            checker.asFiles({
+                foo: {
+                    licenses: 'MIT',
+                    repository: '/path/to/foo',
+                    licenseFile: path.join(__dirname, '../LICENSE') 
+                },
+                bar: {
+                    licenses: 'MIT'
+                } 
+            }, out);
+
+            files = fs.readdirSync(out);
+            assert.equal('foo-LICENSE.txt', files[0]);
+            require('rimraf').sync(out);
+        });
+    
     });
 
     describe('json parsing', function() {
