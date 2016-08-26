@@ -46,7 +46,7 @@ if (args.version) {
     process.exit(1);
 }
 
-checker.init(args, function(json, err) {
+checker.init(args, function(err, json) {
 
     var formattedOutput = '';
 
