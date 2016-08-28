@@ -97,7 +97,7 @@ var checker = require('license-checker');
 
 checker.init({
     start: '/path/to/start/looking'
-}, function(json, err) {
+}, function(err, json) {
     if (err) {
         //Handle error
     } else {
