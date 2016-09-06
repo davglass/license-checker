@@ -2,7 +2,7 @@
   "name": "license-checker",
   "description": "Check license info for a pacakge",
   "author": "Dav Glass <davglass@gmail.com>",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "contributors": [
     "Adam Weber <adamweber01@gmail.com>",
     "Andrew Couch <andy@couchand.com>",
