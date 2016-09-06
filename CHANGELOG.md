@@ -1,6 +1,12 @@
 ## Change Log
 
-### upcoming (2016/08/26 19:47 +00:00)
+### v7.0.0 (2016/09/06 14:50 +00:00)
+- [a3a08da](https://github.com/davglass/license-checker/commit/a3a08da70b680d724045f655e107f36b16b45fea) 7.0.0 (@davglass)
+- [b993399](https://github.com/davglass/license-checker/commit/b9933994472162cc9c4292cb42f2900e17a5167f) added contrib (@davglass)
+- [d783029](https://github.com/davglass/license-checker/commit/d7830297b053496e45b7145b3cfa5809ac8ab1d1) Fixes #76 - If readme data not found, look for it on disk (@davglass)
+- [#75](https://github.com/davglass/license-checker/pull/75) Merge pull request #75 from revov/master (@revov)
+- [6204a24](https://github.com/davglass/license-checker/commit/6204a244ee71ae0329b4f2c1ca6cf37713741f32) Fix incorrect example in README (@revov)
+- [90e24ac](https://github.com/davglass/license-checker/commit/90e24ac9ad20591d5ac166cc2974034fb997b30a) Added changelog (@davglass)
 - [dd768c6](https://github.com/davglass/license-checker/commit/dd768c6c8cbc39b596881a2eca582ad4bb816879) Added contributors (@davglass)
 
 ### v6.0.0 (2016/08/26 19:46 +00:00)
@@ -40,8 +46,8 @@
 - [997914f](https://github.com/davglass/license-checker/commit/997914fd6f94030452d4d9bf549eb156ae8ef7c0) fix git+https URLs (@graingert)
 - [#57](https://github.com/davglass/license-checker/pull/57) Merge pull request #57 from Damien-Larmine/doc-license-asterisk (@Damien-Larmine)
 - [2adff2d](https://github.com/davglass/license-checker/commit/2adff2da98a5af79479a162e4998eb5892ab31c3) Explicit the asterisk in license report (@Damien-Larmine)
-- [7f71c53](https://github.com/davglass/license-checker/commit/7f71c53833cf1318ffe84215fcb1291f9ce4fbd5) updated contributors (@davglass)
 - [b2fc9cf](https://github.com/davglass/license-checker/commit/b2fc9cf2a8eaa008c7593037d046f245a7ce7f25) 5.0.0 (@davglass)
+- [7f71c53](https://github.com/davglass/license-checker/commit/7f71c53833cf1318ffe84215fcb1291f9ce4fbd5) updated contributors (@davglass)
 
 ### v5.0.0 (2016/01/22 15:31 +00:00)
 - [#55](https://github.com/davglass/license-checker/pull/55) Merge pull request #55 from davglass/devflag (@davglass)
