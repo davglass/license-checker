@@ -1,5 +1,12 @@
 ## Change Log
 
+### upcoming (2016/09/07 19:19 +00:00)
+- [99976d0](https://github.com/davglass/license-checker/commit/99976d07980e241384be10341d0305d08de9cea5) 7.1.1 (@davglass)
+- [ef857b7](https://github.com/davglass/license-checker/commit/ef857b7e9bab706299a1cc565ec5d144893af424) [fixes #77] fixed readme file name parsing, made it more strict (@davglass)
+
+### v7.1.1 (2016/09/07 19:16 +00:00)
+- [28be6d4](https://github.com/davglass/license-checker/commit/28be6d4128a3625cf8ed37ba149e79ed3a41b4fa) changelog (@davglass)
+
 ### v7.1.0 (2016/09/07 15:12 +00:00)
 - [9f8b7f1](https://github.com/davglass/license-checker/commit/9f8b7f1c367dfe86342ee5f5cc97171bf97281aa) 7.1.0 (@davglass)
 - [60fce1a](https://github.com/davglass/license-checker/commit/60fce1a24a4ef5add98a08dd8c8a85870db3f4a6) Fixed order of operations for parsing (@davglass)
