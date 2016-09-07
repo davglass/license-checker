@@ -1,5 +1,10 @@
 ## Change Log
 
+### v7.1.0 (2016/09/07 15:12 +00:00)
+- [9f8b7f1](https://github.com/davglass/license-checker/commit/9f8b7f1c367dfe86342ee5f5cc97171bf97281aa) 7.1.0 (@davglass)
+- [60fce1a](https://github.com/davglass/license-checker/commit/60fce1a24a4ef5add98a08dd8c8a85870db3f4a6) Fixed order of operations for parsing (@davglass)
+- [9d4db11](https://github.com/davglass/license-checker/commit/9d4db112794b8110a1bfe0abfe2d3e63bc812299) Updated changelog (@davglass)
+
 ### v7.0.0 (2016/09/06 14:50 +00:00)
 - [a3a08da](https://github.com/davglass/license-checker/commit/a3a08da70b680d724045f655e107f36b16b45fea) 7.0.0 (@davglass)
 - [b993399](https://github.com/davglass/license-checker/commit/b9933994472162cc9c4292cb42f2900e17a5167f) added contrib (@davglass)
