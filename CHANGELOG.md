@@ -1,6 +1,9 @@
 ## Change Log
 
-### upcoming (2016/09/07 19:19 +00:00)
+### v8.0.0 (2016/09/09 13:23 +00:00)
+- [44c2c48](https://github.com/davglass/license-checker/commit/44c2c48ae177915523fdf89a74474fe0953408bf) 8.0.0 (@davglass)
+- [b5f5c6a](https://github.com/davglass/license-checker/commit/b5f5c6ae03a8c60c52fdd308f1721744a4baaa99) [fixes #78] - include notice file if found (@davglass)
+- [dfcbd6f](https://github.com/davglass/license-checker/commit/dfcbd6f4966adc74e065f71e45cbd08ba8fe62ab) changelog (@davglass)
 - [99976d0](https://github.com/davglass/license-checker/commit/99976d07980e241384be10341d0305d08de9cea5) 7.1.1 (@davglass)
 - [ef857b7](https://github.com/davglass/license-checker/commit/ef857b7e9bab706299a1cc565ec5d144893af424) [fixes #77] fixed readme file name parsing, made it more strict (@davglass)
 
