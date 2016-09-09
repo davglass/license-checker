@@ -38,10 +38,11 @@
     "treeify": "^1.0.1"
   },
   "devDependencies": {
+    "camden.jshint": "cfjedimaster/brackets-jshint",
     "detectionizr": "*",
     "format-package-json": "^0.2.0",
-    "github-changes": "^1.0.4",
     "git-contributors": "^0.2.3",
+    "github-changes": "^1.0.4",
     "istanbul": "^0.4.3",
     "jenkins-mocha": "^2.6.0",
     "jshint": "~1.1.0",
