@@ -53,7 +53,7 @@ You should see something like this:
 ```
 
 An asterisk next to a license name means that it was deduced from
-an other file than package.json (README, LICENSE, ...)
+an other file than package.json (README, LICENSE, COPYING, ...)
 You could see something like this:
 
 ```
@@ -74,7 +74,7 @@ Options
 * `--out [filepath]` write the data to a specific file.
 * `--customPath` to add a custom Format file in JSON
 * `--exclude [list]` exclude modules which licenses are in the comma-separated list from the output
-* `--relativeLicensePath` output the location of the license files as relative paths 
+* `--relativeLicensePath` output the location of the license files as relative paths
 
 Examples
 --------
@@ -83,7 +83,7 @@ Examples
 license-checker --json > /path/to/licenses.json
 license-checker --csv --out /path/to/licenses.csv
 license-checker --unknown
-license-checker --customPath customFormatExample.js 
+license-checker --customPath customFormatExample.js
 license-checker --exclude 'MIT, MIT/X11, BSD, ISC'
 license-checker --onlyunknown
 ```
