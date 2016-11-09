@@ -1,5 +1,13 @@
 ## Change Log
 
+### v8.0.1 (2016/11/09 21:51 +00:00)
+- [594871d](https://github.com/davglass/license-checker/commit/594871d6197a030121f940500495e6ca7d82f02c) 8.0.1 (@davglass)
+- [c243663](https://github.com/davglass/license-checker/commit/c243663b0ab8a0126251292a57b2c47369a51ebf) added contrib (@davglass)
+- [#86](https://github.com/davglass/license-checker/pull/86) Merge pull request #86 from drewfish/copying (@drewfish)
+- [380aa26](https://github.com/davglass/license-checker/commit/380aa26799cb527739907484e69c6dae26d5f17a) also support COPYING file (@drewfish)
+- [329c367](https://github.com/davglass/license-checker/commit/329c3676d0cd5c5947a53fd205ff23b767b7f882) handling undefined@undefined error better (@davglass)
+- [1f93a07](https://github.com/davglass/license-checker/commit/1f93a072632aad0660b63f61c56c3bd2fe109474) changelog (@davglass)
+
 ### v8.0.0 (2016/09/09 13:23 +00:00)
 - [44c2c48](https://github.com/davglass/license-checker/commit/44c2c48ae177915523fdf89a74474fe0953408bf) 8.0.0 (@davglass)
 - [b5f5c6a](https://github.com/davglass/license-checker/commit/b5f5c6ae03a8c60c52fdd308f1721744a4baaa99) [fixes #78] - include notice file if found (@davglass)
