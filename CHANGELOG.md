@@ -1,5 +1,15 @@
 ## Change Log
 
+### v8.0.3 (2016/11/10 17:04 +00:00)
+- [66fd7b5](https://github.com/davglass/license-checker/commit/66fd7b5ad5577cc2c85668a7c6607365c86a2c85) 8.0.3 (@davglass)
+- [#87](https://github.com/davglass/license-checker/pull/87) Merge pull request #87 from drewfish/guess-cc0 (@drewfish)
+- [668bbd3](https://github.com/davglass/license-checker/commit/668bbd38fd5148f99c5263f4e0506e04d5e3f8a0) guess CC0-1.0, upgraded jshint (@drewfish)
+
+### v8.0.2 (2016/11/09 21:57 +00:00)
+- [0bdedd8](https://github.com/davglass/license-checker/commit/0bdedd8cb990e1f5ffacde1c12cc708185a5b866) 8.0.2 (@davglass)
+- [ef67bb4](https://github.com/davglass/license-checker/commit/ef67bb454373352343faa49d4dc978a295bd1544) updated semver (@davglass)
+- [14b5c85](https://github.com/davglass/license-checker/commit/14b5c8551ccbb5c5ce8aa76fb5367857c891d013) Changelog (@davglass)
+
 ### v8.0.1 (2016/11/09 21:51 +00:00)
 - [594871d](https://github.com/davglass/license-checker/commit/594871d6197a030121f940500495e6ca7d82f02c) 8.0.1 (@davglass)
 - [c243663](https://github.com/davglass/license-checker/commit/c243663b0ab8a0126251292a57b2c47369a51ebf) added contrib (@davglass)
