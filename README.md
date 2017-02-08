@@ -83,10 +83,33 @@ Examples
 license-checker --json > /path/to/licenses.json
 license-checker --csv --out /path/to/licenses.csv
 license-checker --unknown
-license-checker --customPath customFormatExample.js
+license-checker --customPath customFormatExample.json
 license-checker --exclude 'MIT, MIT/X11, BSD, ISC'
 license-checker --onlyunknown
 ```
+
+Custom format
+-------------
+
+The `--customPath` option can be used with CSV to specify the columns. Note that
+the first column, `module_name`, will always be used.
+
+When used with JSON format, it will add the specified items to the usual ones.
+
+The available items are the following:
+- name
+- version
+- description
+- repository
+- publisher
+- email
+- url
+- licenses
+- licenseFile
+- licenseModified
+
+You can also give default values for each item.
+See an example in [customFormatExample.json](customFormatExample.json).
 
 Requiring
 ---------
