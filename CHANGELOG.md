@@ -1,5 +1,13 @@
 ## Change Log
 
+### v8.0.4 (2017/02/15 16:21 +00:00)
+- [28d379a](https://github.com/davglass/license-checker/commit/28d379aca51da7a47af324bc6feb63736ea02295) 8.0.4 (@davglass)
+- [#89](https://github.com/davglass/license-checker/pull/89) Merge pull request #89 from Pawamoy/master (@Pawamoy)
+- [#90](https://github.com/davglass/license-checker/pull/90) Merge pull request #90 from drewfish/bsd-source-code (@drewfish)
+- [b704bc1](https://github.com/davglass/license-checker/commit/b704bc18a43de246302b8ff6933f8fe5f96ee3a6) guess BSD-Source-Code license (@drewfish)
+- [8d31eab](https://github.com/davglass/license-checker/commit/8d31eabfb671d32e6f3e63215d6530d7fb4acc59) Add docs about customFormat option (@Pawamoy)
+- [2529d31](https://github.com/davglass/license-checker/commit/2529d3118dfae53f1e01056ec99f5c542cb8d63e) changes (@davglass)
+
 ### v8.0.3 (2016/11/10 17:04 +00:00)
 - [66fd7b5](https://github.com/davglass/license-checker/commit/66fd7b5ad5577cc2c85668a7c6607365c86a2c85) 8.0.3 (@davglass)
 - [#87](https://github.com/davglass/license-checker/pull/87) Merge pull request #87 from drewfish/guess-cc0 (@drewfish)
