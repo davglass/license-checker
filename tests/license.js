@@ -26,6 +26,11 @@ describe('license parser', function() {
         assert.equal(data, 'BSD*');
     });
 
+    it('BSD-Source-Code check', function() {
+        var data = license('asdf\nRedistribution and use of this software in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\nasdf\n');
+        assert.equal(data, 'BSD-Source-Code*');
+    });
+
     it('BSD word check', function() {
         var data = license('asdf\nasdf\nBSD\nasdf\n');
         assert.equal(data, 'BSD*');
