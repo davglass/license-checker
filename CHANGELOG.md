@@ -1,5 +1,13 @@
 ## Change Log
 
+### v9.0.0 (2017/04/04 12:26 +00:00)
+- [267c80e](https://github.com/davglass/license-checker/commit/267c80efac89eef70c71a12b8f12b3dc8e6d58dd) 9.0.0 (@davglass)
+- [057af47](https://github.com/davglass/license-checker/commit/057af47bc52ac526f646ba21496f338689801809) added licenseFile assertion to tests (@davglass)
+- [#92](https://github.com/davglass/license-checker/pull/92) Merge pull request #92 from abtris/includeFileContent (@abtris)
+- [1cda118](https://github.com/davglass/license-checker/commit/1cda118e1aa18cc391ba2765dccae89172943a0f) fix: replace problematics chars for easy import to Excel (@abtris)
+- [dd6ecab](https://github.com/davglass/license-checker/commit/dd6ecab1a7b1354c4d1d001491f58dbe0f5e3e63) feat: add licenseText (@abtris)
+- [6395498](https://github.com/davglass/license-checker/commit/639549890c54a12043244579ad0c0d5972309fb2) changes and contrib (@davglass)
+
 ### v8.0.4 (2017/02/15 16:21 +00:00)
 - [28d379a](https://github.com/davglass/license-checker/commit/28d379aca51da7a47af324bc6feb63736ea02295) 8.0.4 (@davglass)
 - [#89](https://github.com/davglass/license-checker/pull/89) Merge pull request #89 from Pawamoy/master (@Pawamoy)
