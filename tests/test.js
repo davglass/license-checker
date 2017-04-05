@@ -245,7 +245,6 @@ describe('main tests', function() {
                     var expectedPath = path.join(__dirname, '../');
                     var actualPath = dep.licenseFile.substr(0, expectedPath.length);
                     assert.equal(actualPath, expectedPath);
-                    assert.ok(dep.licenseText);
                 });
                 done();
             });
@@ -262,7 +261,6 @@ describe('main tests', function() {
                     return dep.licenseFile !== undefined;
                 }).forEach(function(dep) {
                     assert.notEqual(dep.licenseFile.substr(0, 1), "/");
-                    assert.ok(dep.licenseText);
                 });
                 done();
             });

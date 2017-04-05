@@ -106,6 +106,7 @@ The available items are the following:
 - url
 - licenses
 - licenseFile
+- licenseText
 - licenseModified
 
 You can also give default values for each item.
