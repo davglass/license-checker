@@ -399,6 +399,7 @@ describe('main tests', function() {
             assert.notEqual(json, undefined);
             assert.notEqual(json, null);
             assert.equal(json.licenseModified, 'no');
+            assert.ok(json.licenseText);
         });
 
         it('should parse json with errors (File exists + no json)', function() {
