@@ -1,5 +1,13 @@
 ## Change Log
 
+### v9.0.1 (2017/04/05 13:09 +00:00)
+- [9f1a1f3](https://github.com/davglass/license-checker/commit/9f1a1f32194a9bb312858f624e303af1ad4f61ca) 9.0.1 (@davglass)
+- [c99f612](https://github.com/davglass/license-checker/commit/c99f612fee22d9eb03db0ad41e7918fbaf6e8ed9) added test for licenseText (@davglass)
+- [#93](https://github.com/davglass/license-checker/pull/93) Merge pull request #93 from abtris/licenseText-just-in-customFormat (@abtris)
+- [da4d73c](https://github.com/davglass/license-checker/commit/da4d73c0feb22f50ddbce54364eef5b7bcc7f1a4) test: fix test, remove check from non custom format (@abtris)
+- [dcd3b59](https://github.com/davglass/license-checker/commit/dcd3b59bb9457df354fa3095189235b6e030df1a) feat: add licenseText only for customFormat
+- [4e02eca](https://github.com/davglass/license-checker/commit/4e02eca6e8bd332ff6d90e5039cacb50f0df1bf3) updated contribs and changelog (@davglass)
+
 ### v9.0.0 (2017/04/04 12:26 +00:00)
 - [267c80e](https://github.com/davglass/license-checker/commit/267c80efac89eef70c71a12b8f12b3dc8e6d58dd) 9.0.0 (@davglass)
 - [057af47](https://github.com/davglass/license-checker/commit/057af47bc52ac526f646ba21496f338689801809) added licenseFile assertion to tests (@davglass)
