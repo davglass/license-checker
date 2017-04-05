@@ -73,7 +73,7 @@
     "test": "jenkins-mocha ./tests/*.js",
     "posttest": "istanbul check-coverage"
   },
-  "preferGlobal": "true",
+  "preferGlobal": true,
   "bugs": {
     "url": "http://github.com/davglass/license-checker/issues"
   },

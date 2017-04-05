@@ -130,6 +130,28 @@ describe('main tests', function() {
         });
     });
 
+    describe('should parse local with excludes containing commas', function() {
+        var output;
+        before(function (done) {
+            checker.init({
+                start: path.join(__dirname, './fixtures'),
+                exclude: "Apache License\\, Version 2.0"
+            }, function (err, filtered) {
+                output = filtered;
+                done();
+            });
+        });
+
+        it('should exclude a license with a comma from the list', function () {
+            var excluded = true;
+            Object.keys(output).forEach(function(item) {
+                if (output[item].licenses && output[item].licenses == "Apache License, Version 2.0")
+                    excluded = false;
+            });
+            assert.ok(excluded);
+        });
+    });
+
     describe('error handler', function() {
         it('should init without errors', function(done) {
             checker.init({
