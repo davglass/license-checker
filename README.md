@@ -71,6 +71,7 @@ Options
 * `--onlyunknown` only list packages with unknown or guessed licenses.
 * `--json` output in json format.
 * `--csv` output in csv format.
+* `--csvComponentPrefix` prefix column for compoment in csv format.
 * `--out [filepath]` write the data to a specific file.
 * `--customPath` to add a custom Format file in JSON
 * `--exclude [list]` exclude modules which licenses are in the comma-separated list from the output
