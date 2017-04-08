@@ -78,6 +78,19 @@ describe('main tests', function() {
             assert.equal('"abbrev@1.0.9","abbrev","Like ruby\'s abbrev module, but in js","<<Should Never be set>>"', str.split('\n')[1]);
         });
 
+        it('and convert to CSV with component prefix', function() {
+            var format = {
+                'name': '<<Default Name>>',
+                'description': '<<Default Description>>',
+                'pewpew': '<<Should Never be set>>'
+            };
+
+            var str = checker.asCSV(output, format, "main-module");
+            assert.equal('"component","module name","name","description","pewpew"', str.split('\n')[0]);
+            assert.equal('"main-module","abbrev@1.0.9","abbrev","Like ruby\'s abbrev module, but in js","<<Should Never be set>>"', str.split('\n')[1]);
+
+        });
+
         it('and convert to MarkDown', function() {
             var format = {
                 'name': '<<Default Name>>',
