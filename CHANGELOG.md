@@ -1,9 +1,22 @@
 ## Change Log
 
+### v9.0.3 (2017/04/10 13:42 +00:00)
+- [a0fd60f](https://github.com/davglass/license-checker/commit/a0fd60f972b7c84a32117b3dfc1f95bfa2282f27) 9.0.3 (@davglass)
+- [#95](https://github.com/davglass/license-checker/pull/95) Merge pull request #95 from abtris/prefix-component (@abtris)
+- [3b80272](https://github.com/davglass/license-checker/commit/3b80272a217687c2f0cd7a0c1e98775064d820ff) test: add test for csvComponentPrefix (@abtris)
+- [d593554](https://github.com/davglass/license-checker/commit/d593554c1a6b4f7e004e4a23fca88cb7294f8351) feat: add support for csvComponentPrefix (@abtris)
+- [5b2eea1](https://github.com/davglass/license-checker/commit/5b2eea12d8c54068a01a2cf1fd9bdeca8c1f0fa2) added contrib (@davglass)
+
+### v9.0.2 (2017/04/05 14:55 +00:00)
+- [f24833b](https://github.com/davglass/license-checker/commit/f24833bce846f608ec3d8c327d335da56c42b895) 9.0.2 (@davglass)
+- [#94](https://github.com/davglass/license-checker/pull/94) Merge pull request #94 from timbru31/fix-comma-exclude (@timbru31)
+- [2d08a77](https://github.com/davglass/license-checker/commit/2d08a77030362c7ab03ac12358dd524c0be47eee) contrib & changelog (@davglass)
+
 ### v9.0.1 (2017/04/05 13:09 +00:00)
 - [9f1a1f3](https://github.com/davglass/license-checker/commit/9f1a1f32194a9bb312858f624e303af1ad4f61ca) 9.0.1 (@davglass)
 - [c99f612](https://github.com/davglass/license-checker/commit/c99f612fee22d9eb03db0ad41e7918fbaf6e8ed9) added test for licenseText (@davglass)
 - [#93](https://github.com/davglass/license-checker/pull/93) Merge pull request #93 from abtris/licenseText-just-in-customFormat (@abtris)
+- [8d7fb2f](https://github.com/davglass/license-checker/commit/8d7fb2f85fc585d8e75ab1459e0b0cef43993ba4) fix: allow escaped commas in exclude string (@timbru31)
 - [da4d73c](https://github.com/davglass/license-checker/commit/da4d73c0feb22f50ddbce54364eef5b7bcc7f1a4) test: fix test, remove check from non custom format (@abtris)
 - [dcd3b59](https://github.com/davglass/license-checker/commit/dcd3b59bb9457df354fa3095189235b6e030df1a) feat: add licenseText only for customFormat
 - [4e02eca](https://github.com/davglass/license-checker/commit/4e02eca6e8bd332ff6d90e5039cacb50f0df1bf3) updated contribs and changelog (@davglass)
