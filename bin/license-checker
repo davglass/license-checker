@@ -56,19 +56,18 @@ checker.init(args, function(err, json) {
         console.log(err);
     }
     if (args.json) {
-        formattedOutput = JSON.stringify(json, null, 2);
+        formattedOutput = JSON.stringify(json, null, 2) + '\n';
     } else if (args.csv) {
-        formattedOutput = checker.asCSV(json, args.customFormat, args.csvComponentPrefix);
+        formattedOutput = checker.asCSV(json, args.customFormat, args.csvComponentPrefix) + '\n';
     } else if (args.markdown){
-        formattedOutput = checker.asMarkDown(json, args.customFormat);
+        formattedOutput = checker.asMarkDown(json, args.customFormat) + '\n';
     } else {
         formattedOutput = checker.asTree(json);
     }
 
     if (args.files) {
-        checker.asFiles(json, args.files);        
-    }
-    else if (args.out) {
+        checker.asFiles(json, args.files);
+    } else if (args.out) {
         var dir = path.dirname(args.out);
         mkdirp.sync(dir);
         //Remove the color tags
