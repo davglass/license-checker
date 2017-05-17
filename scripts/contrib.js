@@ -9,7 +9,7 @@ var json = require(pkg);
  
 json.contributors = []; //clear it
 
-GitContributors.list(opts, function (err, result) {
+GitContributors.list(opts, function(err, result) {
     result.forEach(function(item) {
         json.contributors.push([item.name, '<' + item.email + '>'].join(' '));
     });

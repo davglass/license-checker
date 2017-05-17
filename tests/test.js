@@ -16,18 +16,18 @@ describe('main tests', function() {
         assert.equal(typeof checker.print, 'function');
     });
     
-    describe('should parse local with unknown', function(done) {
+    describe('should parse local with unknown', function() {
         var output;
         before(function(done) {
             checker.init({
                 start: path.join(__dirname, '../')
-            }, function (err, sorted) {
+            }, function(err, sorted) {
                 output = sorted;
                 done();
             });
         });
 
-        it('and give us results', function () {
+        it('and give us results', function() {
             assert.equal(Object.keys(output).length > 70, true);
             assert.equal(output['abbrev@1.0.9'].licenses, 'ISC');
         });
@@ -43,9 +43,9 @@ describe('main tests', function() {
         });
     });
 
-    describe('should parse local with unknown and custom format', function(done) {
+    describe('should parse local with unknown and custom format', function() {
         var output;
-        before(function (done) {
+        before(function(done) {
             var format = {
                 'name': '<<Default Name>>',
                 'description': '<<Default Description>>',
@@ -55,13 +55,13 @@ describe('main tests', function() {
             checker.init({
                 start: path.join(__dirname, '../'),
                 customFormat: format
-            }, function (err, sorted) {
+            }, function(err, sorted) {
                 output = sorted;
                 done();
             });
         });
 
-        it('and give us results', function () {
+        it('and give us results', function() {
             assert.ok(Object.keys(output).length > 70);
             assert.equal(output['abbrev@1.0.9'].description, 'Like ruby\'s abbrev module, but in js');
         });
@@ -109,13 +109,13 @@ describe('main tests', function() {
             checker.init({
                 start: path.join(__dirname, '../'),
                 unknown: true
-            }, function (err, sorted) {
+            }, function(err, sorted) {
                 output = sorted;
                 done();
             });
         });
 
-        it('should give us results', function () {
+        it('should give us results', function() {
             assert.ok(output);
             assert.ok(Object.keys(output).length > 20);
         });
@@ -123,20 +123,20 @@ describe('main tests', function() {
 
     describe('should parse local with unknown and excludes', function() {
         var output;
-        before(function (done) {
+        before(function(done) {
             checker.init({
                 start: path.join(__dirname, '../'),
                 exclude: "MIT, ISC"
-            }, function (err, filtered) {
+            }, function(err, filtered) {
                 output = filtered;
                 done();
             });
         });
 
-        it('should exclude MIT and ISC licensed modules from results', function () {
+        it('should exclude MIT and ISC licensed modules from results', function() {
             var excluded = true;
             Object.keys(output).forEach(function(item) {
-                if (output[item].licenses && (output[item].licenses == "MIT" || output[item].licenses == "ISC"))
+                if (output[item].licenses && (output[item].licenses === "MIT" || output[item].licenses === "ISC"))
                     excluded = false;
             });
             assert.ok(excluded);
@@ -145,20 +145,20 @@ describe('main tests', function() {
 
     describe('should parse local with excludes containing commas', function() {
         var output;
-        before(function (done) {
+        before(function(done) {
             checker.init({
                 start: path.join(__dirname, './fixtures'),
                 exclude: "Apache License\\, Version 2.0"
-            }, function (err, filtered) {
+            }, function(err, filtered) {
                 output = filtered;
                 done();
             });
         });
 
-        it('should exclude a license with a comma from the list', function () {
+        it('should exclude a license with a comma from the list', function() {
             var excluded = true;
             Object.keys(output).forEach(function(item) {
-                if (output[item].licenses && output[item].licenses == "Apache License, Version 2.0")
+                if (output[item].licenses && output[item].licenses === "Apache License, Version 2.0")
                     excluded = false;
             });
             assert.ok(excluded);
@@ -170,7 +170,7 @@ describe('main tests', function() {
             checker.init({
                 start: path.join(__dirname, '../'),
                 development: true
-            }, function (err) {
+            }, function(err) {
                 assert.equal(err, null);
                 done();
             });
@@ -179,7 +179,7 @@ describe('main tests', function() {
         it('should init with errors (npm packages not found)', function(done) {
             checker.init({
                 start: 'C:\\'
-            }, function (err) {
+            }, function(err) {
                 assert.ok(util.isError(err));
                 done();
             });
@@ -189,20 +189,20 @@ describe('main tests', function() {
     describe('should parse with args', function() {
         var args = require('../lib/args.js');
         
-        it('should handle undefined', function () {
+        it('should handle undefined', function() {
             var result = args.defaults(undefined);
             assert.equal(result.color, chalk.supportsColor);
             assert.equal(result.start, path.resolve(path.join(__dirname, '../')));
         });
 
-        it('should handle color undefined', function () {
-            var result = args.defaults({color: undefined, start: path.resolve(path.join(__dirname, '../'))});
+        it('should handle color undefined', function() {
+            var result = args.defaults({ color: undefined, start: path.resolve(path.join(__dirname, '../')) });
             assert.equal(result.color, chalk.supportsColor);
             assert.equal(result.start, path.resolve(path.join(__dirname, '../')));
         });
 
         ['json', 'markdown', 'csv'].forEach(function(type) {
-            it('should disable color on ' + type, function () {
+            it('should disable color on ' + type, function() {
                 var def = {
                     color: undefined,
                     start: path.resolve(path.join(__dirname, '../'))
@@ -225,7 +225,7 @@ describe('main tests', function() {
                     'description': '<<Default Description>>',
                     'pewpew': '<<Should Never be set>>'
                 }
-            }, function (err, d) {
+            }, function(err, d) {
                 Object.keys(d).forEach(function(item) {
                     assert.notEqual(d[item].name, undefined);
                     assert.notEqual(d[item].description, undefined);
@@ -246,7 +246,7 @@ describe('main tests', function() {
             process.argv.pop();
             process.argv.pop();
 
-            checker.init(args, function (err, filtered) {
+            checker.init(args, function(err, filtered) {
                 var customFormatContent = fs.readFileSync(path.join(__dirname, './../customFormatExample.json'), 'utf8');
 
                 assert.notEqual(customFormatContent, undefined);
@@ -268,13 +268,13 @@ describe('main tests', function() {
 
     describe('should output the location of the license files', function() {
 
-        it('as absolute paths', function (done) {
+        it('as absolute paths', function(done) {
             checker.init({
                 start: path.join(__dirname, '../')
-            }, function (err, output) {
-                Object.keys(output).map(function (key) {
+            }, function(err, output) {
+                Object.keys(output).map(function(key) {
                     return output[key];
-                }).filter(function (dep) {
+                }).filter(function(dep) {
                     return dep.licenseFile !== undefined;
                 }).forEach(function(dep) {
                     var expectedPath = path.join(__dirname, '../');
@@ -289,10 +289,10 @@ describe('main tests', function() {
             checker.init({
                 start: path.join(__dirname, '../'),
                 relativeLicensePath: true
-            }, function (err, filtered) {
-                Object.keys(filtered).map(function (key) {
+            }, function(err, filtered) {
+                Object.keys(filtered).map(function(key) {
                     return filtered[key];
-                }).filter(function (dep) {
+                }).filter(function(dep) {
                     return dep.licenseFile !== undefined;
                 }).forEach(function(dep) {
                     assert.notEqual(dep.licenseFile.substr(0, 1), "/");
@@ -304,11 +304,11 @@ describe('main tests', function() {
 
     describe('should only list UNKNOWN or guessed licenses successful', function() {
         var output;
-        before(function (done) {
+        before(function(done) {
             checker.init({
                 start: path.join(__dirname, '../'),
                 onlyunknown: true
-            }, function (err, sorted) {
+            }, function(err, sorted) {
                 output = sorted;
                 done();
             });
@@ -331,11 +331,11 @@ describe('main tests', function() {
 
     describe('should only list UNKNOWN or guessed licenses with errors (argument missing)', function() {
         var output;
-        before(function (done) {
+        before(function(done) {
             checker.init({
                 start: path.join(__dirname, '../'),
                 production: true
-            }, function (err, sorted) {
+            }, function(err, sorted) {
                 output = sorted;
                 done();
             });
@@ -407,7 +407,7 @@ describe('main tests', function() {
     
         it('as files', function() {
             var out = path.join(require('os').tmpDir(), 'lc'),
-            files;
+                files;
             checker.asFiles({
                 foo: {
                     licenses: 'MIT',
