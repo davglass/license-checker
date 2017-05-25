@@ -1,5 +1,9 @@
 ## Change Log
 
+### upcoming (2017/05/25 16:16 +00:00)
+- [#100](https://github.com/davglass/license-checker/pull/100) Suppress JSON properties with custom format (#100) (@tbbstny)
+- [ed5b3ab](https://github.com/davglass/license-checker/commit/ed5b3ab50825f0be032958f8233dd3000ee98e85) changelog (@davglass)
+
 ### v10.0.0 (2017/05/17 13:51 +00:00)
 - [b2c2283](https://github.com/davglass/license-checker/commit/b2c2283cf5a937e64a07ab200ec2379e481903b6) 10.0.0 (@davglass)
 - [a0406ac](https://github.com/davglass/license-checker/commit/a0406ac2c7a0b1037ca31b47e36d316b9c088938) [fixes #96] - do not replace newline, etc in licenses for exporting to json/markdown (@davglass)
@@ -124,8 +128,8 @@
 - [997914f](https://github.com/davglass/license-checker/commit/997914fd6f94030452d4d9bf549eb156ae8ef7c0) fix git+https URLs (@graingert)
 - [#57](https://github.com/davglass/license-checker/pull/57) Merge pull request #57 from Damien-Larmine/doc-license-asterisk (@Damien-Larmine)
 - [2adff2d](https://github.com/davglass/license-checker/commit/2adff2da98a5af79479a162e4998eb5892ab31c3) Explicit the asterisk in license report (@Damien-Larmine)
-- [7f71c53](https://github.com/davglass/license-checker/commit/7f71c53833cf1318ffe84215fcb1291f9ce4fbd5) updated contributors (@davglass)
 - [b2fc9cf](https://github.com/davglass/license-checker/commit/b2fc9cf2a8eaa008c7593037d046f245a7ce7f25) 5.0.0 (@davglass)
+- [7f71c53](https://github.com/davglass/license-checker/commit/7f71c53833cf1318ffe84215fcb1291f9ce4fbd5) updated contributors (@davglass)
 
 ### v5.0.0 (2016/01/22 15:31 +00:00)
 - [#55](https://github.com/davglass/license-checker/pull/55) Merge pull request #55 from davglass/devflag (@davglass)

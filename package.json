@@ -32,7 +32,8 @@
     "Timothée Mazzucotelli <timothee.mazzucotelli@gmail.com>",
     "Yuri Zapuchlak <yuri@vidmaker.com>",
     "badunk <baduncaduncan@gmail.com>",
-    "gdw2 <gdwarner@Gmail.com>"
+    "gdw2 <gdwarner@Gmail.com>",
+    "tbbstny <tbbstny@users.noreply.github.com>"
   ],
   "dependencies": {
     "chalk": "~0.5.1",
