@@ -42,6 +42,7 @@
     "nopt": "^2.2.0",
     "read-installed": "~4.0.3",
     "semver": "^5.3.0",
+    "spdx": "^0.5.1",
     "treeify": "^1.0.1"
   },
   "devDependencies": {
