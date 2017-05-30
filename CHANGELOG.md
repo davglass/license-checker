@@ -1,6 +1,13 @@
 ## Change Log
 
-### upcoming (2017/05/25 16:16 +00:00)
+### v11.0.0 (2017/05/30 13:33 +00:00)
+- [258df10](https://github.com/davglass/license-checker/commit/258df102da484943088da8e0b6160b80c0e703cd) 11.0.0 (@davglass)
+- [#102](https://github.com/davglass/license-checker/pull/102) Merge pull request #102 from xswordsx/multiple-licenses (@xswordsx)
+- [c5c8b0f](https://github.com/davglass/license-checker/commit/c5c8b0f408f2a26259a7b1109f7cc135ed5bf9c4) Check for SPDX-compatible licenses (@xswordsx)
+
+### v10.1.0 (2017/05/25 16:16 +00:00)
+- [b52a16d](https://github.com/davglass/license-checker/commit/b52a16d0ba414e7287f82325dd65619cd76afdd1) 10.1.0 (@davglass)
+- [f911a99](https://github.com/davglass/license-checker/commit/f911a9919033254945ecbbf69362cb171436688e) contrib & changes (@davglass)
 - [#100](https://github.com/davglass/license-checker/pull/100) Suppress JSON properties with custom format (#100) (@tbbstny)
 - [ed5b3ab](https://github.com/davglass/license-checker/commit/ed5b3ab50825f0be032958f8233dd3000ee98e85) changelog (@davglass)
 
