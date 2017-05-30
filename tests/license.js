@@ -70,4 +70,32 @@ describe('license parser', function() {
         var data = license('this is empty, hi');
         assert.equal(data, null);
     });
+
+	describe('SPDX licenses', function() {
+
+		it('should parse a basic SPDX license', function() {
+			var data = [
+				'MIT',
+				'LGPL-2.0',
+				'Apache-2.0',
+				'BSD-2-Clause'
+			];
+			data.forEach(function (licenseType) {
+				assert.equal(license(licenseType), licenseType);
+			});
+		});
+
+		it('should parse more complicated license expressions', function() {
+			var data = [
+				'(GPL-2.0+ WITH Bison-exception-2.2)',
+				'LGPL-2.0 OR (ISC AND BSD-3-Clause+)',
+				'Apache-2.0 OR ISC OR MIT',
+			];
+			data.forEach(function (licenseType) {
+				assert.equal(license(licenseType), licenseType);
+			});
+
+		});
+
+	});
 });
