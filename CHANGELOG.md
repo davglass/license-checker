@@ -1,5 +1,10 @@
 ## Change Log
 
+### v12.0.0 (2017/07/05 13:32 +00:00)
+- [#106](https://github.com/davglass/license-checker/pull/106) Merge pull request #106 from helio-frota/licensefile-readme (@helio-frota)
+- [a229507](https://github.com/davglass/license-checker/commit/a2295073d0178dca1b88e85ea8f52c21d35e52fc) src: the README is added as licenseFile (@helio-frota)
+- [b59d90d](https://github.com/davglass/license-checker/commit/b59d90d8705f6f728c817b89936f95097d26857b) changes & contrib (@davglass)
+
 ### v11.0.0 (2017/05/30 13:33 +00:00)
 - [258df10](https://github.com/davglass/license-checker/commit/258df102da484943088da8e0b6160b80c0e703cd) 11.0.0 (@davglass)
 - [#102](https://github.com/davglass/license-checker/pull/102) Merge pull request #102 from xswordsx/multiple-licenses (@xswordsx)
@@ -135,8 +140,8 @@
 - [997914f](https://github.com/davglass/license-checker/commit/997914fd6f94030452d4d9bf549eb156ae8ef7c0) fix git+https URLs (@graingert)
 - [#57](https://github.com/davglass/license-checker/pull/57) Merge pull request #57 from Damien-Larmine/doc-license-asterisk (@Damien-Larmine)
 - [2adff2d](https://github.com/davglass/license-checker/commit/2adff2da98a5af79479a162e4998eb5892ab31c3) Explicit the asterisk in license report (@Damien-Larmine)
-- [b2fc9cf](https://github.com/davglass/license-checker/commit/b2fc9cf2a8eaa008c7593037d046f245a7ce7f25) 5.0.0 (@davglass)
 - [7f71c53](https://github.com/davglass/license-checker/commit/7f71c53833cf1318ffe84215fcb1291f9ce4fbd5) updated contributors (@davglass)
+- [b2fc9cf](https://github.com/davglass/license-checker/commit/b2fc9cf2a8eaa008c7593037d046f245a7ce7f25) 5.0.0 (@davglass)
 
 ### v5.0.0 (2016/01/22 15:31 +00:00)
 - [#55](https://github.com/davglass/license-checker/pull/55) Merge pull request #55 from davglass/devflag (@davglass)
