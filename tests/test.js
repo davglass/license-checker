@@ -179,7 +179,7 @@ describe('main tests', function() {
         it('should reconise private modules', function() {
             var privateModule = false;
             Object.keys(output).forEach(function(item) {
-                if (output[item].private) {
+                if (output[item].licenses && output[item].licenses.indexOf("UNLICENSED") >=0) {
                     privateModule = true;
                 }
             });
