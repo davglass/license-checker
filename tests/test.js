@@ -223,6 +223,27 @@ describe('main tests', function() {
         });
     });
 
+    describe('should treat URLs as custom licenses', function() {
+        var output;
+        before(function(done) {
+            checker.init({
+                start: path.join(__dirname, './fixtures/custom-license')
+            }, function(err, filtered) {
+                output = filtered;
+                done();
+            });
+        });
+
+        it('should recognise a custom license', function() {
+            var foundCustomLicense = false;
+            Object.keys(output).forEach(function(item) {
+                if (output[item].licenses && (output[item].licenses === "Custom: http://example.com/dummy-license"))
+                    foundCustomLicense = true;
+            });
+            assert.ok(foundCustomLicense);
+        });
+    });
+
     describe('error handler', function() {
         it('should init without errors', function(done) {
             checker.init({
