@@ -121,20 +121,25 @@ describe('main tests', function() {
         });
     });
 
-    describe('should parse local with unknown and excludes', function() {
-        var output;
-        before(function(done) {
+    function parseAndExclude(parsePath, licenses, result) {
+        return function(done) {
             checker.init({
-                start: path.join(__dirname, '../'),
-                exclude: "MIT, ISC"
+                start: path.join(__dirname, parsePath),
+                exclude: licenses
             }, function(err, filtered) {
-                output = filtered;
+                result.output = filtered;
                 done();
             });
-        });
+        };
+    }
+
+    describe('should parse local with unknown and excludes', function() {
+        var result={};
+        before(parseAndExclude('../', "MIT, ISC", result));
 
         it('should exclude MIT and ISC licensed modules from results', function() {
             var excluded = true;
+            var output = result.output;
             Object.keys(output).forEach(function(item) {
                 if (output[item].licenses && (output[item].licenses === "MIT" || output[item].licenses === "ISC"))
                     excluded = false;
@@ -144,21 +149,52 @@ describe('main tests', function() {
     });
 
     describe('should parse local with excludes containing commas', function() {
+        var result={};
+        before(parseAndExclude('./fixtures/excludeWithComma',  "Apache License\\, Version 2.0", result));
+
+        it('should exclude a license with a comma from the list', function() {
+            var excluded = true;
+            var output = result.output;
+            Object.keys(output).forEach(function(item) {
+                if (output[item].licenses && output[item].licenses === "Apache License, Version 2.0")
+                    excluded = false;
+            });
+            assert.ok(excluded);
+        });
+    });
+
+    describe('should parse local with BSD excludes', function() {
+        var result={};
+        before(parseAndExclude('./fixtures/excludeBSD',  "BSD", result));
+
+
+        it('should exclude BSD-3-Clause', function() {
+            var excluded = true;
+            var output = result.output;
+            Object.keys(output).forEach(function(item) {
+                if (output[item].licenses && output[item].licenses === "BSD-3-Clause")
+                    excluded = false;
+            });
+            assert.ok(excluded);
+        });
+    });
+
+    describe('should parse local with Public Domain excludes', function() {
         var output;
         before(function(done) {
             checker.init({
-                start: path.join(__dirname, './fixtures'),
-                exclude: "Apache License\\, Version 2.0"
+                start: path.join(__dirname, '../fixtures/exclusions2'),
+                exclude: "Public Domain"
             }, function(err, filtered) {
                 output = filtered;
                 done();
             });
         });
 
-        it('should exclude a license with a comma from the list', function() {
+        it('should exclude Public Domain', function() {
             var excluded = true;
             Object.keys(output).forEach(function(item) {
-                if (output[item].licenses && output[item].licenses === "Apache License, Version 2.0")
+                if (output[item].licenses && output[item].licenses === "Public Domain")
                     excluded = false;
             });
             assert.ok(excluded);
