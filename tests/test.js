@@ -180,19 +180,13 @@ describe('main tests', function() {
     });
 
     describe('should parse local with Public Domain excludes', function() {
-        var output;
-        before(function(done) {
-            checker.init({
-                start: path.join(__dirname, '../fixtures/exclusions2'),
-                exclude: "Public Domain"
-            }, function(err, filtered) {
-                output = filtered;
-                done();
-            });
-        });
+        var result={};
+        before(parseAndExclude('./fixtures/excludePublicDomain',  "Public Domain", result));
+
 
         it('should exclude Public Domain', function() {
             var excluded = true;
+            var output = result.output;
             Object.keys(output).forEach(function(item) {
                 if (output[item].licenses && output[item].licenses === "Public Domain")
                     excluded = false;
