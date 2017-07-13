@@ -1,0 +1,11 @@
+{
+  "name": "private",
+  "version": "0.0.0",
+  "private": true,
+  "licenses": [
+    {
+      "type": "UNLICENSED",
+      "url": ""
+    }
+  ]
+}

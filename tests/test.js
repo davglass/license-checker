@@ -165,6 +165,28 @@ describe('main tests', function() {
         });
     });
 
+    describe('should parse local and handle private modules', function() {
+        var output;
+        before(function(done) {
+            checker.init({
+                start: path.join(__dirname, './fixtures/privateModule'),
+            }, function(err, filtered) {
+                output = filtered;
+                done();
+            });
+        });
+
+        it('should reconise private modules', function() {
+            var privateModule = false;
+            Object.keys(output).forEach(function(item) {
+                if (output[item].private) {
+                    privateModule = true;
+                }
+            });
+            assert.ok(privateModule);
+        });
+    });
+
     describe('error handler', function() {
         it('should init without errors', function(done) {
             checker.init({
@@ -406,7 +428,7 @@ describe('main tests', function() {
         });
     
         it('as files', function() {
-            var out = path.join(require('os').tmpDir(), 'lc'),
+            var out = path.join(require('os').tmpdir(), 'lc'),
                 files;
             checker.asFiles({
                 foo: {
