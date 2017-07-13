@@ -21,6 +21,26 @@ describe('license parser', function() {
         assert.equal(data, 'MIT*');
     });
 
+    it('GPL word check', function() {
+        var data;
+        data = license('GNU GENERAL PUBLIC LICENSE \nVersion 1, February 1989');
+        assert.equal(data, 'GPL-1.0*');
+        data = license('GNU GENERAL PUBLIC LICENSE \nVersion 2, June 1991');
+        assert.equal(data, 'GPL-2.0*');
+        data = license('GNU GENERAL PUBLIC LICENSE \nVersion 3, 29 June 2007');
+        assert.equal(data, 'GPL-3.0*');
+    });
+
+    it('LGPL word check', function() {
+        var data;
+        data = license('GNU LIBRARY GENERAL PUBLIC LICENSE\nVersion 2, June 1991');
+        assert.equal(data, 'LGPL-2.0*');
+        data = license('GNU LESSER GENERAL PUBLIC LICENSE\nVersion 2.1, February 1999');
+        assert.equal(data, 'LGPL-2.1*');
+        data = license('GNU LESSER GENERAL PUBLIC LICENSE \nVersion 3, 29 June 2007');
+        assert.equal(data, 'LGPL-3.0*');
+    });
+
     it('BSD check', function() {
         var data = license('asdf\nRedistribution and use in source and binary forms, with or without\nasdf\n');
         assert.equal(data, 'BSD*');
