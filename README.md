@@ -77,6 +77,15 @@ Options
 * `--exclude [list]` exclude modules which licenses are in the comma-separated list from the output
 * `--relativeLicensePath` output the location of the license files as relative paths
 
+Exclusions
+----------
+A list of licenses is the simples way to describe what you want to exclude.
+
+You can use valid [SPDX identifiers](https://spdx.org/licenses/). 
+You can use valid SPDX expressions like `MIT OR X11`.
+You can use non-valid SPDX identifiers, like `Public Domain`, since `npm` does
+support some license strings that are not SPDX identifiers.
+
 Examples
 --------
 
@@ -85,7 +94,7 @@ license-checker --json > /path/to/licenses.json
 license-checker --csv --out /path/to/licenses.csv
 license-checker --unknown
 license-checker --customPath customFormatExample.json
-license-checker --exclude 'MIT, MIT/X11, BSD, ISC'
+license-checker --exclude 'MIT, MIT OR X11, BSD, ISC'
 license-checker --onlyunknown
 ```
 

@@ -150,7 +150,7 @@ describe('main tests', function() {
 
     describe('should parse local with excludes containing commas', function() {
         var result={};
-        before(parseAndExclude('./fixtures/exclusions1',  "Apache License\\, Version 2.0", result));
+        before(parseAndExclude('./fixtures/excludeWithComma',  "Apache License\\, Version 2.0", result));
 
         it('should exclude a license with a comma from the list', function() {
             var excluded = true;
