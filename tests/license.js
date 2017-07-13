@@ -95,6 +95,22 @@ describe('license parser', function() {
         assert.equal(data, 'Public Domain');
     });
 
+    it('License at URL check', function() {
+        var data = license('http://example.com/foo');
+        assert.equal(data, 'Custom: http://example.com/foo');
+        data = license('See license at http://example.com/foo');
+        assert.equal(data, 'Custom: http://example.com/foo');
+        data = license('https://example.com/foo');
+        assert.equal(data, 'Custom: https://example.com/foo');
+    });
+
+    it('License at file check', function() {
+        var data = license('See license in LICENSE.md');
+        assert.equal(data, 'Custom: LICENSE.md');
+        data = license('SEE LICENSE IN LICENSE.md');
+        assert.equal(data, 'Custom: LICENSE.md');
+    });
+
 
     it('Check for null', function() {
         var data = license('this is empty, hi');
