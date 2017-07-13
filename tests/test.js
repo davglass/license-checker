@@ -227,17 +227,38 @@ describe('main tests', function() {
         var output;
         before(function(done) {
             checker.init({
-                start: path.join(__dirname, './fixtures/custom-license')
+                start: path.join(__dirname, './fixtures/custom-license-url')
             }, function(err, filtered) {
                 output = filtered;
                 done();
             });
         });
 
-        it('should recognise a custom license', function() {
+        it('should recognise a custom license at a url', function() {
             var foundCustomLicense = false;
             Object.keys(output).forEach(function(item) {
                 if (output[item].licenses && (output[item].licenses === "Custom: http://example.com/dummy-license"))
+                    foundCustomLicense = true;
+            });
+            assert.ok(foundCustomLicense);
+        });
+    });
+
+    describe('should treat file references as custom licenses', function() {
+        var output;
+        before(function(done) {
+            checker.init({
+                start: path.join(__dirname, './fixtures/custom-license-file')
+            }, function(err, filtered) {
+                output = filtered;
+                done();
+            });
+        });
+
+        it('should recognise a custom license in a file', function() {
+            var foundCustomLicense = false;
+            Object.keys(output).forEach(function(item) {
+                if (output[item].licenses && (output[item].licenses === "Custom: MY-LICENSE.md"))
                     foundCustomLicense = true;
             });
             assert.ok(foundCustomLicense);
