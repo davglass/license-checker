@@ -180,19 +180,13 @@ describe('main tests', function() {
     });
 
     describe('should parse local with Public Domain excludes', function() {
-        var output;
-        before(function(done) {
-            checker.init({
-                start: path.join(__dirname, '../fixtures/exclusions2'),
-                exclude: "Public Domain"
-            }, function(err, filtered) {
-                output = filtered;
-                done();
-            });
-        });
+        var result={};
+        before(parseAndExclude('./fixtures/excludePublicDomain',  "Public Domain", result));
+
 
         it('should exclude Public Domain', function() {
             var excluded = true;
+            var output = result.output;
             Object.keys(output).forEach(function(item) {
                 if (output[item].licenses && output[item].licenses === "Public Domain")
                     excluded = false;
@@ -220,6 +214,48 @@ describe('main tests', function() {
                 }
             });
             assert.ok(privateModule);
+        });
+    });
+
+    describe('should treat URLs as custom licenses', function() {
+        var output;
+        before(function(done) {
+            checker.init({
+                start: path.join(__dirname, './fixtures/custom-license-url')
+            }, function(err, filtered) {
+                output = filtered;
+                done();
+            });
+        });
+
+        it('should recognise a custom license at a url', function() {
+            var foundCustomLicense = false;
+            Object.keys(output).forEach(function(item) {
+                if (output[item].licenses && (output[item].licenses === "Custom: http://example.com/dummy-license"))
+                    foundCustomLicense = true;
+            });
+            assert.ok(foundCustomLicense);
+        });
+    });
+
+    describe('should treat file references as custom licenses', function() {
+        var output;
+        before(function(done) {
+            checker.init({
+                start: path.join(__dirname, './fixtures/custom-license-file')
+            }, function(err, filtered) {
+                output = filtered;
+                done();
+            });
+        });
+
+        it('should recognise a custom license in a file', function() {
+            var foundCustomLicense = false;
+            Object.keys(output).forEach(function(item) {
+                if (output[item].licenses && (output[item].licenses === "Custom: MY-LICENSE.md"))
+                    foundCustomLicense = true;
+            });
+            assert.ok(foundCustomLicense);
         });
     });
 
