@@ -1,6 +1,15 @@
 ## Change Log
 
-### v12.1.0 (2017/07/12 16:47 +00:00)
+### v13.0.0 (2017/07/14 12:49 +00:00)
+- [051b20b](https://github.com/davglass/license-checker/commit/051b20b0c4b35f223f724705a0025dafc809373f) cleaned up some tests (@davglass)
+- [#110](https://github.com/davglass/license-checker/pull/110) FEATURE: Recognise some custom licenses by file or url (#110) (@dancrumb)
+- [#111](https://github.com/davglass/license-checker/pull/111) Resolves #60 (#111) Adding support for GPL and LGPL (@dancrumb)
+- [#109](https://github.com/davglass/license-checker/pull/109) FEATURE: Improve license exclusion (#109) (@dancrumb)
+- [#108](https://github.com/davglass/license-checker/pull/108) FEATURE: Detect private modules and report them as UNLICENSED (#108) (@dancrumb)
+
+### v12.1.0 (2017/07/12 16:48 +00:00)
+- [dc944e5](https://github.com/davglass/license-checker/commit/dc944e54d55d77b0ef6b6321d9abee847662ccb8) 12.1.0 (@davglass)
+- [d415c58](https://github.com/davglass/license-checker/commit/d415c580b04bc5eefa592dc9f9a0a31b244c1bd3) updated contrib and changes (@davglass)
 - [#107](https://github.com/davglass/license-checker/pull/107) Merge pull request #107 from dancrumb/feature/support-for-public-domain-licenses (@dancrumb)
 - [0c55770](https://github.com/davglass/license-checker/commit/0c55770294167161c48b79cc82a15a6545154a87) FEATURE: Add support for Public Domain licenses (@dancrumb)
 
