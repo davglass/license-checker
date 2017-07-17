@@ -1,6 +1,11 @@
 ## Change Log
 
+### v13.0.1 (2017/07/17 12:47 +00:00)
+- [#113](https://github.com/davglass/license-checker/pull/113) Use LICENSE file in preference to README (#113) (@ibeucaly)
+- [6b7f79f](https://github.com/davglass/license-checker/commit/6b7f79f654e21903ea37e4391fba3601ece32e90) changes (@davglass)
+
 ### v13.0.0 (2017/07/14 12:49 +00:00)
+- [dd9e880](https://github.com/davglass/license-checker/commit/dd9e880abd234d683d8c1e57e7a5f889c9156de4) 13.0.0 (@davglass)
 - [051b20b](https://github.com/davglass/license-checker/commit/051b20b0c4b35f223f724705a0025dafc809373f) cleaned up some tests (@davglass)
 - [#110](https://github.com/davglass/license-checker/pull/110) FEATURE: Recognise some custom licenses by file or url (#110) (@dancrumb)
 - [#111](https://github.com/davglass/license-checker/pull/111) Resolves #60 (#111) Adding support for GPL and LGPL (@dancrumb)
