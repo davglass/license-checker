@@ -60,6 +60,7 @@
     "github-changes": "^1.0.4",
     "istanbul": "^0.4.3",
     "jenkins-mocha": "^2.6.0",
+    "locale": "^0.1.0",
     "queue": "^1.0.0",
     "request": "^2.34.0",
     "rimraf": "^2.5.4"

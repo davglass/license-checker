@@ -217,6 +217,19 @@ describe('main tests', function() {
         });
     });
 
+    describe('should treat license file over custom urls', function() {
+
+        it('should recognise a custom license at a url', function(done) {
+            checker.init({
+                start: path.join(__dirname, '../node_modules/locale')
+            }, function(err, output) {
+                var item = output[Object.keys(output)[0]];
+                assert.equal(item.licenses, 'MIT*');
+                done();
+            });
+        });
+    });
+
     describe('should treat URLs as custom licenses', function() {
         var output;
         before(function(done) {
