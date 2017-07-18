@@ -1,6 +1,12 @@
 ## Change Log
 
-### v13.0.1 (2017/07/17 12:47 +00:00)
+### v13.0.2 (2017/07/18 16:24 +00:00)
+- [2c712b7](https://github.com/davglass/license-checker/commit/2c712b7c7e6efe916d60f3ef3125f7f019c46d59) 13.0.2 (@davglass)
+- [ef812c1](https://github.com/davglass/license-checker/commit/ef812c1168901d08b97dbd450a64ca03bb7062ad) [fixes #114] - Custom URL/File parsing skipped if file found on disk (@davglass)
+
+### v13.0.1 (2017/07/17 12:48 +00:00)
+- [a1bf8f1](https://github.com/davglass/license-checker/commit/a1bf8f152b100d81b44757b3b7e141df6a971c44) 13.0.1 (@davglass)
+- [e6d0c89](https://github.com/davglass/license-checker/commit/e6d0c893b8a86e12493f7a5c22fd74ef26267994) contrib & changes (@davglass)
 - [#113](https://github.com/davglass/license-checker/pull/113) Use LICENSE file in preference to README (#113) (@ibeucaly)
 - [6b7f79f](https://github.com/davglass/license-checker/commit/6b7f79f654e21903ea37e4391fba3601ece32e90) changes (@davglass)
 
@@ -160,8 +166,8 @@
 - [997914f](https://github.com/davglass/license-checker/commit/997914fd6f94030452d4d9bf549eb156ae8ef7c0) fix git+https URLs (@graingert)
 - [#57](https://github.com/davglass/license-checker/pull/57) Merge pull request #57 from Damien-Larmine/doc-license-asterisk (@Damien-Larmine)
 - [2adff2d](https://github.com/davglass/license-checker/commit/2adff2da98a5af79479a162e4998eb5892ab31c3) Explicit the asterisk in license report (@Damien-Larmine)
-- [b2fc9cf](https://github.com/davglass/license-checker/commit/b2fc9cf2a8eaa008c7593037d046f245a7ce7f25) 5.0.0 (@davglass)
 - [7f71c53](https://github.com/davglass/license-checker/commit/7f71c53833cf1318ffe84215fcb1291f9ce4fbd5) updated contributors (@davglass)
+- [b2fc9cf](https://github.com/davglass/license-checker/commit/b2fc9cf2a8eaa008c7593037d046f245a7ce7f25) 5.0.0 (@davglass)
 
 ### v5.0.0 (2016/01/22 15:31 +00:00)
 - [#55](https://github.com/davglass/license-checker/pull/55) Merge pull request #55 from davglass/devflag (@davglass)
