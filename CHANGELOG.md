@@ -1,5 +1,10 @@
 ## Change Log
 
+### 13.0.3 (2017/08/04 17:15 +00:00)
+- [2caf76b](https://github.com/davglass/license-checker/commit/2caf76be7f2849e153ee28410f3b7a41df3283b5) 13.0.3 (@davglass)
+- [fadddc8](https://github.com/davglass/license-checker/commit/fadddc895ef9c6f182e2283c5605a8c1d8fa8a25) [fixes #117] fixed minor URL parsing (@davglass)
+- [e58a868](https://github.com/davglass/license-checker/commit/e58a868268aefd97d735b364bd87d03140d76482) changes (@davglass)
+
 ### v13.0.2 (2017/07/18 16:24 +00:00)
 - [2c712b7](https://github.com/davglass/license-checker/commit/2c712b7c7e6efe916d60f3ef3125f7f019c46d59) 13.0.2 (@davglass)
 - [ef812c1](https://github.com/davglass/license-checker/commit/ef812c1168901d08b97dbd450a64ca03bb7062ad) [fixes #114] - Custom URL/File parsing skipped if file found on disk (@davglass)
