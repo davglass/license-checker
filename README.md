@@ -1,7 +1,6 @@
 NPM License Checker
 ===================
 
-
 Ever needed to see all the license info for a module and it's dependencies?
 
 It's this easy:
@@ -159,7 +158,17 @@ scanning ./yui-lint
 # ...
 ```
 
-build status
+How Licenses are Found
+----------------------
+
+We walk the `node_modules` directory with the [`read-installed`](https://www.npmjs.org/package/read-installed) module. Once we gather a list of modules we walk
+them and look at all of their `package.json`'s, We try to identify the licese with the [`spdx`](https://www.npmjs.com/package/spdx) module
+to see if it has a valid SPDX license attached. If that fails, we then look into the module for the following files: `LICENSE`, `LICENCE`, `COPYING`, & `README`
+
+If one of the files are found (in that order) we will attempt to parse the license data from it with a known list of license texts. This will
+be shown with the `*` next to the name of the license to show that we "guessed" at it.
+
+Build Status
 ------------
 
 [![Build Status](https://travis-ci.org/davglass/license-checker.png?branch=master)](https://travis-ci.org/davglass/license-checker)
