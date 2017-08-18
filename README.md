@@ -1,11 +1,11 @@
 NPM License Checker
 ===================
 
-Ever needed to see all the license info for a module and it's dependencies?
+Ever needed to see all the license info for a module and its dependencies?
 
 It's this easy:
 
-```
+```shell
 npm install -g license-checker
 
 mkdir foo
@@ -78,7 +78,7 @@ Options
 
 Exclusions
 ----------
-A list of licenses is the simples way to describe what you want to exclude.
+A list of licenses is the simplest way to describe what you want to exclude.
 
 You can use valid [SPDX identifiers](https://spdx.org/licenses/). 
 You can use valid SPDX expressions like `MIT OR X11`.
