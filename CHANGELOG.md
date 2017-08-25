@@ -1,6 +1,13 @@
 ## Change Log
 
-### 13.0.3 (2017/08/04 17:15 +00:00)
+### v13.1.0 (2017/08/25 14:59 +00:00)
+- [#121](https://github.com/davglass/license-checker/pull/121) Add `--summary` mode to show a summary with counts of the used licenses (#121) (@tobilg)
+- [#119](https://github.com/davglass/license-checker/pull/119) Fix minor spelling mistakes (#119) (@tobiasbueschel)
+- [#118](https://github.com/davglass/license-checker/pull/118) Minor readme text improvements (#118) (@peteruithoven)
+- [d2bc5ea](https://github.com/davglass/license-checker/commit/d2bc5ea91ab50becea91d5f0f050955fe9a6ac59) added license parsing info to README (@davglass)
+- [3e9d320](https://github.com/davglass/license-checker/commit/3e9d320acb2e9f14297d6a4355680f34a9b0609d) changes (@davglass)
+
+### v13.0.3 (2017/08/04 17:15 +00:00)
 - [2caf76b](https://github.com/davglass/license-checker/commit/2caf76be7f2849e153ee28410f3b7a41df3283b5) 13.0.3 (@davglass)
 - [fadddc8](https://github.com/davglass/license-checker/commit/fadddc895ef9c6f182e2283c5605a8c1d8fa8a25) [fixes #117] fixed minor URL parsing (@davglass)
 - [e58a868](https://github.com/davglass/license-checker/commit/e58a868268aefd97d735b364bd87d03140d76482) changes (@davglass)
