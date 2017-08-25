@@ -308,7 +308,7 @@ describe('main tests', function() {
             assert.equal(result.start, path.resolve(path.join(__dirname, '../')));
         });
 
-        ['json', 'markdown', 'csv'].forEach(function(type) {
+        ['json', 'markdown', 'csv', 'summary'].forEach(function(type) {
             it('should disable color on ' + type, function() {
                 var def = {
                     color: undefined,
@@ -510,6 +510,17 @@ describe('main tests', function() {
             });
             assert.ok(data);
             assert.ok(data.indexOf('[foo](/path/to/foo) - MIT') > -1);
+        });
+
+        it('as summary', function() {
+            var data = checker.asSummary({
+                foo: {
+                    licenses: 'MIT',
+                    repository: '/path/to/foo'
+                }
+            });
+            assert.ok(data);
+            assert.ok(data.indexOf('└─') > -1);
         });
     
         it('as files', function() {

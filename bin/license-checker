@@ -33,6 +33,7 @@ if (args.help) {
         '   --customPath to add a custom Format file in JSON',
         '   --exclude [list] exclude modules which licenses are in the comma-separated list from the output',
         '   --relativeLicensePath output the location of the license files as relative paths',
+        '   --summary output a summary of the license usage',
         '',
         '   --version The current version',
         '   --help  The text you are reading right now :)',
@@ -61,6 +62,8 @@ checker.init(args, function(err, json) {
         formattedOutput = checker.asCSV(json, args.customFormat, args.csvComponentPrefix) + '\n';
     } else if (args.markdown){
         formattedOutput = checker.asMarkDown(json, args.customFormat) + '\n';
+    } else if (args.summary) {
+        formattedOutput = checker.asSummary(json);
     } else {
         formattedOutput = checker.asTree(json);
     }
