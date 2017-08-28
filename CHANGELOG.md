@@ -1,6 +1,12 @@
 ## Change Log
 
-### v13.1.0 (2017/08/25 14:59 +00:00)
+### v14.0.0 (2017/08/28 13:22 +00:00)
+- [#122](https://github.com/davglass/license-checker/pull/122) Added --failOn [list] mode (#122) (@tobilg)
+
+### v13.1.0 (2017/08/25 15:00 +00:00)
+- [ee25265](https://github.com/davglass/license-checker/commit/ee25265f92fe0d3b603da6b8c88d175e0d1f2fa5) 13.1.0 (@davglass)
+- [5bb9a17](https://github.com/davglass/license-checker/commit/5bb9a17f89d7e180b3a9d929ebc073135262bd2f) changes (@davglass)
+- [b1e0392](https://github.com/davglass/license-checker/commit/b1e0392afa4b511b7c532125cd3165a828d3d4e3) added contrib (@davglass)
 - [#121](https://github.com/davglass/license-checker/pull/121) Add `--summary` mode to show a summary with counts of the used licenses (#121) (@tobilg)
 - [#119](https://github.com/davglass/license-checker/pull/119) Fix minor spelling mistakes (#119) (@tobiasbueschel)
 - [#118](https://github.com/davglass/license-checker/pull/118) Minor readme text improvements (#118) (@peteruithoven)
