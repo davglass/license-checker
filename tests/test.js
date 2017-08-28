@@ -195,6 +195,41 @@ describe('main tests', function() {
         });
     });
 
+    function parseAndFailOn(parsePath, licenses, result) {
+        return function(done) {
+            var exitCode = 0;
+            process.exit = function(code) {
+                exitCode = code;
+            };
+            checker.init({
+                start: path.join(__dirname, parsePath),
+                failOn: licenses
+            }, function(err, filtered) {
+                result.output = filtered;
+                result.exitCode = exitCode;
+                done();
+            });
+        };
+    }
+
+    describe('should exit on given list of failOn licenses', function() {
+        var result={};
+        before(parseAndFailOn('../', "MIT, ISC", result));
+
+        it('should exit on MIT and ISC licensed modules from results', function() {
+            assert.equal(result.exitCode, 1);
+        });
+    });
+
+    describe('should exit on single failOn license', function() {
+        var result={};
+        before(parseAndFailOn('../', "ISC", result));
+
+        it('should exit on MIT and ISC licensed modules from results', function() {
+            assert.equal(result.exitCode, 1);
+        });
+    });
+
     describe('should parse local and handle private modules', function() {
         var output;
         before(function(done) {

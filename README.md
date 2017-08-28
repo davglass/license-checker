@@ -75,6 +75,8 @@ Options
 * `--customPath` to add a custom Format file in JSON
 * `--exclude [list]` exclude modules which licenses are in the comma-separated list from the output
 * `--relativeLicensePath` output the location of the license files as relative paths
+* `--summary` output a summary of the license usage',
+* `--failOn [list]` fail (exit with code 1) on the first occurrence of the licenses of the comma-separated list
 
 Exclusions
 ----------
