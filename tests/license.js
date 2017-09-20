@@ -21,6 +21,11 @@ describe('license parser', function() {
         assert.equal(data, 'MIT*');
     });
 
+    it('Non-MIT word check', function() {
+        var data = license('prefixMIT\n');
+        assert.notEqual(data, 'MIT*');
+    });
+
     it('GPL word check', function() {
         var data;
         data = license('GNU GENERAL PUBLIC LICENSE \nVersion 1, February 1989');
@@ -29,6 +34,16 @@ describe('license parser', function() {
         assert.equal(data, 'GPL-2.0*');
         data = license('GNU GENERAL PUBLIC LICENSE \nVersion 3, 29 June 2007');
         assert.equal(data, 'GPL-3.0*');
+    });
+
+    it('Non-GPL word check', function() {
+        var data;
+        data = license('preGNU GENERAL PUBLIC LICENSE \nVersion 1, February 1989');
+        assert.notEqual(data, 'GPL-1.0*');
+        data = license('preGNU GENERAL PUBLIC LICENSE \nVersion 2, June 1991');
+        assert.notEqual(data, 'GPL-2.0*');
+        data = license('preGNU GENERAL PUBLIC LICENSE \nVersion 3, 29 June 2007');
+        assert.notEqual(data, 'GPL-3.0*');
     });
 
     it('LGPL word check', function() {
@@ -55,10 +70,20 @@ describe('license parser', function() {
         var data = license('asdf\nasdf\nBSD\nasdf\n');
         assert.equal(data, 'BSD*');
     });
+    
+    it('Non-BSD word check', function() {
+        var data = license('prefixBSD\n');
+        assert.notEqual(data, 'BSD*');
+    });
 
     it('Apache word check', function() {
         var data = license('asdf\nasdf\nApache License\nasdf\n');
         assert.equal(data, 'Apache*');
+    });
+    
+    it('Non-Apache word check', function() {
+        var data = license('prefixApache License\n');
+        assert.notEqual(data, 'Apache*');
     });
 
     it('WTF check', function() {
@@ -70,10 +95,20 @@ describe('license parser', function() {
         var data = license('asdf\nasdf\nWTFPL\nasdf\n');
         assert.equal(data, 'WTFPL*');
     });
+    
+    it('Non-WTF word check', function() {
+        var data = license('prefixWTFPL\n');
+        assert.notEqual(data, 'WTFPL*');
+    });
 
     it('ISC check', function() {
         var data = license('asdfasdf\nThe ISC License\nasdfasdf');
         assert.equal(data, 'ISC*');
+    });
+
+    it('Non-ISC word check', function() {
+        var data = license('prefixISC\n');
+        assert.notEqual(data, 'ISC*');
     });
 
     it('ISC word check', function() {
