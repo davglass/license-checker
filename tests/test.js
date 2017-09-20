@@ -408,6 +408,23 @@ describe('main tests', function() {
 
     });
 
+    describe('should output the module location', function() {
+
+        it('as absolute path', function(done) {
+            checker.init({
+                start: path.join(__dirname, '../')
+            }, function(err, output) {
+                Object.keys(output).map(function(key) {
+                    var expectedPath = path.join(__dirname, '../');
+                    var actualPath = output[key].path.substr(0, expectedPath.length);
+                    assert.equal(actualPath, expectedPath);
+                });
+                done();
+            });
+        });
+
+    });
+
     describe('should output the location of the license files', function() {
 
         it('as absolute paths', function(done) {
