@@ -417,8 +417,6 @@ describe('main tests', function() {
                 Object.keys(output).map(function(key) {
                     var expectedPath = path.join(__dirname, '../');
                     var actualPath = output[key].path.substr(0, expectedPath.length);
-                    console.log(expectedPath);
-                    console.log(output[key].path);
                     assert.equal(actualPath, expectedPath);
                 });
                 done();
