@@ -1,6 +1,13 @@
 ## Change Log
 
+### v15.0.0 (2017/10/19 14:23 +00:00)
+- [#124](https://github.com/davglass/license-checker/pull/124) Merge pull request #124 from neverendingqs/app/stricterguesses (@neverendingqs)
+- [#126](https://github.com/davglass/license-checker/pull/126) app - output now includes path to dependency. (#126) (@neverendingqs)
+- [9f68b29](https://github.com/davglass/license-checker/commit/9f68b29bbfa73278cdab92e221be6ccbab191932) app - strengthening license guessing; resolves #123. (@neverendingqs)
+- [3061c87](https://github.com/davglass/license-checker/commit/3061c87363f3416d86ca6c2ba7b2bfa77def0e73) changes (@davglass)
+
 ### v14.0.0 (2017/08/28 13:22 +00:00)
+- [b2a4403](https://github.com/davglass/license-checker/commit/b2a440309c1537c52e5c5a2106f11e72d5b784ec) 14.0.0 (@davglass)
 - [#122](https://github.com/davglass/license-checker/pull/122) Added --failOn [list] mode (#122) (@tobilg)
 
 ### v13.1.0 (2017/08/25 15:00 +00:00)
@@ -184,8 +191,8 @@
 - [997914f](https://github.com/davglass/license-checker/commit/997914fd6f94030452d4d9bf549eb156ae8ef7c0) fix git+https URLs (@graingert)
 - [#57](https://github.com/davglass/license-checker/pull/57) Merge pull request #57 from Damien-Larmine/doc-license-asterisk (@Damien-Larmine)
 - [2adff2d](https://github.com/davglass/license-checker/commit/2adff2da98a5af79479a162e4998eb5892ab31c3) Explicit the asterisk in license report (@Damien-Larmine)
-- [7f71c53](https://github.com/davglass/license-checker/commit/7f71c53833cf1318ffe84215fcb1291f9ce4fbd5) updated contributors (@davglass)
 - [b2fc9cf](https://github.com/davglass/license-checker/commit/b2fc9cf2a8eaa008c7593037d046f245a7ce7f25) 5.0.0 (@davglass)
+- [7f71c53](https://github.com/davglass/license-checker/commit/7f71c53833cf1318ffe84215fcb1291f9ce4fbd5) updated contributors (@davglass)
 
 ### v5.0.0 (2016/01/22 15:31 +00:00)
 - [#55](https://github.com/davglass/license-checker/pull/55) Merge pull request #55 from davglass/devflag (@davglass)
