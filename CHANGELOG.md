@@ -1,6 +1,16 @@
 ## Change Log
 
-### v15.0.0 (2017/10/19 14:23 +00:00)
+### v16.0.0 (2018/01/18 15:02 +00:00)
+- [a46c448](https://github.com/davglass/license-checker/commit/a46c4483f872c3db9498a65b7ae3dc6d8164de0a) 16.0.0 (@davglass)
+- [6c5274c](https://github.com/davglass/license-checker/commit/6c5274c6064d318844cf36185dea395e0893ff08) [fixes #132] - Fixed issue with asFiles and path issues (@davglass)
+- [38d63e2](https://github.com/davglass/license-checker/commit/38d63e2c2c3fd6c11012fb69b1470b2ba06d5554) [fixes #128] - Added --onlyAllow option (@davglass)
+- [#131](https://github.com/davglass/license-checker/pull/131) Merge pull request #131 from mischah/patch-1 (@mischah)
+- [e341d17](https://github.com/davglass/license-checker/commit/e341d1701092be87309ec4b51fa6eb23f7e9a589) Fix typo in Readme (@mischah)
+- [cc38a20](https://github.com/davglass/license-checker/commit/cc38a2047bf41b6fe25266114a13a9bf54133e04) updated license text (@davglass)
+
+### v15.0.0 (2017/10/19 14:24 +00:00)
+- [a9bd001](https://github.com/davglass/license-checker/commit/a9bd001b649bfa186bae5598bb8c67ff56383599) 15.0.0 (@davglass)
+- [db621fa](https://github.com/davglass/license-checker/commit/db621fa6beeff870699c33be484bf49816ab7866) changelog (@davglass)
 - [#124](https://github.com/davglass/license-checker/pull/124) Merge pull request #124 from neverendingqs/app/stricterguesses (@neverendingqs)
 - [#126](https://github.com/davglass/license-checker/pull/126) app - output now includes path to dependency. (#126) (@neverendingqs)
 - [9f68b29](https://github.com/davglass/license-checker/commit/9f68b29bbfa73278cdab92e221be6ccbab191932) app - strengthening license guessing; resolves #123. (@neverendingqs)
@@ -191,8 +201,8 @@
 - [997914f](https://github.com/davglass/license-checker/commit/997914fd6f94030452d4d9bf549eb156ae8ef7c0) fix git+https URLs (@graingert)
 - [#57](https://github.com/davglass/license-checker/pull/57) Merge pull request #57 from Damien-Larmine/doc-license-asterisk (@Damien-Larmine)
 - [2adff2d](https://github.com/davglass/license-checker/commit/2adff2da98a5af79479a162e4998eb5892ab31c3) Explicit the asterisk in license report (@Damien-Larmine)
-- [b2fc9cf](https://github.com/davglass/license-checker/commit/b2fc9cf2a8eaa008c7593037d046f245a7ce7f25) 5.0.0 (@davglass)
 - [7f71c53](https://github.com/davglass/license-checker/commit/7f71c53833cf1318ffe84215fcb1291f9ce4fbd5) updated contributors (@davglass)
+- [b2fc9cf](https://github.com/davglass/license-checker/commit/b2fc9cf2a8eaa008c7593037d046f245a7ce7f25) 5.0.0 (@davglass)
 
 ### v5.0.0 (2016/01/22 15:31 +00:00)
 - [#55](https://github.com/davglass/license-checker/pull/55) Merge pull request #55 from davglass/devflag (@davglass)
