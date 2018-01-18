@@ -77,6 +77,7 @@ Options
 * `--relativeLicensePath` output the location of the license files as relative paths
 * `--summary` output a summary of the license usage',
 * `--failOn [list]` fail (exit with code 1) on the first occurrence of the licenses of the comma-separated list
+* `--onlyAllow [list]` fail (exit with code 1) on the first occurrence of the licenses not in the comma-seperated list
 
 Exclusions
 ----------

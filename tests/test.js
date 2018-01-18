@@ -195,16 +195,17 @@ describe('main tests', function() {
         });
     });
 
-    function parseAndFailOn(parsePath, licenses, result) {
+    function parseAndFailOn(key, parsePath, licenses, result) {
         return function(done) {
             var exitCode = 0;
             process.exit = function(code) {
                 exitCode = code;
             };
-            checker.init({
-                start: path.join(__dirname, parsePath),
-                failOn: licenses
-            }, function(err, filtered) {
+            var config = {
+                start: path.join(__dirname, parsePath)
+            };
+            config[key] = licenses;
+            checker.init(config, function(err, filtered) {
                 result.output = filtered;
                 result.exitCode = exitCode;
                 done();
@@ -212,9 +213,36 @@ describe('main tests', function() {
         };
     }
 
+    describe('should exit on given list of onlyAllow licenses', function() {
+        var result={};
+        before(parseAndFailOn('onlyAllow', '../', "MIT, ISC", result));
+
+        it('should exit on non MIT and ISC licensed modules from results', function() {
+            assert.equal(result.exitCode, 1);
+        });
+    });
+
+    describe('should exit on single onlyAllow license', function() {
+        var result={};
+        before(parseAndFailOn('onlyAllow', '../', "ISC", result));
+
+        it('should exit on non ISC licensed modules from results', function() {
+            assert.equal(result.exitCode, 1);
+        });
+    });
+
+    describe('should exit on single onlyAllow license', function() {
+        var result={};
+        before(parseAndFailOn('onlyAllow', '../', "ISC,", result));
+
+        it('should exit on non ISC licensed modules from results', function() {
+            assert.equal(result.exitCode, 1);
+        });
+    });
+
     describe('should exit on given list of failOn licenses', function() {
         var result={};
-        before(parseAndFailOn('../', "MIT, ISC", result));
+        before(parseAndFailOn('failOn', '../', "MIT, ISC", result));
 
         it('should exit on MIT and ISC licensed modules from results', function() {
             assert.equal(result.exitCode, 1);
@@ -223,9 +251,9 @@ describe('main tests', function() {
 
     describe('should exit on single failOn license', function() {
         var result={};
-        before(parseAndFailOn('../', "ISC", result));
+        before(parseAndFailOn('failOn', '../', "ISC", result));
 
-        it('should exit on MIT and ISC licensed modules from results', function() {
+        it('should exit on ISC licensed modules from results', function() {
             assert.equal(result.exitCode, 1);
         });
     });
