@@ -24,6 +24,7 @@ if (args.help) {
         '',
         '   --production only show production dependencies.',
         '   --development only show development dependencies.',
+        '   --start [path of the initial json to look for]',
         '   --unknown report guessed licenses as unknown licenses.',
         '   --onlyunknown only list packages with unknown or guessed licenses.',
         '   --json output in json format.',
@@ -36,6 +37,7 @@ if (args.help) {
         '   --summary output a summary of the license usage',
         '   --failOn [list] fail (exit with code 1) on the first occurrence of the licenses of the comma-separated list',
         '   --onlyAllow [list] fail (exit with code 1) on the first occurrence of the licenses not in the comma-seperated list',
+        '   --depth look for dependencies infinitely (default), --no-depth in order to look for direct dependencies only',
         '',
         '   --version The current version',
         '   --help  The text you are reading right now :)',
@@ -53,6 +55,13 @@ if (args.version) {
 if (args.failOn && args.onlyAllow) {
     console.log('--failOn and --onlyAllow can not be used at the same time. Choose one or the other.');
     process.exit(1);
+}
+
+// Prepare args.depth for read-installed
+if (args.depth === undefined || args.depth) {
+    args.depth = Infinity;
+} else {
+    args.depth = 0;
 }
 
 checker.init(args, function(err, json) {
