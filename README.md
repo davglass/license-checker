@@ -68,6 +68,7 @@ Options
 * `--development` only show development dependencies.
 * `--unknown` report guessed licenses as unknown licenses.
 * `--onlyunknown` only list packages with unknown or guessed licenses.
+* `--depth [number]` optional parameter: how deep tree structure should be analyzed, e.g. `depth=0` will just output licenses of your package.json modules
 * `--json` output in json format.
 * `--csv` output in csv format.
 * `--csvComponentPrefix` prefix column for component in csv format.
@@ -93,6 +94,7 @@ Examples
 
 ```
 license-checker --json > /path/to/licenses.json
+license-checker --production --depth=0 --json --customPath /path/to/custom-format.json --out /path/to/licenses.json
 license-checker --csv --out /path/to/licenses.csv
 license-checker --unknown
 license-checker --customPath customFormatExample.json
