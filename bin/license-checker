@@ -64,7 +64,7 @@ checker.init(args, function(err, json) {
         console.log(err);
     }
     if (args.json) {
-        formattedOutput = JSON.stringify(json, null, 2) + '\n';
+        formattedOutput = checker.asJson(json, args.customFormat) + '\n';
     } else if (args.csv) {
         formattedOutput = checker.asCSV(json, args.customFormat, args.csvComponentPrefix) + '\n';
     } else if (args.markdown){
