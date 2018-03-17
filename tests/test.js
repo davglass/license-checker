@@ -215,7 +215,7 @@ describe('main tests', function() {
 
     describe('should exit on given list of onlyAllow licenses', function() {
         var result={};
-        before(parseAndFailOn('onlyAllow', '../', "MIT, ISC", result));
+        before(parseAndFailOn('onlyAllow', '../', "MIT; ISC", result));
 
         it('should exit on non MIT and ISC licensed modules from results', function() {
             assert.equal(result.exitCode, 1);
@@ -231,18 +231,31 @@ describe('main tests', function() {
         });
     });
 
-    describe('should exit on single onlyAllow license', function() {
+    describe('should not exit on complete list', function() {
         var result={};
-        before(parseAndFailOn('onlyAllow', '../', "ISC,", result));
+        before(parseAndFailOn('onlyAllow', '../', "MIT;ISC;MIT;BSD-3-Clause;BSD;Apache-2.0;" +
+            "BSD-2-Clause;Apache*;BSD*;CC-BY-3.0;Unlicense;CC0-1.0;The MIT License;AFLv2.1,BSD;" +
+            "Public Domain;Custom: http://i.imgur.com/goJdO.png;WTFPL*;Apache License, Version 2.0;" +
+            "WTFPL;(MIT AND CC-BY-3.0);Custom: https://github.com/substack/node-browserify;" +
+            "BSD-3-Clause OR MIT;(WTFPL OR MIT)", result));
 
-        it('should exit on non ISC licensed modules from results', function() {
+        it('should not exist if list is complete', function() {
+            assert.equal(result.exitCode, 0);
+        });
+    });
+
+    describe('should exit on given list of failOn licenses', function() {
+        var result={};
+        before(parseAndFailOn('failOn', '../', "Apache License, Version 2.0", result));
+
+        it('should exit on Apache License, Version 2.0 licensed modules from results', function() {
             assert.equal(result.exitCode, 1);
         });
     });
 
     describe('should exit on given list of failOn licenses', function() {
         var result={};
-        before(parseAndFailOn('failOn', '../', "MIT, ISC", result));
+        before(parseAndFailOn('failOn', '../', "MIT; ISC", result));
 
         it('should exit on MIT and ISC licensed modules from results', function() {
             assert.equal(result.exitCode, 1);
