@@ -1,6 +1,8 @@
 NPM License Checker
 ===================
 
+[![Build Status](https://www.travis-ci.org/davglass/license-checker.svg?branch=master)](https://www.travis-ci.org/davglass/license-checker)
+
 *As of v17.0.0 the `failOn` and `onlyAllow` arguments take semicolons as delimeters instead of commas. Some license names contain
 commas and it messed with the parsing*
 
@@ -86,7 +88,7 @@ Exclusions
 ----------
 A list of licenses is the simplest way to describe what you want to exclude.
 
-You can use valid [SPDX identifiers](https://spdx.org/licenses/). 
+You can use valid [SPDX identifiers](https://spdx.org/licenses/).
 You can use valid SPDX expressions like `MIT OR X11`.
 You can use non-valid SPDX identifiers, like `Public Domain`, since `npm` does
 support some license strings that are not SPDX identifiers.
