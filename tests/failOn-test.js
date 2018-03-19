@@ -15,7 +15,7 @@ describe('bin/license-checker', function() {
     });
 
     it('should exit 1 if it finds forbidden licenses license due to --failOn MIT;ISC', function(done) {
-        spawn('node', [path.join(__dirname, '../bin/license-checker'), '--failOn', 'MIT,ISC'], {
+        spawn('node', [path.join(__dirname, '../bin/license-checker'), '--failOn', 'MIT;ISC'], {
             cwd: path.join(__dirname, '../'),
             stdio: 'ignore'
         }).on('exit', function(code) {
