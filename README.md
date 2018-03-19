@@ -1,6 +1,9 @@
 NPM License Checker
 ===================
 
+*As of v17.0.0 the `failOn` and `onlyAllow` arguments take semicolons as delimeters instead of commas. Some license names contain
+commas and it messed with the parsing*
+
 Ever needed to see all the license info for a module and its dependencies?
 
 It's this easy:
@@ -76,8 +79,8 @@ Options
 * `--exclude [list]` exclude modules which licenses are in the comma-separated list from the output
 * `--relativeLicensePath` output the location of the license files as relative paths
 * `--summary` output a summary of the license usage',
-* `--failOn [list]` fail (exit with code 1) on the first occurrence of the licenses of the comma-separated list
-* `--onlyAllow [list]` fail (exit with code 1) on the first occurrence of the licenses not in the comma-seperated list
+* `--failOn [list]` fail (exit with code 1) on the first occurrence of the licenses of the semicolon-separated list
+* `--onlyAllow [list]` fail (exit with code 1) on the first occurrence of the licenses not in the semicolon-seperated list
 
 Exclusions
 ----------
