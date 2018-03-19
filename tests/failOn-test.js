@@ -23,4 +23,20 @@ describe('bin/license-checker', function() {
             done();
         });
     });
+
+    it('should give warning about commas if --failOn MIT,ISC is provided', function(done) {
+        var proc = spawn('node', [path.join(__dirname, '../bin/license-checker'), '--failOn', 'MIT,ISC'], {
+            cwd: path.join(__dirname, '../'),
+            stdio: 'pipe'
+        });
+        var stderr = '';
+        proc.stdout.on('data', function() { });
+        proc.stderr.on('data', function(data) {
+            stderr += data.toString();
+        });
+        proc.on('close', function() {
+            assert.equal(stderr.indexOf('--failOn argument takes semicolons as delimeters instead of commas') >= 0, true);
+            done();
+        });
+    });
 });
