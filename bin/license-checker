@@ -19,7 +19,7 @@ if (!args.color && (args.json || args.csv || args.out)) {
 }
 
 if (args.help) {
-    console.log('license-checker@' + require('../package.json').version);
+    console.error('license-checker@' + require('../package.json').version);
     var usage = [
         '',
         '   --production only show production dependencies.',
@@ -41,17 +41,17 @@ if (args.help) {
         '   --help  The text you are reading right now :)',
         ''
     ];
-    console.log(usage.join('\n'), '\n');
+    console.error(usage.join('\n'), '\n');
     process.exit(0);
 }
 
 if (args.version) {
-    console.log(require('../package.json').version);
+    console.error(require('../package.json').version);
     process.exit(1);
 }
 
 if (args.failOn && args.onlyAllow) {
-    console.log('--failOn and --onlyAllow can not be used at the same time. Choose one or the other.');
+    console.error('--failOn and --onlyAllow can not be used at the same time. Choose one or the other.');
     process.exit(1);
 } else {
     var argValue = args.failOn || args.onlyAllow;
@@ -66,8 +66,8 @@ checker.init(args, function(err, json) {
     var formattedOutput = '';
 
     if (!!err) {
-        console.log('Found error');
-        console.log(err);
+        console.error('Found error');
+        console.error(err);
     }
     if (args.json) {
         formattedOutput = JSON.stringify(json, null, 2) + '\n';
