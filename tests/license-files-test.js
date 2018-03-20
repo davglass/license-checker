@@ -62,4 +62,26 @@ describe('license files detector', function() {
             'LiCeNcE',
         ]);
     });
+
+    it('LICENSE-MIT gets matched', function() {
+        assert.deepEqual(licenseFiles([
+            'LICENSE',
+            '.gitignore',
+            'LICENSE-MIT',
+            'src',
+        ]), [
+            'LICENSE',
+            'LICENSE-MIT',
+        ]);
+    });
+
+    it('only the first LICENSE-* file gets matched', function() {
+        assert.deepEqual(licenseFiles([
+            'license-foobar.txt',
+            '.gitignore',
+            'LICENSE-MIT',
+        ]), [
+            'license-foobar.txt',
+        ]);
+    });
 });
