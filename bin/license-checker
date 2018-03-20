@@ -53,6 +53,12 @@ if (args.version) {
 if (args.failOn && args.onlyAllow) {
     console.log('--failOn and --onlyAllow can not be used at the same time. Choose one or the other.');
     process.exit(1);
+} else {
+    var argValue = args.failOn || args.onlyAllow;
+    if (argValue && argValue.indexOf(',') >= 0) {
+        var argName = args.failOn ? 'failOn' : 'onlyAllow';
+        console.warn('Warning: As of v17 the --' + argName + ' argument takes semicolons as delimeters instead of commas (some license names can contain commas)');
+    }
 }
 
 checker.init(args, function(err, json) {
