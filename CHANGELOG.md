@@ -1,6 +1,19 @@
 ## Change Log
 
-### v18.0.0 (2018/03/20 12:28 +00:00)
+### v18.1.0 (2018/04/30 14:16 +00:00)
+- [82ec91b](https://github.com/davglass/license-checker/commit/82ec91bb02e6bf998164b62b4aa827198156ad4c) 18.1.0 (@davglass)
+- [4b546d3](https://github.com/davglass/license-checker/commit/4b546d38ce91bcbe8d21e7bc53e44635b0447fc2) contrib (@davglass)
+- [#155](https://github.com/davglass/license-checker/pull/155) Merge pull request #155 from ktmouk/supress-path-property (@ktmouk)
+- [#160](https://github.com/davglass/license-checker/pull/160) Merge pull request #160 from helio-frota/pr (@helio-frota)
+- [8b068f2](https://github.com/davglass/license-checker/commit/8b068f25fe910d087c06e29312bc250b49aba4c7) fix: Updating debug dependency to fix a security warning (@helio-frota)
+- [8716845](https://github.com/davglass/license-checker/commit/87168456cae35263882bd2b6d6d0081f228b6b66) Suppress path property (@ktmouk)
+- [#149](https://github.com/davglass/license-checker/pull/149) Merge pull request #149 from honzajavorek/patch-1 (@honzajavorek)
+- [955bbf6](https://github.com/davglass/license-checker/commit/955bbf6070ffcd9f0d01ef37bb84ffbac65e007b) remove the old status badge (@honzajavorek)
+
+### v18.0.0 (2018/03/20 12:30 +00:00)
+- [315de0b](https://github.com/davglass/license-checker/commit/315de0b1a881cf8737c3c0131c217c4820df13a8) 18.0.0 (@davglass)
+- [76655d5](https://github.com/davglass/license-checker/commit/76655d59bad95c2e52724aaa3a0cf036f0e60bd6) changelog (@davglass)
+- [c8aa823](https://github.com/davglass/license-checker/commit/c8aa823342b7a250d510582c8a03dd76af50bd9c) added contributors (@davglass)
 - [#147](https://github.com/davglass/license-checker/pull/147) Merge pull request #147 from honzajavorek/honzajavorek/license-files (@honzajavorek)
 - [#148](https://github.com/davglass/license-checker/pull/148) Merge pull request #148 from honzajavorek/honzajavorek/use-stderr (@honzajavorek)
 - [#146](https://github.com/davglass/license-checker/pull/146) Merge pull request #146 from honzajavorek/honzajavorek/fix-e2e-test (@honzajavorek)
@@ -14,15 +27,15 @@
 - [8cea3dc](https://github.com/davglass/license-checker/commit/8cea3dccf1d185dc3ae3f37f44a82d7e123a1988) add Travis CI badge to the README (@honzajavorek)
 - [8f59c3b](https://github.com/davglass/license-checker/commit/8f59c3b494f69b1d51535bcff80c0e006d0ef6bb) drop support for node 4, add support for node 8 (@honzajavorek)
 
-### v17.0.0 (2018/03/19 13:27 +00:00)
+### v17.0.0 (2018/03/19 13:26 +00:00)
 - [cd5fdd8](https://github.com/davglass/license-checker/commit/cd5fdd8e94267d7d8f29e86dd9cbf8b694c037f1) 17.0.0 (@davglass)
 - [13c11ee](https://github.com/davglass/license-checker/commit/13c11eeea1b1a3e012de62536100fce91c355c8b) updated readme and help text (@davglass)
 - [#144](https://github.com/davglass/license-checker/pull/144) Merge pull request #144 from creising/parser-fixes (@creising)
 - [d2ab8df](https://github.com/davglass/license-checker/commit/d2ab8df30bc3e6b38b321a1e12a70cf477a69eb0) added support for lic with commas and spaces (@creising)
 - [2075208](https://github.com/davglass/license-checker/commit/20752083c6029823fb389a30a1ed4d7d90fa9297) contrib and changelog (@davglass)
 - [a46c448](https://github.com/davglass/license-checker/commit/a46c4483f872c3db9498a65b7ae3dc6d8164de0a) 16.0.0 (@davglass)
-- [38d63e2](https://github.com/davglass/license-checker/commit/38d63e2c2c3fd6c11012fb69b1470b2ba06d5554) [fixes #128] - Added --onlyAllow option (@davglass)
 - [6c5274c](https://github.com/davglass/license-checker/commit/6c5274c6064d318844cf36185dea395e0893ff08) [fixes #132] - Fixed issue with asFiles and path issues (@davglass)
+- [38d63e2](https://github.com/davglass/license-checker/commit/38d63e2c2c3fd6c11012fb69b1470b2ba06d5554) [fixes #128] - Added --onlyAllow option (@davglass)
 
 ### v16.0.0 (2018/01/18 15:02 +00:00)
 - [#131](https://github.com/davglass/license-checker/pull/131) Merge pull request #131 from mischah/patch-1 (@mischah)
