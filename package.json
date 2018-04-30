@@ -90,7 +90,7 @@
     "contrib": "./scripts/contrib.js",
     "pretest": "eslint --fix .",
     "test": "jenkins-mocha ./tests/*.js",
-    "posttest": "istanbul check-coverage"
+    "posttest": "nyc check-coverage && nyc report -r lcov -r text -r text-summary"
   },
   "preferGlobal": true,
   "bugs": {
@@ -100,5 +100,13 @@
   "repository": {
     "type": "git",
     "url": "http://github.com/davglass/license-checker.git"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "exclude": [ "**/tests/*.js" ],
+    "lines": 99,
+    "statements": 99,
+    "functions": 100,
+    "branches": 99
   }
 }

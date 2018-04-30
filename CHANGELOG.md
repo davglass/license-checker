@@ -1,5 +1,10 @@
 ## Change Log
 
+### v19.0.0 (2018/04/30 14:51 +00:00)
+- [7e83a06](https://github.com/davglass/license-checker/commit/7e83a069d23c104c3cd8257eb64666704ecca465) 19.0.0 (@davglass)
+- [e5eb49b](https://github.com/davglass/license-checker/commit/e5eb49bcb5546dbc681f736f159d63908cd39ce9) upgrading packages (@davglass)
+- [442aee6](https://github.com/davglass/license-checker/commit/442aee69b5d44e47bfd2e441c4e1f86d387e49c6) Changlog (@davglass)
+
 ### v18.1.0 (2018/04/30 14:16 +00:00)
 - [82ec91b](https://github.com/davglass/license-checker/commit/82ec91bb02e6bf998164b62b4aa827198156ad4c) 18.1.0 (@davglass)
 - [4b546d3](https://github.com/davglass/license-checker/commit/4b546d38ce91bcbe8d21e7bc53e44635b0447fc2) contrib (@davglass)
@@ -34,8 +39,8 @@
 - [d2ab8df](https://github.com/davglass/license-checker/commit/d2ab8df30bc3e6b38b321a1e12a70cf477a69eb0) added support for lic with commas and spaces (@creising)
 - [2075208](https://github.com/davglass/license-checker/commit/20752083c6029823fb389a30a1ed4d7d90fa9297) contrib and changelog (@davglass)
 - [a46c448](https://github.com/davglass/license-checker/commit/a46c4483f872c3db9498a65b7ae3dc6d8164de0a) 16.0.0 (@davglass)
-- [6c5274c](https://github.com/davglass/license-checker/commit/6c5274c6064d318844cf36185dea395e0893ff08) [fixes #132] - Fixed issue with asFiles and path issues (@davglass)
 - [38d63e2](https://github.com/davglass/license-checker/commit/38d63e2c2c3fd6c11012fb69b1470b2ba06d5554) [fixes #128] - Added --onlyAllow option (@davglass)
+- [6c5274c](https://github.com/davglass/license-checker/commit/6c5274c6064d318844cf36185dea395e0893ff08) [fixes #132] - Fixed issue with asFiles and path issues (@davglass)
 
 ### v16.0.0 (2018/01/18 15:02 +00:00)
 - [#131](https://github.com/davglass/license-checker/pull/131) Merge pull request #131 from mischah/patch-1 (@mischah)
