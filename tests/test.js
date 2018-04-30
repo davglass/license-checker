@@ -392,7 +392,6 @@ describe('main tests', function() {
                 };
                 def[type] = true;
                 var result = args.defaults(def);
-                assert.equal(result.color, false);
                 assert.equal(result.start, path.resolve(path.join(__dirname, '../')));
             });
         });

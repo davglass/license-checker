@@ -11,3 +11,5 @@ CVS/
 coverage/
 .idea/
 artifacts
+.nyc_output
+package-lock.json

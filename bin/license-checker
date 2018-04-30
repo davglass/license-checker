@@ -13,6 +13,7 @@ var mkdirp = require('mkdirp');
 var path = require('path');
 var chalk = require('chalk');
 var fs = require('fs');
+var stripColor = require('strip-ansi');
 
 if (!args.color && (args.json || args.csv || args.out)) {
     args.color = false;
@@ -87,7 +88,7 @@ checker.init(args, function(err, json) {
         var dir = path.dirname(args.out);
         mkdirp.sync(dir);
         //Remove the color tags
-        formattedOutput = chalk.stripColor(formattedOutput);
+        formattedOutput = stripColor(formattedOutput);
         fs.writeFileSync(args.out, formattedOutput, 'utf8');
     } else {
         console.log(formattedOutput);
