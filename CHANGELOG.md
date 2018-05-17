@@ -1,5 +1,10 @@
 ## Change Log
 
+### v20.0.0 (2018/05/17 14:10 +00:00)
+- [#156](https://github.com/davglass/license-checker/pull/156) Merge pull request #156 from zodiac403/z4/copyright (@zodiac403)
+- [56414b4](https://github.com/davglass/license-checker/commit/56414b4a67cbb25bcc8eb8cc05b0ac712b677dc2) Add unit test for Copyright statement. (@zodiac403)
+- [3eafe24](https://github.com/davglass/license-checker/commit/3eafe249ad662af727a9b7472f7ad6c1b9a73ade) fixing test coverage with switch to nyc from istanbul (@davglass)
+
 ### v19.0.0 (2018/04/30 14:51 +00:00)
 - [7e83a06](https://github.com/davglass/license-checker/commit/7e83a069d23c104c3cd8257eb64666704ecca465) 19.0.0 (@davglass)
 - [e5eb49b](https://github.com/davglass/license-checker/commit/e5eb49bcb5546dbc681f736f159d63908cd39ce9) upgrading packages (@davglass)
@@ -11,7 +16,14 @@
 - [#155](https://github.com/davglass/license-checker/pull/155) Merge pull request #155 from ktmouk/supress-path-property (@ktmouk)
 - [#160](https://github.com/davglass/license-checker/pull/160) Merge pull request #160 from helio-frota/pr (@helio-frota)
 - [8b068f2](https://github.com/davglass/license-checker/commit/8b068f25fe910d087c06e29312bc250b49aba4c7) fix: Updating debug dependency to fix a security warning (@helio-frota)
+- [040dd94](https://github.com/davglass/license-checker/commit/040dd9468261966c5c40e4a418aa9ba8f716c3a2) Copyright statement: Handle multi-line stagements (@zodiac403)
+- [0480750](https://github.com/davglass/license-checker/commit/04807506d61aa1d704e8b51da3a289baa025b510) Fix layout issue. (@zodiac403)
+- [9cb45f2](https://github.com/davglass/license-checker/commit/9cb45f2b9ce2c1142c0d1f556f01f7d754737a4c) Link with customFormat (@zodiac403)
+- [f83aaae](https://github.com/davglass/license-checker/commit/f83aaae85ad4cc2e9880802951dfacbc86dc2d7f) Merge branch 'z4/copyright' of https://github.com/zodiac403/license-checker into z4/copyright (@zodiac403)
+- [7536af9](https://github.com/davglass/license-checker/commit/7536af935d91078657f0e169ed82383f099607f6) Trim output. (@zodiac403)
 - [8716845](https://github.com/davglass/license-checker/commit/87168456cae35263882bd2b6d6d0081f228b6b66) Suppress path property (@ktmouk)
+- [be57ee8](https://github.com/davglass/license-checker/commit/be57ee8f76c8aada0d227913b7d0e12aca0dc640) Add example for (c) statement. (@zodiac403)
+- [fe17f7c](https://github.com/davglass/license-checker/commit/fe17f7c76dbdae0cbf689a0cd260a746698f3281) Parse (c) statements from LICENSE file. (@zodiac403)
 - [#149](https://github.com/davglass/license-checker/pull/149) Merge pull request #149 from honzajavorek/patch-1 (@honzajavorek)
 - [955bbf6](https://github.com/davglass/license-checker/commit/955bbf6070ffcd9f0d01ef37bb84ffbac65e007b) remove the old status badge (@honzajavorek)
 
