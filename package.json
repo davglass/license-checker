@@ -46,7 +46,8 @@
     "creising <creising@gmail.com>",
     "gdw2 <gdwarner@Gmail.com>",
     "ktmouk <ktmouk@gmail.com>",
-    "tbbstny <tbbstny@users.noreply.github.com>"
+    "tbbstny <tbbstny@users.noreply.github.com>",
+    "zodiac403 <zodiac403@gmx.de>"
   ],
   "dependencies": {
     "chalk": "^2.4.1",
@@ -103,7 +104,9 @@
   },
   "nyc": {
     "check-coverage": true,
-    "exclude": [ "**/tests/*.js" ],
+    "exclude": [
+      "**/tests/*.js"
+    ],
     "lines": 99,
     "statements": 99,
     "functions": 100,
