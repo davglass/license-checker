@@ -502,6 +502,28 @@ describe('main tests', function() {
         });
     });
 
+    describe('handle copytight statement', function(){
+
+        it('should output copyright statements when configured in custom format', function(done) {
+            checker.init({
+                start: path.join(__dirname, '../'),
+                customFormat: {
+                    copyright: '', // specify custom format
+                    email: false,
+                    licenseFile: false,
+                    licenseText: false,
+                    publisher: false
+                }
+            }, function(err, output) {
+                assert(output.hasOwnProperty('abbrev@1.0.9'), 'Check if the expected package still exists.');
+                assert.equal(output['abbrev@1.0.9'].copyright, 'Copyright (c) Isaac Z. Schlueter and Contributors');
+                done();
+            });
+
+        });
+
+    });
+
     describe('should only list UNKNOWN or guessed licenses successful', function() {
         var output;
         before(function(done) {
