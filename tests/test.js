@@ -195,6 +195,22 @@ describe('main tests', function() {
         });
     });
 
+    describe('should not exclude Custom if not specified in excludes', function() {
+        var result={};
+        before(parseAndExclude('./fixtures/custom-license-file',  "MIT", result));
+
+
+        it('should exclude Public Domain', function() {
+            var excluded = true;
+            var output = result.output;
+            Object.keys(output).forEach(function(item) {
+                if (output[item].licenses && output[item].licenses === "Custom: MY-LICENSE.md")
+                    excluded = false;
+            });
+            assert.ok(!excluded);
+        });
+    });
+
     function parseAndFailOn(key, parsePath, licenses, result) {
         return function(done) {
             var exitCode = 0;
