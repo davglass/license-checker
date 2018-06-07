@@ -1,6 +1,13 @@
 ## Change Log
 
-### v20.0.0 (2018/05/17 14:10 +00:00)
+### v20.1.0 (2018/06/07 14:33 +00:00)
+- [#165](https://github.com/davglass/license-checker/pull/165) Merge pull request #165 from santiagocanti/fix-exclude-not-adding-custom-licenses (@santiagocanti)
+- [89e48a9](https://github.com/davglass/license-checker/commit/89e48a9d3d0c9f2e48bfcee0dc3563ce4b652e22) Fix exclude not including custom licenses (@santiagocanti)
+
+### v20.0.0 (2018/05/17 14:14 +00:00)
+- [0e89310](https://github.com/davglass/license-checker/commit/0e8931021df777cb401d9a332fa2a8c9a2c49eb2) 20.0.0 (@davglass)
+- [c36a5c9](https://github.com/davglass/license-checker/commit/c36a5c99bb4f68816e4e19cad5090ba3c7ba67a4) changes (@davglass)
+- [ccb66f3](https://github.com/davglass/license-checker/commit/ccb66f3410a4589e6f2b7cf1c3aefb1446bab460) contributors (@davglass)
 - [#156](https://github.com/davglass/license-checker/pull/156) Merge pull request #156 from zodiac403/z4/copyright (@zodiac403)
 - [56414b4](https://github.com/davglass/license-checker/commit/56414b4a67cbb25bcc8eb8cc05b0ac712b677dc2) Add unit test for Copyright statement. (@zodiac403)
 - [3eafe24](https://github.com/davglass/license-checker/commit/3eafe249ad662af727a9b7472f7ad6c1b9a73ade) fixing test coverage with switch to nyc from istanbul (@davglass)
