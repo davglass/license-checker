@@ -83,6 +83,7 @@ Options
 * `--summary` output a summary of the license usage',
 * `--failOn [list]` fail (exit with code 1) on the first occurrence of the licenses of the semicolon-separated list
 * `--onlyAllow [list]` fail (exit with code 1) on the first occurrence of the licenses not in the semicolon-seperated list
+* `--packages [list]` restrict output to the packages (package@version) in the semicolon-seperated list
 
 Exclusions
 ----------
@@ -102,6 +103,7 @@ license-checker --csv --out /path/to/licenses.csv
 license-checker --unknown
 license-checker --customPath customFormatExample.json
 license-checker --exclude 'MIT, MIT OR X11, BSD, ISC'
+license-checker --packages 'react@16.3.0;react-dom@16.3.0;lodash@4.3.1'
 license-checker --onlyunknown
 ```
 
