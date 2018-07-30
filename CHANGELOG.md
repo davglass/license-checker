@@ -1,6 +1,14 @@
 ## Change Log
 
+### v20.2.0 (2018/07/30 13:51 +00:00)
+- [#169](https://github.com/davglass/license-checker/pull/169) Merge pull request #169 from codepunkt/restrict_packages (@codepunkt)
+- [5e4b274](https://github.com/davglass/license-checker/commit/5e4b274e955485fb2aba37e65fec913b8042f38d) refactor: restore previous code style (@codepunkt)
+- [ed25d68](https://github.com/davglass/license-checker/commit/ed25d6829602793e13233d3da2d97b92ee2044c6) test: add test for --packages flag (@codepunkt)
+- [0f53922](https://github.com/davglass/license-checker/commit/0f53922088be0b0dfd4f8db7ea884b53d0137e45) feat: allow restricting output to specified packages (@codepunkt)
+- [5f63f87](https://github.com/davglass/license-checker/commit/5f63f8766a17e589b57db99bda4eb54d91b85b77) changes and contrib (@davglass)
+
 ### v20.1.0 (2018/06/07 14:33 +00:00)
+- [970882a](https://github.com/davglass/license-checker/commit/970882a09b345c7f32496431e5ca4c069ad7e320) 20.1.0 (@davglass)
 - [#165](https://github.com/davglass/license-checker/pull/165) Merge pull request #165 from santiagocanti/fix-exclude-not-adding-custom-licenses (@santiagocanti)
 - [89e48a9](https://github.com/davglass/license-checker/commit/89e48a9d3d0c9f2e48bfcee0dc3563ce4b652e22) Fix exclude not including custom licenses (@santiagocanti)
 
@@ -57,9 +65,9 @@
 - [#144](https://github.com/davglass/license-checker/pull/144) Merge pull request #144 from creising/parser-fixes (@creising)
 - [d2ab8df](https://github.com/davglass/license-checker/commit/d2ab8df30bc3e6b38b321a1e12a70cf477a69eb0) added support for lic with commas and spaces (@creising)
 - [2075208](https://github.com/davglass/license-checker/commit/20752083c6029823fb389a30a1ed4d7d90fa9297) contrib and changelog (@davglass)
+- [6c5274c](https://github.com/davglass/license-checker/commit/6c5274c6064d318844cf36185dea395e0893ff08) [fixes #132] - Fixed issue with asFiles and path issues (@davglass)
 - [a46c448](https://github.com/davglass/license-checker/commit/a46c4483f872c3db9498a65b7ae3dc6d8164de0a) 16.0.0 (@davglass)
 - [38d63e2](https://github.com/davglass/license-checker/commit/38d63e2c2c3fd6c11012fb69b1470b2ba06d5554) [fixes #128] - Added --onlyAllow option (@davglass)
-- [6c5274c](https://github.com/davglass/license-checker/commit/6c5274c6064d318844cf36185dea395e0893ff08) [fixes #132] - Fixed issue with asFiles and path issues (@davglass)
 
 ### v16.0.0 (2018/01/18 15:02 +00:00)
 - [#131](https://github.com/davglass/license-checker/pull/131) Merge pull request #131 from mischah/patch-1 (@mischah)
@@ -177,7 +185,7 @@
 - [#89](https://github.com/davglass/license-checker/pull/89) Merge pull request #89 from Pawamoy/master (@Pawamoy)
 - [#90](https://github.com/davglass/license-checker/pull/90) Merge pull request #90 from drewfish/bsd-source-code (@drewfish)
 - [b704bc1](https://github.com/davglass/license-checker/commit/b704bc18a43de246302b8ff6933f8fe5f96ee3a6) guess BSD-Source-Code license (@drewfish)
-- [8d31eab](https://github.com/davglass/license-checker/commit/8d31eabfb671d32e6f3e63215d6530d7fb4acc59) Add docs about customFormat option (@Pawamoy)
+- [8d31eab](https://github.com/davglass/license-checker/commit/8d31eabfb671d32e6f3e63215d6530d7fb4acc59) Add docs about customFormat option (@pawamoy)
 - [2529d31](https://github.com/davglass/license-checker/commit/2529d3118dfae53f1e01056ec99f5c542cb8d63e) changes (@davglass)
 
 ### v8.0.3 (2016/11/10 17:04 +00:00)
