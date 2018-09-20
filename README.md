@@ -140,11 +140,12 @@ var checker = require('license-checker');
 
 checker.init({
     start: '/path/to/start/looking'
-}, function(err, json) {
+}, function(err, packages) {
     if (err) {
         //Handle error
     } else {
-        //The sorted json data
+        //The sorted package data
+        //as an Object
     }
 });
 ```
