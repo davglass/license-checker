@@ -1,6 +1,13 @@
 ## Change Log
 
-### v20.2.0 (2018/07/30 13:51 +00:00)
+### v21.0.0 (2018/10/06 13:26 +00:00)
+- [d75fe43](https://github.com/davglass/license-checker/commit/d75fe43d61a9d5b6696d71a663e25a53fd3d44f7) 21.0.0 (@davglass)
+- [05cb221](https://github.com/davglass/license-checker/commit/05cb221359de4ffe1039f586cd9e8fb7cb9d6398) [Fixes #174] - Moved private and unknown detection above filtering (@davglass)
+- [231bd3f](https://github.com/davglass/license-checker/commit/231bd3f2412507be1d702ad100b23c1b1fe93602) updated readme (@davglass)
+- [6c61a7b](https://github.com/davglass/license-checker/commit/6c61a7bd102466c702065d42706392c11717cc1d) changelog (@davglass)
+
+### v20.2.0 (2018/07/30 13:49 +00:00)
+- [28dc521](https://github.com/davglass/license-checker/commit/28dc5218dec3340778bd801593275ad1b222e53f) 20.2.0 (@davglass)
 - [#169](https://github.com/davglass/license-checker/pull/169) Merge pull request #169 from codepunkt/restrict_packages (@codepunkt)
 - [5e4b274](https://github.com/davglass/license-checker/commit/5e4b274e955485fb2aba37e65fec913b8042f38d) refactor: restore previous code style (@codepunkt)
 - [ed25d68](https://github.com/davglass/license-checker/commit/ed25d6829602793e13233d3da2d97b92ee2044c6) test: add test for --packages flag (@codepunkt)
@@ -65,9 +72,9 @@
 - [#144](https://github.com/davglass/license-checker/pull/144) Merge pull request #144 from creising/parser-fixes (@creising)
 - [d2ab8df](https://github.com/davglass/license-checker/commit/d2ab8df30bc3e6b38b321a1e12a70cf477a69eb0) added support for lic with commas and spaces (@creising)
 - [2075208](https://github.com/davglass/license-checker/commit/20752083c6029823fb389a30a1ed4d7d90fa9297) contrib and changelog (@davglass)
-- [6c5274c](https://github.com/davglass/license-checker/commit/6c5274c6064d318844cf36185dea395e0893ff08) [fixes #132] - Fixed issue with asFiles and path issues (@davglass)
-- [a46c448](https://github.com/davglass/license-checker/commit/a46c4483f872c3db9498a65b7ae3dc6d8164de0a) 16.0.0 (@davglass)
 - [38d63e2](https://github.com/davglass/license-checker/commit/38d63e2c2c3fd6c11012fb69b1470b2ba06d5554) [fixes #128] - Added --onlyAllow option (@davglass)
+- [a46c448](https://github.com/davglass/license-checker/commit/a46c4483f872c3db9498a65b7ae3dc6d8164de0a) 16.0.0 (@davglass)
+- [6c5274c](https://github.com/davglass/license-checker/commit/6c5274c6064d318844cf36185dea395e0893ff08) [fixes #132] - Fixed issue with asFiles and path issues (@davglass)
 
 ### v16.0.0 (2018/01/18 15:02 +00:00)
 - [#131](https://github.com/davglass/license-checker/pull/131) Merge pull request #131 from mischah/patch-1 (@mischah)
@@ -410,7 +417,7 @@
 
 ### v0.0.10 (2014/08/12 12:48 +00:00)
 - [807507d](https://github.com/davglass/license-checker/commit/807507df1a293bc0360adffd725a9f911331ff2b) 0.0.10 (@davglass)
-- [e39ad9b](https://github.com/davglass/license-checker/commit/e39ad9bce6bcd545772c241e2e7aba8f40d5bbbb) Added checking that the license file is a normal file, because otherwise an appropriately named directory crashes the license-checker through EISDIR, illegal operation on a directory. (@keskival)
+- [e39ad9b](https://github.com/davglass/license-checker/commit/e39ad9bce6bcd545772c241e2e7aba8f40d5bbbb) Added checking that the license file is a normal file, because otherwise an appropriately named directory crashes the license-checker through EISDIR, illegal operation on a directory.
 - [40ca4da](https://github.com/davglass/license-checker/commit/40ca4dadbc163ca774c87b1de249bd295952faa9) colorize (@couchand)
 
 ### v0.0.9 (2014/07/29 01:48 +00:00)
