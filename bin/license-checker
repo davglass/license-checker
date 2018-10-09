@@ -13,11 +13,6 @@ var mkdirp = require('mkdirp');
 var path = require('path');
 var chalk = require('chalk');
 var fs = require('fs');
-var stripColor = require('strip-ansi');
-
-if (!args.color && (args.json || args.csv || args.out)) {
-    args.color = false;
-}
 
 if (args.help) {
     console.error('license-checker@' + require('../package.json').version);
@@ -72,6 +67,17 @@ checker.init(args, function(err, json) {
         console.error('Found error');
         console.error(err);
     }
+
+    if (shouldColorizeOutput(args)) {
+        var keys = Object.keys(json);
+        keys.forEach(function(key) {
+            var keyParts = key.split('@');
+            var colorizedKey = chalk.blue(keyParts[0]) + chalk.dim('@') + chalk.green(keyParts[1]);
+            json[colorizedKey] = json[key];
+            delete json[key];
+        });
+    }
+
     if (args.json) {
         formattedOutput = JSON.stringify(json, null, 2) + '\n';
     } else if (args.csv) {
@@ -89,10 +95,12 @@ checker.init(args, function(err, json) {
     } else if (args.out) {
         var dir = path.dirname(args.out);
         mkdirp.sync(dir);
-        //Remove the color tags
-        formattedOutput = stripColor(formattedOutput);
         fs.writeFileSync(args.out, formattedOutput, 'utf8');
     } else {
         console.log(formattedOutput);
     }
 });
+
+function shouldColorizeOutput(args) {
+    return args.color && !args.out && !(args.csv || args.json || args.markdown);
+}
