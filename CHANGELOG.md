@@ -1,5 +1,12 @@
 ## Change Log
 
+### v24.0.0 (2018/10/09 21:12 +00:00)
+- [84d64a2](https://github.com/davglass/license-checker/commit/84d64a28fa971c3bfb20b9e9de27cafbe6e8481b) 24.0.0 (@davglass)
+- [#180](https://github.com/davglass/license-checker/pull/180) Feature: Exclude Private Packages (#180) (@jonny-improbable)
+- [#179](https://github.com/davglass/license-checker/pull/179) Merge pull request #179 from jonny-improbable/fix/fix-strict-checks (@jonny-improbable)
+- [179077d](https://github.com/davglass/license-checker/commit/179077d079acbcd0183aa6691cfe5c2ec0f93f07) Fixes 176, Packages are not ignored when using --onlyAllow and --excludePackages.
+- [890ca17](https://github.com/davglass/license-checker/commit/890ca17d179bc43a6cb7cff962d69d1521dc9ac2) changelog (@davglass)
+
 ### v23.0.0 (2018/10/09 14:37 +00:00)
 - [f243287](https://github.com/davglass/license-checker/commit/f243287fbce6da33838a226ddfe8c412535390d4) 23.0.0 (@davglass)
 - [#178](https://github.com/davglass/license-checker/pull/178) Merge pull request #178 from jonny-improbable/fix/filtering (@jonny-improbable)
@@ -86,9 +93,9 @@
 - [#144](https://github.com/davglass/license-checker/pull/144) Merge pull request #144 from creising/parser-fixes (@creising)
 - [d2ab8df](https://github.com/davglass/license-checker/commit/d2ab8df30bc3e6b38b321a1e12a70cf477a69eb0) added support for lic with commas and spaces (@creising)
 - [2075208](https://github.com/davglass/license-checker/commit/20752083c6029823fb389a30a1ed4d7d90fa9297) contrib and changelog (@davglass)
-- [a46c448](https://github.com/davglass/license-checker/commit/a46c4483f872c3db9498a65b7ae3dc6d8164de0a) 16.0.0 (@davglass)
 - [38d63e2](https://github.com/davglass/license-checker/commit/38d63e2c2c3fd6c11012fb69b1470b2ba06d5554) [fixes #128] - Added --onlyAllow option (@davglass)
 - [6c5274c](https://github.com/davglass/license-checker/commit/6c5274c6064d318844cf36185dea395e0893ff08) [fixes #132] - Fixed issue with asFiles and path issues (@davglass)
+- [a46c448](https://github.com/davglass/license-checker/commit/a46c4483f872c3db9498a65b7ae3dc6d8164de0a) 16.0.0 (@davglass)
 
 ### v16.0.0 (2018/01/18 15:02 +00:00)
 - [#131](https://github.com/davglass/license-checker/pull/131) Merge pull request #131 from mischah/patch-1 (@mischah)
