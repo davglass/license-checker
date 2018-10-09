@@ -29,8 +29,17 @@ describe('bin/license-checker', function() {
         });
         
         var packages = Object.keys(JSON.parse(output.stdout.toString()));
-        excludedPackages.forEach(package => {
-            assert.ok(!packages.includes(package));
+        excludedPackages.forEach(function(pkg) {
+            assert.ok(!packages.includes(pkg));
         });
+    });
+
+    it('should exclude private packages from the output', function() {
+        var output = spawn('node', [path.join(__dirname, '../bin/license-checker'), '--json', '--excludePrivatePackages'], {
+            cwd: path.join(__dirname, 'fixtures', 'privateModule'),
+        });
+
+        var packages = Object.keys(JSON.parse(output.stdout.toString()));
+        assert.equal(packages.length, 0);
     });
 });
