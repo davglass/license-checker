@@ -1,5 +1,10 @@
 ## Change Log
 
+### v24.0.1 (2018/10/11 16:40 +00:00)
+- [d72eae8](https://github.com/davglass/license-checker/commit/d72eae8bcb80d8582e6d12c5e2664e9c19135709) 24.0.1 (@davglass)
+- [9433e64](https://github.com/davglass/license-checker/commit/9433e640ea9f629aad5f00c224a9f61026b8116d) [Fixes #181] - Removed extra line break with --cvs (@davglass)
+- [65baa28](https://github.com/davglass/license-checker/commit/65baa28f532f87ebb75a32578c7ac5837806d12f) contrib and changes (@davglass)
+
 ### v24.0.0 (2018/10/09 21:12 +00:00)
 - [84d64a2](https://github.com/davglass/license-checker/commit/84d64a28fa971c3bfb20b9e9de27cafbe6e8481b) 24.0.0 (@davglass)
 - [#180](https://github.com/davglass/license-checker/pull/180) Feature: Exclude Private Packages (#180) (@jonny-improbable)
