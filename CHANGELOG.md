@@ -1,6 +1,8 @@
 ## Change Log
 
-### upcoming (2018/12/14 20:54 +00:00)
+### v24.1.0 (2018/12/14 20:54 +00:00)
+- [18ab8a1](https://github.com/davglass/license-checker/commit/18ab8a1eb478d1354429ca4318c1df3de3e4cbb1) 24.1.0 (@davglass)
+- [1dca0f6](https://github.com/davglass/license-checker/commit/1dca0f616aebdef2d398c130a2a4f86c2b4e88c8) Changelog (@davglass)
 - [#188](https://github.com/davglass/license-checker/pull/188) Fix for #153: remove deprecated package 'spdx' (#188) (@rogierschouten)
 - [98c4dc6](https://github.com/davglass/license-checker/commit/98c4dc670fdebb6e58b62b38ebcb12302e5b1db5) changes (@davglass)
 
@@ -304,8 +306,8 @@
 - [997914f](https://github.com/davglass/license-checker/commit/997914fd6f94030452d4d9bf549eb156ae8ef7c0) fix git+https URLs (@graingert)
 - [#57](https://github.com/davglass/license-checker/pull/57) Merge pull request #57 from Damien-Larmine/doc-license-asterisk (@Damien-Larmine)
 - [2adff2d](https://github.com/davglass/license-checker/commit/2adff2da98a5af79479a162e4998eb5892ab31c3) Explicit the asterisk in license report (@Damien-Larmine)
-- [b2fc9cf](https://github.com/davglass/license-checker/commit/b2fc9cf2a8eaa008c7593037d046f245a7ce7f25) 5.0.0 (@davglass)
 - [7f71c53](https://github.com/davglass/license-checker/commit/7f71c53833cf1318ffe84215fcb1291f9ce4fbd5) updated contributors (@davglass)
+- [b2fc9cf](https://github.com/davglass/license-checker/commit/b2fc9cf2a8eaa008c7593037d046f245a7ce7f25) 5.0.0 (@davglass)
 
 ### v5.0.0 (2016/01/22 15:31 +00:00)
 - [#55](https://github.com/davglass/license-checker/pull/55) Merge pull request #55 from davglass/devflag (@davglass)
