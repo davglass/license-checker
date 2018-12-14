@@ -1,5 +1,9 @@
 ## Change Log
 
+### upcoming (2018/12/14 20:54 +00:00)
+- [#188](https://github.com/davglass/license-checker/pull/188) Fix for #153: remove deprecated package 'spdx' (#188) (@rogierschouten)
+- [98c4dc6](https://github.com/davglass/license-checker/commit/98c4dc670fdebb6e58b62b38ebcb12302e5b1db5) changes (@davglass)
+
 ### v24.0.1 (2018/10/11 16:40 +00:00)
 - [d72eae8](https://github.com/davglass/license-checker/commit/d72eae8bcb80d8582e6d12c5e2664e9c19135709) 24.0.1 (@davglass)
 - [9433e64](https://github.com/davglass/license-checker/commit/9433e640ea9f629aad5f00c224a9f61026b8116d) [Fixes #181] - Removed extra line break with --cvs (@davglass)
@@ -7,17 +11,17 @@
 
 ### v24.0.0 (2018/10/09 21:12 +00:00)
 - [84d64a2](https://github.com/davglass/license-checker/commit/84d64a28fa971c3bfb20b9e9de27cafbe6e8481b) 24.0.0 (@davglass)
-- [#180](https://github.com/davglass/license-checker/pull/180) Feature: Exclude Private Packages (#180) (@jonny-improbable)
+- [#180](https://github.com/davglass/license-checker/pull/180) Feature: Exclude Private Packages (#180) (Jonny Reeves)
 - [#179](https://github.com/davglass/license-checker/pull/179) Merge pull request #179 from jonny-improbable/fix/fix-strict-checks (@jonny-improbable)
-- [179077d](https://github.com/davglass/license-checker/commit/179077d079acbcd0183aa6691cfe5c2ec0f93f07) Fixes 176, Packages are not ignored when using --onlyAllow and --excludePackages.
+- [179077d](https://github.com/davglass/license-checker/commit/179077d079acbcd0183aa6691cfe5c2ec0f93f07) Fixes 176, Packages are not ignored when using --onlyAllow and --excludePackages. (@jonny-improbable)
 - [890ca17](https://github.com/davglass/license-checker/commit/890ca17d179bc43a6cb7cff962d69d1521dc9ac2) changelog (@davglass)
 
 ### v23.0.0 (2018/10/09 14:37 +00:00)
 - [f243287](https://github.com/davglass/license-checker/commit/f243287fbce6da33838a226ddfe8c412535390d4) 23.0.0 (@davglass)
 - [#178](https://github.com/davglass/license-checker/pull/178) Merge pull request #178 from jonny-improbable/fix/filtering (@jonny-improbable)
 - [#175](https://github.com/davglass/license-checker/pull/175) Merge pull request #175 from jonny-improbable/patch-1 (@jonny-improbable)
-- [f2c6611](https://github.com/davglass/license-checker/commit/f2c6611d6c68e50b2b6f56260026837e7167f44a) Fixes #177, --packages and --excludePackages filtering
-- [0a598df](https://github.com/davglass/license-checker/commit/0a598df55c3ec33803ef33be07cc47a910eee961) Improve --onlyAllow violation Error (@jonny-improbable)
+- [f2c6611](https://github.com/davglass/license-checker/commit/f2c6611d6c68e50b2b6f56260026837e7167f44a) Fixes #177, --packages and --excludePackages filtering (@jonny-improbable)
+- [0a598df](https://github.com/davglass/license-checker/commit/0a598df55c3ec33803ef33be07cc47a910eee961) Improve --onlyAllow violation Error
 - [ee723af](https://github.com/davglass/license-checker/commit/ee723af79889a4d98ed067494a58f6aa41a44ac7) changes (@davglass)
 
 ### v22.0.0 (2018/10/08 19:00 +00:00)
@@ -98,9 +102,9 @@
 - [#144](https://github.com/davglass/license-checker/pull/144) Merge pull request #144 from creising/parser-fixes (@creising)
 - [d2ab8df](https://github.com/davglass/license-checker/commit/d2ab8df30bc3e6b38b321a1e12a70cf477a69eb0) added support for lic with commas and spaces (@creising)
 - [2075208](https://github.com/davglass/license-checker/commit/20752083c6029823fb389a30a1ed4d7d90fa9297) contrib and changelog (@davglass)
+- [a46c448](https://github.com/davglass/license-checker/commit/a46c4483f872c3db9498a65b7ae3dc6d8164de0a) 16.0.0 (@davglass)
 - [38d63e2](https://github.com/davglass/license-checker/commit/38d63e2c2c3fd6c11012fb69b1470b2ba06d5554) [fixes #128] - Added --onlyAllow option (@davglass)
 - [6c5274c](https://github.com/davglass/license-checker/commit/6c5274c6064d318844cf36185dea395e0893ff08) [fixes #132] - Fixed issue with asFiles and path issues (@davglass)
-- [a46c448](https://github.com/davglass/license-checker/commit/a46c4483f872c3db9498a65b7ae3dc6d8164de0a) 16.0.0 (@davglass)
 
 ### v16.0.0 (2018/01/18 15:02 +00:00)
 - [#131](https://github.com/davglass/license-checker/pull/131) Merge pull request #131 from mischah/patch-1 (@mischah)
