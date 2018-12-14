@@ -35,6 +35,7 @@
     "Paul Mandel <paul.mand3l@gmail.com>",
     "Peter Uithoven <peter@peteruithoven.nl>",
     "Philipp Tusch <philipp.tusch@huf-group.com>",
+    "Rogier Schouten <github@workingcode.ninja>",
     "Stan Senotrusov <stan@senotrusov.com>",
     "Stoyan Revov <st.revov@gmail.com>",
     "Tero Keski-Valkama <tero.keski-valkama@cybercom.com>",
@@ -61,8 +62,8 @@
     "nopt": "^4.0.1",
     "read-installed": "~4.0.3",
     "semver": "^5.5.0",
-    "spdx": "^0.5.1",
     "spdx-correct": "^3.0.0",
+    "spdx-expression-parse": "^3.0.0",
     "spdx-satisfies": "^4.0.0",
     "treeify": "^1.1.0"
   },
