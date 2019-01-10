@@ -1,5 +1,10 @@
 ## Change Log
 
+### v25.0.1 (2019/01/10 19:29 +00:00)
+- [f1c835b](https://github.com/davglass/license-checker/commit/f1c835b991b65dc928eafe64c29b73df9e703169) Updated readme with new args (@davglass)
+- [ada667f](https://github.com/davglass/license-checker/commit/ada667f28e8ef4e96b5b6059fe05541d05ca936c) changelog (@davglass)
+- [7813f0d](https://github.com/davglass/license-checker/commit/7813f0db3b51f7cc4cd37d8e7b4670f9005fed06) contrib (@davglass)
+
 ### v25.0.0 (2019/01/10 15:09 +00:00)
 - [cdb77d9](https://github.com/davglass/license-checker/commit/cdb77d9a2b36cd87503f32265a0ee388b25c24ae) 25.0.0 (@davglass)
 - [b897345](https://github.com/davglass/license-checker/commit/b89734549bc05fb5e143083fdf6d3959d87eb2b8) [Fixes #136] Document --start option and add the depth option for looking into root dependencies or infinitely (@davglass)
@@ -113,9 +118,9 @@
 - [#144](https://github.com/davglass/license-checker/pull/144) Merge pull request #144 from creising/parser-fixes (@creising)
 - [d2ab8df](https://github.com/davglass/license-checker/commit/d2ab8df30bc3e6b38b321a1e12a70cf477a69eb0) added support for lic with commas and spaces (@creising)
 - [2075208](https://github.com/davglass/license-checker/commit/20752083c6029823fb389a30a1ed4d7d90fa9297) contrib and changelog (@davglass)
-- [38d63e2](https://github.com/davglass/license-checker/commit/38d63e2c2c3fd6c11012fb69b1470b2ba06d5554) [fixes #128] - Added --onlyAllow option (@davglass)
 - [6c5274c](https://github.com/davglass/license-checker/commit/6c5274c6064d318844cf36185dea395e0893ff08) [fixes #132] - Fixed issue with asFiles and path issues (@davglass)
 - [a46c448](https://github.com/davglass/license-checker/commit/a46c4483f872c3db9498a65b7ae3dc6d8164de0a) 16.0.0 (@davglass)
+- [38d63e2](https://github.com/davglass/license-checker/commit/38d63e2c2c3fd6c11012fb69b1470b2ba06d5554) [fixes #128] - Added --onlyAllow option (@davglass)
 
 ### v16.0.0 (2018/01/18 15:02 +00:00)
 - [#131](https://github.com/davglass/license-checker/pull/131) Merge pull request #131 from mischah/patch-1 (@mischah)
@@ -315,8 +320,8 @@
 - [997914f](https://github.com/davglass/license-checker/commit/997914fd6f94030452d4d9bf549eb156ae8ef7c0) fix git+https URLs (@graingert)
 - [#57](https://github.com/davglass/license-checker/pull/57) Merge pull request #57 from Damien-Larmine/doc-license-asterisk (@Damien-Larmine)
 - [2adff2d](https://github.com/davglass/license-checker/commit/2adff2da98a5af79479a162e4998eb5892ab31c3) Explicit the asterisk in license report (@Damien-Larmine)
-- [7f71c53](https://github.com/davglass/license-checker/commit/7f71c53833cf1318ffe84215fcb1291f9ce4fbd5) updated contributors (@davglass)
 - [b2fc9cf](https://github.com/davglass/license-checker/commit/b2fc9cf2a8eaa008c7593037d046f245a7ce7f25) 5.0.0 (@davglass)
+- [7f71c53](https://github.com/davglass/license-checker/commit/7f71c53833cf1318ffe84215fcb1291f9ce4fbd5) updated contributors (@davglass)
 
 ### v5.0.0 (2016/01/22 15:31 +00:00)
 - [#55](https://github.com/davglass/license-checker/pull/55) Merge pull request #55 from davglass/devflag (@davglass)
