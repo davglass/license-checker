@@ -23,6 +23,7 @@ if (args.help) {
         '   --unknown report guessed licenses as unknown licenses.',
         '   --onlyunknown only list packages with unknown or guessed licenses.',
         '   --json output in json format.',
+        '   --base64 additional flag for json format.',
         '   --csv output in csv format.',
         '   --csvComponentPrefix column prefix for components in csv file',
         '   --out [filepath] write the data to a specific file.',
@@ -80,7 +81,7 @@ checker.init(args, function(err, json) {
     }
 
     if (args.json) {
-        formattedOutput = JSON.stringify(json, null, 2) + '\n';
+        formattedOutput = checker.asJson(json, args.customFormat, args.base64) + '\n';
     } else if (args.csv) {
         formattedOutput = checker.asCSV(json, args.customFormat, args.csvComponentPrefix);
     } else if (args.markdown){
