@@ -1,9 +1,18 @@
 ## Change Log
 
+### v25.0.0 (2019/01/10 15:09 +00:00)
+- [cdb77d9](https://github.com/davglass/license-checker/commit/cdb77d9a2b36cd87503f32265a0ee388b25c24ae) 25.0.0 (@davglass)
+- [b897345](https://github.com/davglass/license-checker/commit/b89734549bc05fb5e143083fdf6d3959d87eb2b8) [Fixes #136] Document --start option and add the depth option for looking into root dependencies or infinitely (@davglass)
+- [#185](https://github.com/davglass/license-checker/pull/185) Merge pull request #185 from theboolean/fix/exclude-packages-and-private (@theboolean)
+- [#184](https://github.com/davglass/license-checker/pull/184) Merge pull request #184 from theboolean/docs/fix-typo (@theboolean)
+- [987a60f](https://github.com/davglass/license-checker/commit/987a60fbb58052cf36d5a80e6252e81136bb1dd8) changes 24.1.0 (@davglass)
+
 ### v24.1.0 (2018/12/14 20:54 +00:00)
 - [18ab8a1](https://github.com/davglass/license-checker/commit/18ab8a1eb478d1354429ca4318c1df3de3e4cbb1) 24.1.0 (@davglass)
 - [1dca0f6](https://github.com/davglass/license-checker/commit/1dca0f616aebdef2d398c130a2a4f86c2b4e88c8) Changelog (@davglass)
 - [#188](https://github.com/davglass/license-checker/pull/188) Fix for #153: remove deprecated package 'spdx' (#188) (@rogierschouten)
+- [d1d34b1](https://github.com/davglass/license-checker/commit/d1d34b1a8894987807419c093c3ec10b4f06db3d) Fix typo in package.json description (@theboolean)
+- [f5c9008](https://github.com/davglass/license-checker/commit/f5c9008a6d20b503e21c0d8130e52be526a5bfe8) Fix: Allow excluding packages and private packages together (@theboolean)
 - [98c4dc6](https://github.com/davglass/license-checker/commit/98c4dc670fdebb6e58b62b38ebcb12302e5b1db5) changes (@davglass)
 
 ### v24.0.1 (2018/10/11 16:40 +00:00)
@@ -104,9 +113,9 @@
 - [#144](https://github.com/davglass/license-checker/pull/144) Merge pull request #144 from creising/parser-fixes (@creising)
 - [d2ab8df](https://github.com/davglass/license-checker/commit/d2ab8df30bc3e6b38b321a1e12a70cf477a69eb0) added support for lic with commas and spaces (@creising)
 - [2075208](https://github.com/davglass/license-checker/commit/20752083c6029823fb389a30a1ed4d7d90fa9297) contrib and changelog (@davglass)
-- [a46c448](https://github.com/davglass/license-checker/commit/a46c4483f872c3db9498a65b7ae3dc6d8164de0a) 16.0.0 (@davglass)
 - [38d63e2](https://github.com/davglass/license-checker/commit/38d63e2c2c3fd6c11012fb69b1470b2ba06d5554) [fixes #128] - Added --onlyAllow option (@davglass)
 - [6c5274c](https://github.com/davglass/license-checker/commit/6c5274c6064d318844cf36185dea395e0893ff08) [fixes #132] - Fixed issue with asFiles and path issues (@davglass)
+- [a46c448](https://github.com/davglass/license-checker/commit/a46c4483f872c3db9498a65b7ae3dc6d8164de0a) 16.0.0 (@davglass)
 
 ### v16.0.0 (2018/01/18 15:02 +00:00)
 - [#131](https://github.com/davglass/license-checker/pull/131) Merge pull request #131 from mischah/patch-1 (@mischah)
