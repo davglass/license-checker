@@ -71,6 +71,7 @@ Options
 
 * `--production` only show production dependencies.
 * `--development` only show development dependencies.
+* `--start [path of the initial json to look for]`
 * `--unknown` report guessed licenses as unknown licenses.
 * `--onlyunknown` only list packages with unknown or guessed licenses.
 * `--json` output in json format.
@@ -86,6 +87,7 @@ Options
 * `--packages [list]` restrict output to the packages (package@version) in the semicolon-seperated list
 * `--excludePackages [list]` restrict output to the packages (package@version) not in the semicolon-seperated list
 * `--excludePrivatePackages` restrict output to not include any package marked as private
+* `--direct look for direct dependencies only`
 
 Exclusions
 ----------
