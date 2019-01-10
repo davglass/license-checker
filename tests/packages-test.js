@@ -8,7 +8,7 @@ describe('bin/license-checker', function() {
     it('should restrict the output to the provided packages', function() {
         var restrictedPackages = [
             'readable-stream@1.1.14',
-            'spdx-satisfies@4.0.0',
+            //'spdx-satisfies@4.0.0',
             'y18n@3.2.1',
         ];
         var output = spawn('node', [path.join(__dirname, '../bin/license-checker'), '--json', '--packages', restrictedPackages.join(';')], {

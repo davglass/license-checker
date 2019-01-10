@@ -19,6 +19,7 @@ describe('main tests', function() {
     describe('should parse local with unknown', function() {
         var output;
         before(function(done) {
+            this.timeout(5000);
             checker.init({
                 start: path.join(__dirname, '../')
             }, function(err, sorted) {
@@ -397,6 +398,18 @@ describe('main tests', function() {
         it('should handle color undefined', function() {
             var result = args.defaults({ color: undefined, start: path.resolve(path.join(__dirname, '../')) });
             assert.equal(result.color, chalk.supportsColor);
+            assert.equal(result.start, path.resolve(path.join(__dirname, '../')));
+        });
+
+        it('should handle direct undefined', function() {
+            var result = args.defaults({ direct: undefined, start: path.resolve(path.join(__dirname, '../')) });
+            assert.equal(result.direct, Infinity);
+            assert.equal(result.start, path.resolve(path.join(__dirname, '../')));
+        });
+
+        it('should handle direct true', function() {
+            var result = args.defaults({ direct: true, start: path.resolve(path.join(__dirname, '../')) });
+            assert.equal(result.direct, 0);
             assert.equal(result.start, path.resolve(path.join(__dirname, '../')));
         });
 
