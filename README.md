@@ -76,6 +76,7 @@ Options
 * `--onlyunknown` only list packages with unknown or guessed licenses.
 * `--json` output in json format.
 * `--csv` output in csv format.
+* `--markdown` output in markdown format. 
 * `--csvComponentPrefix` prefix column for component in csv format.
 * `--out [filepath]` write the data to a specific file.
 * `--customPath` to add a custom Format file in JSON
@@ -134,7 +135,7 @@ The available items are the following:
 - licenseModified
 
 You can also give default values for each item.
-See an example in [customFormatExample.json](customFormatExample.json).
+See an example in [customFormatExample.json](customFormatExample.json). 
 
 Requiring
 ---------
