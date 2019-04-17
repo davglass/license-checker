@@ -124,7 +124,7 @@ The available items are the following:
 - name
 - version
 - description
-- repository
+- repository (use "zip" as a parameter if you want the zip package url)
 - publisher
 - email
 - url
