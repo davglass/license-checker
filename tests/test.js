@@ -475,6 +475,19 @@ describe('main tests', function() {
             });
         });
 
+        it('should return data for keys with different names in json vs custom format', function(done) {
+            checker.init({
+                start: path.join(__dirname, './fixtures/author'),
+                customFormat: {
+                    publisher: '',
+                }
+            }, function(err, filtered) {
+                assert.equal(Object.keys(filtered).length, 1);
+                assert.equal(filtered['license-checker@0.0.0'].publisher, 'Dav Glass');
+                done();
+            });
+        });
+
     });
 
     describe('should output the module location', function() {
