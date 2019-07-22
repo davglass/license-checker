@@ -27,7 +27,7 @@ if (args.help) {
         '   --csv output in csv format.',
         '   --csvComponentPrefix column prefix for components in csv file',
         '   --out [filepath] write the data to a specific file.',
-        '   --files [path] copy all license files to path and rename them to <module-name>@<version>-LICENSE.txt.'
+        '   --files [path] copy all license files to path and rename them to <module-name>@<version>-LICENSE.txt.',
         '   --customPath to add a custom Format file in JSON',
         '   --exclude [list] exclude modules which licenses are in the comma-separated list from the output',
         '   --relativeLicensePath output the location of the license files as relative paths',
@@ -106,5 +106,5 @@ checker.init(args, function(err, json) {
 });
 
 function shouldColorizeOutput(args) {
-    return args.color && !args.out && !(args.csv || args.json || args.markdown || args.files);
+    return args.color && !args.out && !args.files && !(args.csv || args.json || args.markdown);
 }
