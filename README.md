@@ -78,6 +78,7 @@ Options
 * `--csv` output in csv format.
 * `--csvComponentPrefix` prefix column for component in csv format.
 * `--out [filepath]` write the data to a specific file.
+* `--files [path]` copy all license files to path and rename them to `module-name`@`version`-LICENSE.txt.
 * `--customPath` to add a custom Format file in JSON
 * `--exclude [list]` exclude modules which licenses are in the comma-separated list from the output
 * `--relativeLicensePath` output the location of the license files as relative paths
