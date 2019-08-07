@@ -128,6 +128,10 @@ describe('license parser', function() {
         assert.equal(data, 'Public Domain');
         data = license('Public domain');
         assert.equal(data, 'Public Domain');
+        data = license('Public-Domain');
+        assert.equal(data, 'Public Domain');
+        data = license('Public_Domain');
+        assert.equal(data, 'Public Domain');
     });
 
     it('License at URL check', function() {
