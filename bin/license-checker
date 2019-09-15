@@ -74,8 +74,8 @@ checker.init(args, function(err, json) {
     if (shouldColorizeOutput(args)) {
         var keys = Object.keys(json);
         keys.forEach(function(key) {
-            var keyParts = key.split('@');
-            var colorizedKey = chalk.blue(keyParts[0]) + chalk.dim('@') + chalk.green(keyParts[1]);
+            var index = key.lastIndexOf('@');
+            var colorizedKey = chalk.blue(key.substr(0, index)) + chalk.dim('@') + chalk.green(key.substr(index + 1));
             json[colorizedKey] = json[key];
             delete json[key];
         });
