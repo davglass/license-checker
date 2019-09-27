@@ -119,7 +119,6 @@ function filterJson(outputColumns, json) {
         var columns = outputColumns.split(',').map(function(column) {
             return column.trim();
         });
-        console.log(columns);
 
         Object.keys(json).forEach(function(dependency) {
             filteredJson[dependency] = checker.filterOutput(columns, json[dependency]);
