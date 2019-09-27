@@ -79,6 +79,7 @@ Options
 * `--csvComponentPrefix` prefix column for component in csv format.
 * `--out [filepath]` write the data to a specific file.
 * `--customPath` to add a custom Format file in JSON
+* `--outputColumns [list]` to restrict columns to be outputted
 * `--exclude [list]` exclude modules which licenses are in the comma-separated list from the output
 * `--relativeLicensePath` output the location of the license files as relative paths
 * `--summary` output a summary of the license usage',
