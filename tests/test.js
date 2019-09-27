@@ -717,4 +717,35 @@ describe('main tests', function() {
     
     });
 
+    describe('output columns', function() {
+        it('should filter output based on outputColumns defined', function() {
+            var path = './tests/config/custom_format_correct.json';
+            var json = checker.parseJson(path);
+
+            var filteredJson = checker.filterOutput(['version', 'name'], json);
+
+            assert.notStrictEqual(filteredJson.version, undefined);
+            assert.notStrictEqual(filteredJson.name, undefined);
+            assert.strictEqual(filteredJson.description, undefined);
+            assert.strictEqual(filteredJson.licenses, undefined);
+            assert.strictEqual(filteredJson.licenseFile, undefined);
+            assert.strictEqual(filteredJson.licenseText, undefined);
+            assert.strictEqual(filteredJson.licenseModified, undefined);
+        });
+
+        it ('should keep json as is if no outputColumns defined', function() {
+            var path = './tests/config/custom_format_correct.json';
+            var json = checker.parseJson(path);
+
+            var filteredJson = checker.filterOutput(null, json);
+
+            assert.notStrictEqual(filteredJson.version, undefined);
+            assert.notStrictEqual(filteredJson.name, undefined);
+            assert.notStrictEqual(filteredJson.description, undefined);
+            assert.notStrictEqual(filteredJson.licenses, undefined);
+            assert.notStrictEqual(filteredJson.licenseFile, undefined);
+            assert.notStrictEqual(filteredJson.licenseText, undefined);
+            assert.notStrictEqual(filteredJson.licenseModified, undefined);
+        });
+    });
 });
