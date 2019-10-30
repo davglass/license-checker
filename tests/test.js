@@ -122,6 +122,28 @@ describe('main tests', function() {
         });
     });
 
+    function parseAndExcludeScops(parsePath, scopes, result) {
+        return function(done) {
+            checker.init({
+                start: path.join(__dirname, parsePath),
+                excludeScopes: scopes
+            }, function(err, filtered) {
+                result.output = filtered;
+                done();
+            });
+        };
+    }
+
+    describe('should parse local with excludeScopes', function() {
+        var result={};
+        before(parseAndExcludeScops('./fixtures/excludeScopes',  "@scoped;@babel", result));
+
+        it('should exclude scope from list', function() {
+            var empty =  Object.keys(result.output).length === 0;
+            assert.ok(empty);
+        });
+    });
+
     function parseAndExclude(parsePath, licenses, result) {
         return function(done) {
             checker.init({

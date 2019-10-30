@@ -37,6 +37,7 @@ if (args.help) {
         '   --packages [list] restrict output to the packages (package@version) in the semicolon-seperated list',
         '   --excludePackages [list] restrict output to the packages (package@version) not in the semicolon-seperated list',
         '   --excludePrivatePackages restrict output to not include any package marked as private',
+        '   --excludeScopes [list] excludes all packages from the semicolon-seperated list',
         '',
         '   --version The current version',
         '   --help  The text you are reading right now :)',

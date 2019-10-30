@@ -87,6 +87,7 @@ Options
 * `--packages [list]` restrict output to the packages (package@version) in the semicolon-seperated list
 * `--excludePackages [list]` restrict output to the packages (package@version) not in the semicolon-seperated list
 * `--excludePrivatePackages` restrict output to not include any package marked as private
+* `--excludeScopes [list]` excludes all packages in scopes from the semicolon-seperated list (example: "@hapi;@babel")
 * `--direct look for direct dependencies only`
 
 Exclusions
@@ -109,6 +110,7 @@ license-checker --customPath customFormatExample.json
 license-checker --exclude 'MIT, MIT OR X11, BSD, ISC'
 license-checker --packages 'react@16.3.0;react-dom@16.3.0;lodash@4.3.1'
 license-checker --excludePackages 'internal-1;internal-2'
+license-checker --excludeScopes '@babel;@hapi'
 license-checker --onlyunknown
 ```
 
