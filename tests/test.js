@@ -494,11 +494,11 @@ describe('main tests', function() {
 
         it('as relative paths when using relativeModulePath', function(done) {
             checker.init({
-                start: path.join(__dirname, '../'),
+                start: path.join(__dirname, '../node_modules'),
                 relativeModulePath: true
             }, function(err, output) {
                 Object.keys(output).map(function(key) {
-                    var expectedPath = './';
+                    var expectedPath = 'node_modules';
                     var actualPath = output[key].path.substr(0, expectedPath.length);
                     assert.equal(actualPath, expectedPath);
                 });
