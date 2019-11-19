@@ -63,7 +63,6 @@ if (args.failOn && args.onlyAllow) {
 }
 
 checker.init(args, function(err, json) {
-
     var formattedOutput = '';
 
     if (!!err) {
