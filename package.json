@@ -1,5 +1,5 @@
 {
-  "name": "license-checker",
+  "name": "license-checker-dkbcodefactory",
   "description": "Check license info for a package",
   "author": "Dav Glass <davglass@gmail.com>",
   "version": "25.0.1",
@@ -37,6 +37,7 @@
     "Peter Uithoven <peter@peteruithoven.nl>",
     "Philipp Tusch <philipp.tusch@huf-group.com>",
     "Rogier Schouten <github@workingcode.nl>",
+    "Roman Seidelsohn <roman.seidelsohn@dkbcodefactory.com>",
     "Stan Senotrusov <stan@senotrusov.com>",
     "Stoyan Revov <st.revov@gmail.com>",
     "Tero Keski-Valkama <tero.keski-valkama@cybercom.com>",
