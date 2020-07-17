@@ -81,13 +81,13 @@ Options
 * `--customPath` to add a custom Format file in JSON
 * `--exclude [list]` exclude modules which licenses are in the comma-separated list from the output
 * `--relativeLicensePath` output the location of the license files as relative paths
-* `--summary` output a summary of the license usage',
+* `--summary` output a summary of the license usage
 * `--failOn [list]` fail (exit with code 1) on the first occurrence of the licenses of the semicolon-separated list
 * `--onlyAllow [list]` fail (exit with code 1) on the first occurrence of the licenses not in the semicolon-seperated list
 * `--packages [list]` restrict output to the packages (package@version) in the semicolon-seperated list
 * `--excludePackages [list]` restrict output to the packages (package@version) not in the semicolon-seperated list
 * `--excludePrivatePackages` restrict output to not include any package marked as private
-* `--direct look for direct dependencies only`
+* `--direct` look for direct dependencies only
 
 Exclusions
 ----------
