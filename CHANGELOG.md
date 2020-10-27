@@ -1,5 +1,8 @@
 ## Change Log
 
+### v25.0.2 (2020/27/10 09:20 +00:00)
+- [5dcc73f](https://github.com/misak113/license-checker/commit/5dcc73f054182f04327c5117a5ab61e25cb6967a) Fix licenses of package when there are more than 1 file of potential license (@misak113)
+
 ### v25.0.1 (2019/01/10 19:29 +00:00)
 - [f1c835b](https://github.com/davglass/license-checker/commit/f1c835b991b65dc928eafe64c29b73df9e703169) Updated readme with new args (@davglass)
 - [ada667f](https://github.com/davglass/license-checker/commit/ada667f28e8ef4e96b5b6059fe05541d05ca936c) changelog (@davglass)
