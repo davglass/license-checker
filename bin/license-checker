@@ -52,9 +52,9 @@ if (args.version) {
   process.exit(1);
 }
 
-if (args.failOn && args.onlyAllow) {
+if ((args.failOn || args.failOnRegEx) && args.onlyAllow) {
   console.error(
-    "--failOn and --onlyAllow can not be used at the same time. Choose one or the other."
+    "--failOn and --failOnRegEx can not be used at the same time as --onlyAllow. Choose one or the other."
   );
   process.exit(1);
 } else {
