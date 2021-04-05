@@ -63,6 +63,7 @@
     "nopt": "^4.0.1",
     "read-installed": "~4.0.3",
     "semver": "^5.5.0",
+    "spdx-copyleft": "^1.0.0",
     "spdx-correct": "^3.0.0",
     "spdx-expression-parse": "^3.0.0",
     "spdx-satisfies": "^4.0.0",
