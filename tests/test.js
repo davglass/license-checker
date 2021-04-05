@@ -288,6 +288,15 @@ describe('main tests', function() {
         });
     });
 
+    describe('should exit on single failOnCopyleft license', function() {
+        var result={};
+        before(parseAndFailOn('failOnCopyleft', './fixtures/copyleftProject', true, result));
+
+        it('should exit on GPL licensed modules from results', function() {
+            assert.equal(result.exitCode, 1);
+        });
+    });
+
     describe('should parse local and handle private modules', function() {
         var output;
         before(function(done) {

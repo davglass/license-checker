@@ -83,6 +83,7 @@ Options
 * `--relativeLicensePath` output the location of the license files as relative paths
 * `--summary` output a summary of the license usage',
 * `--failOn [list]` fail (exit with code 1) on the first occurrence of the licenses of the semicolon-separated list
+* `--failOnCopyleft` fail (exit with code 1) on the first occurrence of a [license with a copyleft effect](https://github.com/jslicense/spdx-copyleft.json/blob/master/index.json)
 * `--onlyAllow [list]` fail (exit with code 1) on the first occurrence of the licenses not in the semicolon-seperated list
 * `--packages [list]` restrict output to the packages (package@version) in the semicolon-seperated list
 * `--excludePackages [list]` restrict output to the packages (package@version) not in the semicolon-seperated list
