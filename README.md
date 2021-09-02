@@ -132,6 +132,7 @@ The available items are the following:
 - licenseFile
 - licenseText
 - licenseModified
+- copyright
 
 You can also give default values for each item.
 See an example in [customFormatExample.json](customFormatExample.json).
