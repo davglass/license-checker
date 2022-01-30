@@ -128,6 +128,7 @@ The available items are the following:
 - publisher
 - email
 - url
+- copyright
 - licenses
 - licenseFile
 - licenseText
