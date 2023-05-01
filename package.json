@@ -60,7 +60,7 @@
     "chalk": "^2.4.1",
     "debug": "^4.3.4",
     "mkdirp": "^3.0.1",
-    "nopt": "^4.0.1",
+    "nopt": "^6.0.0",
     "read-installed": "~4.0.3",
     "semver": "^5.5.0",
     "spdx-correct": "^3.0.0",
@@ -107,6 +107,9 @@
   "repository": {
     "type": "git",
     "url": "http://github.com/davglass/license-checker.git"
+  },
+  "engines": {
+    "node": "^12.13.0 || >=14.15.0"
   },
   "nyc": {
     "check-coverage": true,
