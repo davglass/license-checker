@@ -11,7 +11,7 @@ Ever needed to see all the license info for a module and its dependencies?
 It's this easy:
 
 ```shell
-npm install -g license-checker
+npm install -g @metamask/license-checker
 
 mkdir foo
 cd foo

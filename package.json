@@ -1,5 +1,5 @@
 {
-  "name": "license-checker",
+  "name": "@metamask/license-checker",
   "description": "Check license info for a package",
   "author": "Dav Glass <davglass@gmail.com>",
   "version": "25.0.1",
@@ -99,12 +99,12 @@
   },
   "preferGlobal": true,
   "bugs": {
-    "url": "http://github.com/davglass/license-checker/issues"
+    "url": "https://github.com/MetaMask/license-checker/issues"
   },
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "http://github.com/davglass/license-checker.git"
+    "url": "https://github.com/MetaMask/license-checker.git"
   },
   "engines": {
     "node": "^12.13.0 || >=14.15.0"
