@@ -1,5 +1,14 @@
 ## Change Log
 
+### v26.0.0 (2023/11/13)
+- [ba6f7e](https://github.com/MetaMask/license-checker/commit/ba6f7ed0f82a28e44ca327605e84f61e4f975c71) Fork package from `license-checker` to `@metamask/license-checker`
+- [d81a0c](https://github.com/MetaMask/license-checker/commit/d81a0cd79b8df43f696385366234908731ab3e62) **BREAKING:** nopt@4.0.1->6.0.0 (Minimum Node.js version v12)
+- [38abd6](https://github.com/MetaMask/license-checker/commit/38abd61d6b4a53919ab9d00d2dbeb78348bb0856) Bump spdx-satisfies@4.0.0->5.0.1
+- [278d22](https://github.com/MetaMask/license-checker/commit/278d22faa8326ee7284e4f9fab57cbc4f8bf77ec) Bump semver@5.5.0->7.5.0
+- [6a321a](https://github.com/MetaMask/license-checker/commit/6a321a6f48e5ff791c1e1d2e1a8975358721f6a5) Bump mkdirp@^0.5.1->^3.0.1
+- [e6ae1d](https://github.com/MetaMask/license-checker/commit/e6ae1d55e86b32ce04d7510e4df93bad44d9afd5) Bump debug@3.1.0->4.3.4
+
+
 ### v25.0.1 (2019/01/10 19:29 +00:00)
 - [f1c835b](https://github.com/davglass/license-checker/commit/f1c835b991b65dc928eafe64c29b73df9e703169) Updated readme with new args (@davglass)
 - [ada667f](https://github.com/davglass/license-checker/commit/ada667f28e8ef4e96b5b6059fe05541d05ca936c) changelog (@davglass)
