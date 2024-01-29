@@ -87,6 +87,14 @@
     "oss"
   ],
   "main": "./lib/index.js",
+  "files": [
+    "bin/",
+    "lib/",
+    "scripts/",
+    "CHANGELOG.md",
+    "NOTICE",
+    "customFormatExample.json"
+  ],
   "bin": {
     "license-checker": "./bin/license-checker"
   },
